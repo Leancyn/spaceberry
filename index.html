@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spaceberry</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- SIDEBAR START -->
+      <aside class="sidebar">
+        <img src="/assets/img/logo (2).png"Spaceberry" />
+        <nav>
+          <a href="#" class="nav-item active"><i data-feather="home"></i><span>Dashboard</span></a>
+          <a href="/assets/page/explore.html" class="nav-item"><i data-feather="compass"></i><span>Explore</span></a>
+          <a href="#" class="nav-item"><i data-feather="book-open"></i><span>Dictionary</span></a>
+          <a href="#" class="nav-item"><i data-feather="calendar"></i><span>Schedule</span></a>
+          <a href="#" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
+        </nav>
+        <div class="contact-box">
+          <i data-feather="mail" class="contact-icon"></i>
+          <p class="contact-text">Need help or have questions?</p>
+          <button class="contact-btn">Contact Us</button>
+        </div>
+      </aside>
+      <!-- SIDEBAR END -->
+
+      <main class="main-content">
+        <header class="header">
+          <input type="text" placeholder="Search..." />
+        </header>
+
+        <!-- CARD START -->
+        <section class="word-sets">
+          <h3>Word Sets</h3>
+          <div class="cards">
+            <div class="card">
+              <a href="/assets/page/booksAndLibrary/main.html"><i data-feather="arrow-up-right" class="arrow-icon"></i></a>
+              <img src="/assets/img/books.png" alt="Books" class="card-icon" />
+              <div class="card-title">Books and Library</div>
+            </div>
+            <div class="card">
+              <i data-feather="arrow-up-right" class="arrow-icon"><a href="#books"></a></i>
+              <img src="/assets/img/brain.png" alt="Books" class="card-icon" />
+              <div class="card-title">Word of the Day</div>
+            </div>
+            <div class="card">
+              <i data-feather="arrow-up-right" class="arrow-icon"><a href="#books"></a></i>
+              <img src="/assets/img/quote.png" alt="Books" class="card-icon" />
+              <div class="card-title">Quote of the Day</div>
+            </div>
+            <div class="card world-clock-card">
+              <div class="card-title">What is o'clock now?</div>
+              <div class="digital-clock" id="digitalClock">00:00:00</div>
+              <div class="clock-date" id="clockDate">Loading date...</div>
+            </div>
+          </div>
+        </section>
+        <!-- CARD END -->
+
+        <!-- STATISTIK START -->
+        <section class="statistics">
+          <h3>Statistics</h3>
+          <div id="realtimeChart" class="chart-placeholder"></div>
+        </section>
+        <!-- STATISTIK END -->
+
+        <section class="quick-start">
+          <h3>Quick Start</h3>
+          <div class="quick-cards">
+            <a href="" class="quick-card">Exam - 20 min</a>
+            <a href="" class="quick-card">Writing - 15 min</a>
+            <a href="" class="quick-card">Grammar - 17 min</a>
+          </div>
+        </section>
+
+        <section class="interactive-practice">
+          <h3>Latihan Interaktif</h3>
+
+          <!-- Soal Pilihan Ganda -->
+          <div class="quiz-section">
+            <h4>1. Pilihan Ganda: Apa ibu kota Indonesia?</h4>
+            <div>
+              <label><input type="radio" name="q1" value="Jakarta" /> Jakarta</label><br />
+              <label><input type="radio" name="q1" value="Bandung" /> Bandung</label><br />
+              <label><input type="radio" name="q1" value="Surabaya" /> Surabaya</label><br />
+              <button onclick="checkMultipleChoice()">Cek Jawaban</button>
+              <p id="feedback-q1"></p>
+            </div>
+          </div>
+
+          <!-- Soal Drag & Drop -->
+          <div class="quiz-section">
+            <h4>2. Drag & Drop: Pasangkan negara dengan ibukotanya</h4>
+            <div class="dragdrop-container">
+              <div class="drag-items">
+                <div draggable="true" ondragstart="drag(event)" id="drag1">Tokyo</div>
+                <div draggable="true" ondragstart="drag(event)" id="drag2">Canberra</div>
+              </div>
+              <div class="drop-zones">
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="Tokyo">Jepang</div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="Canberra">Australia</div>
+              </div>
+              <button onclick="checkDragDrop()">Cek Jawaban</button>
+              <p id="feedback-q2"></p>
+            </div>
+          </div>
+
+          <!-- Soal Fill-in-the-Blank -->
+          <div class="quiz-section">
+            <h4>3. Isian Singkat: Siapa penemu lampu pijar?</h4>
+            <input type="text" id="q3" placeholder="Jawaban Anda" />
+            <button onclick="checkFillBlank()">Cek Jawaban</button>
+            <p id="feedback-q3"></p>
+          </div>
+
+          <div class="score">Skor Anda: <span id="score">0</span></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/assets/js/feather.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/apexcharts.min.js"></script>
+    <script src="/assets/js/chart-script.js"></script>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
