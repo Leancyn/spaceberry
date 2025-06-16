@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "comic-relief";
+  src: url("/assets/font/ComicRelief-Bold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "comic-relief", sans-serif;
+  background: #d4dce9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(to right, #1f1b3f, #302b63);
+  color: white;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.sidebar img {
+  width: 160px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 3px rgba(255, 255, 255, 0.3));
+  -webkit-filter: drop-shadow(0 2px 3px rgba(255, 255, 255, 0.9));
+}
+
+nav .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav .nav-item i {
+  width: 20px;
+  height: 20px;
+}
+
+nav .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+nav .nav-item.active {
+  background-color: white;
+  color: #333;
+}
+
+nav .nav-item.active i {
+  color: #333;
+}
+
+nav .nav-item span {
+  font-weight: 500;
+}
+
+.contact-box {
+  background: linear-gradient(to right, #ffffff, #f0f4ff);
+  color: #333;
+  margin-bottom: 10px;
+  padding: 20px 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.contact-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  color: #7c3aed;
+  margin-bottom: 8px;
+}
+
+.contact-text {
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.contact-btn {
+  padding: 8px 14px;
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #5b21b6;
+}
+
+.main-content {
+  margin-left: 260px; /* geser konten supaya tidak tertimpa sidebar */
+  padding: 30px;
+  width: 100%;
+}
+
+.modul-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  gap: 20px;
+  margin-left: 500px;
+}
+
+.modul {
+  background: linear-gradient(to right, #fbc2eb, #a18cd1);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.modul-container h1 {
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+
+.modul ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.modul p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.modul h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+input,
+select {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-color: #7c3aed;
+}
+
+input[type="text"],
+select {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 5px rgba(124, 58, 237, 0.5);
+  outline: none;
+}
+
+button {
+  padding: 10px 18px;
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 8px 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #5b21b6;
+  transform: translateY(-2px);
+}
+
+.feedback {
+  margin-bottom: 20px;
+  color: green;
+}
+
+/* === RESPONSIVE MEDIA QUERY === */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .sidebar img {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav .nav-item {
+    margin: 6px;
+    padding: 8px 12px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .modul-container {
+    margin-left: 0;
+  }
+
+  .contact-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 180px;
+  }
+
+  .contact-icon {
+    display: none;
+  }
+
+  .modul {
+    width: 70%;
+    margin-left: 50px;
+    padding: 20px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  nav .nav-item span {
+    display: none;
+  }
+
+  nav .nav-item {
+    padding: 6px;
+    justify-content: center;
+  }
+
+  .contact-box {
+    width: 160px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .modul {
+    padding: 20px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .contact-box {
+    width: 100px;
+    font-size: 12px;
+    padding: 10px;
+    display: none;
+  }
+
+  .contact-title {
+    display: none;
+  }
+
+  .contact-btn {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .digital-clock {
+    font-size: 24px;
+  }
+
+  .clock-date {
+    font-size: 12px;
+  }
+
+  .modul-container h1 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 50px;
+    text-align: center;
+    width: 70%;
+  }
+
+  input[type="text"] {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .modul {
+    width: 80%;
+    margin-left: 40px;
+    padding: 20px;
+  }
+}
