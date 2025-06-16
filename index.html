@@ -76,51 +76,6 @@
           <a href="" class="quick-card">Grammar - 17 min</a>
         </div>
       </section>
-
-      <section class="interactive-practice">
-        <h3>Latihan Interaktif</h3>
-
-        <!-- Soal Pilihan Ganda -->
-        <div class="quiz-section">
-          <h4>1. Pilihan Ganda: Apa ibu kota Indonesia?</h4>
-          <div>
-            <label><input type="radio" name="q1" value="Jakarta" /> Jakarta</label><br />
-            <label><input type="radio" name="q1" value="Bandung" /> Bandung</label><br />
-            <label><input type="radio" name="q1" value="Surabaya" /> Surabaya</label><br />
-            <button onclick="checkMultipleChoice()">Cek Jawaban</button>
-            <p id="feedback-q1"></p>
-          </div>
-        </div>
-
-        <!-- Soal Drag & Drop -->
-        <div class="quiz-section">
-          <h4>2. Drag & Drop: Pasangkan negara dengan ibukotanya</h4>
-          <div class="dragdrop-container">
-            <div class="drag-items">
-              <div draggable="true" ondragstart="drag(event)" id="drag1">Tokyo</div>
-              <div draggable="true" ondragstart="drag(event)" id="drag2">Canberra</div>
-            </div>
-            <div class="drop-zones">
-              <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="Tokyo">Jepang
-              </div>
-              <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="Canberra">
-                Australia</div>
-            </div>
-            <button onclick="checkDragDrop()">Cek Jawaban</button>
-            <p id="feedback-q2"></p>
-          </div>
-        </div>
-
-        <!-- Soal Fill-in-the-Blank -->
-        <div class="quiz-section">
-          <h4>3. Isian Singkat: Siapa penemu lampu pijar?</h4>
-          <input type="text" id="q3" placeholder="Jawaban Anda" />
-          <button onclick="checkFillBlank()">Cek Jawaban</button>
-          <p id="feedback-q3"></p>
-        </div>
-
-        <div class="score">Skor Anda: <span id="score">0</span></div>
-      </section>
     </main>
   </div>
 
