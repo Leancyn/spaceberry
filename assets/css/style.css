@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "comic-relief";
-  src: url("/spaceberry/assets/font/ComicRelief-Bold.ttf") format("truetype");
+  src: url("/spaceberry/assets/font/ComicRelief-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
