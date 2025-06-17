@@ -422,6 +422,22 @@ footer {
     left: 8px;
     top: 0;
   }
+
+  .modul-container {
+    padding: 20px;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
 /* Small Mobile (≤ 480px) */
