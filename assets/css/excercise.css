@@ -230,7 +230,7 @@ button:hover {
   }
 
   .sidebar {
-    position: relative;
+    position: fixed;
     flex-direction: row;
     width: 100%;
     height: auto;

@@ -541,4 +541,9 @@ nav .nav-item span {
   .clock-date {
     font-size: 14px;
   }
+
+  .sidebar {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
 }
