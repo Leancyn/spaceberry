@@ -202,6 +202,10 @@ prevPageBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     renderTable(currentPage, searchInput.value);
+    document.querySelector("table.word-list").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 });
 nextPageBtn.addEventListener("click", () => {
@@ -209,6 +213,10 @@ nextPageBtn.addEventListener("click", () => {
   if (currentPage * rowsPerPage < filteredCount) {
     currentPage++;
     renderTable(currentPage, searchInput.value);
+    document.querySelector("table.word-list").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 });
 
