@@ -140,7 +140,7 @@ nav .nav-item span {
   background: linear-gradient(to right, #fbc2eb, #a18cd1);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
