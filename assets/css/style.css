@@ -31,6 +31,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: fixed;
   justify-content: space-between;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
