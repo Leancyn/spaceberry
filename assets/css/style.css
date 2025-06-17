@@ -122,6 +122,10 @@ nav .nav-item span {
   background-color: #5b21b6;
 }
 
+.contact-query {
+  display: none;
+}
+
 /* Main Content */
 .main-content {
   flex: 1;
@@ -408,6 +412,27 @@ nav .nav-item span {
     justify-content: center;
   }
 
+  .contact-query {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    border: none;
+    color: rgb(46, 45, 45);
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 11px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
   .container {
     flex-direction: column;
   }
@@ -450,6 +475,7 @@ nav .nav-item span {
     right: 20px;
     z-index: 1000;
     width: 150px;
+    display: none;
   }
 
   .digital-clock {

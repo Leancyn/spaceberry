@@ -30,7 +30,6 @@ body {
   height: 100vh;
   padding: 20px;
   display: flex;
-  position: fixed;
   flex-direction: column;
   justify-content: space-between;
   border-top-right-radius: 30px;
@@ -123,141 +122,121 @@ nav .nav-item span {
   background-color: #5b21b6;
 }
 
-/* === DICTIONARY PAGE STYLES === */
-.app-container {
-  max-width: 960px;
-  margin: 0 auto;
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.header {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* Header */
-.app-container header {
-  text-align: center;
-}
-
-.app-container header h1 {
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 4px;
-}
-
-/* Search bar */
-.app-container .search-bar {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 12px;
-  padding: 8px 12px;
-  background-color: #a9aedd;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
-  border: 1px solid transparent;
-  transition: border-color 0.3s ease;
-  -webkit-transition: border-color 0.3s ease;
-  -moz-transition: border-color 0.3s ease;
-  -ms-transition: border-color 0.3s ease;
-  -o-transition: border-color 0.3s ease;
 }
 
-.app-container .search-bar:focus-within {
-  border-color: #6366f1;
-  outline-offset: 2px;
-}
-
-.search-bar .material-icons {
-  color: white;
-  padding: 4px 10px;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  height: 100%;
-}
-
-.app-container .search-bar input {
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: transparent;
+.header input {
+  padding: 10px;
   width: 100%;
-  color: white;
-  align-items: left;
-  font-weight: 400;
-}
-
-/* Table */
-.app-container table.word-list {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  font-size: 1rem;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-.app-container table.word-list th,
-.app-container table.word-list td {
-  padding: 12px 16px;
-  text-align: center;
-}
-
-.app-container table.word-list thead th {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: white;
-  background: #818cf8;
-  border-bottom: 2px solid #c7d2fe;
-}
-
-.app-container table.word-list tbody tr {
-  background: linear-gradient(to right, #a18cd1, #ec9ed6);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s ease;
-}
-
-.app-container table.word-list tbody tr:hover {
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.18), 0 2px 8px rgba(79, 70, 229, 0.2);
-  cursor: pointer;
-}
-
-/* Highlighted search match */
-.app-container mark.highlight {
-  background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 100%);
-  color: #1e293b;
-  padding: 0 2px;
-  border-radius: 3px;
-  font-weight: 600;
-}
-
-/* Pagination */
-.app-container .pagination {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.app-container .pagination button {
-  background: #818cf8;
-  border: none;
-  color: white;
-  padding: 8px 14px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease;
 }
 
-.app-container .pagination button:disabled {
-  background: #c7d2fe;
-  cursor: default;
+/* === MODUL PAGE STYLING === */
+
+.modul-container {
+  flex: 1;
+  padding: 40px 60px;
+  overflow-y: auto;
+  color: #1f2937;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-.app-container .pagination button:hover:not(:disabled) {
-  background: #4f46e5;
+.modul-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1e1b4b;
+}
+
+.modul-container h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #3f3f46;
+  border-left: 5px solid #7c3aed;
+  padding-left: 12px;
+}
+
+.modul-container h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #4c1d95;
+}
+
+.modul-container h4 {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #6b21a8;
+}
+
+.modul-container p {
+  margin-bottom: 15px;
+}
+
+.modul-container ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.modul-container ul li {
+  margin-bottom: 8px;
+}
+
+blockquote {
+  background: #ffffff;
+  border-left: 5px solid #7c3aed;
+  margin: 20px 0;
+  padding: 15px 20px;
+  font-style: italic;
+  border-radius: 10px;
+  color: #1e1b4b;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table thead {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  color: #1f1f1f;
+}
+
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  border-top: 1px solid #d1d5db;
+}
+
+.contact-query {
+  display: none;
 }
 
 #scrollTopBtn {
@@ -278,29 +257,14 @@ nav .nav-item span {
   transition: background-color 0.3s ease;
 }
 
-/* Tampilkan tombol hanya di layar ≤ 1040px */
-@media (max-width: 1040px) {
-  #scrollTopBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.h-none {
-  display: none;
-}
-
-.contact-query {
-  display: none;
-}
-
 /* === RESPONSIVE MEDIA QUERY === */
 
 /* Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
-  .h-desktop {
-    display: none;
+  #scrollTopBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .contact-query {
@@ -329,14 +293,13 @@ nav .nav-item span {
   }
 
   .sidebar {
-    position: fixed;
     flex-direction: row;
     width: 100%;
     height: auto;
     border-radius: 0;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0;
   }
 
   .sidebar img {
@@ -358,8 +321,7 @@ nav .nav-item span {
   }
 
   .main-content {
-    margin-left: 0;
-    padding: 20px;
+    padding-top: 20px;
   }
 
   .contact-box {
@@ -367,34 +329,48 @@ nav .nav-item span {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    width: 180px;
+    width: 150px;
     display: none;
+  }
+
+  .digital-clock {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 5px;
+    z-index: 2;
+  }
+
+  .world-clock-card {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
   }
 
   .contact-icon {
+    width: 30px;
+    height: 30px;
+    color: #7c3aed;
+    margin-bottom: 8px;
     display: none;
   }
 
-  .dictionary-page {
-    margin-left: 0;
-    padding-top: 100px;
-  }
-
-  .app-container {
-    padding: 0 16px;
-  }
-
-  .app-container header {
-    text-align: center;
-  }
-
-  .app-container header h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
+  .contact-text {
+    font-size: 13px;
     margin-bottom: 4px;
-    margin-top: 100px;
+    color: #666;
   }
 
+  .card-icon {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
   .sidebar {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -413,9 +389,38 @@ nav .nav-item span {
   }
 
   .contact-box {
-    width: 160px;
+    width: 220px;
     right: 15px;
     bottom: 15px;
+  }
+
+  .card,
+  .quick-card {
+    width: 100%;
+    height: auto;
+    flex: none;
+  }
+
+  .cards,
+  .quick-cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .arrow-icon {
+    position: absolute;
+    top: 16px;
+    right: 23px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    left: 8px;
+    top: 0;
   }
 }
 
@@ -423,17 +428,13 @@ nav .nav-item span {
 @media (max-width: 480px) {
   .contact-box {
     width: 100px;
+    height: auto;
     font-size: 12px;
-    padding: 10px;
     display: none;
   }
 
-  .contact-title {
-    display: none;
-  }
-
-  .contact-btn {
-    font-size: 11px;
-    padding: 5px 8px;
+  .sidebar {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 }

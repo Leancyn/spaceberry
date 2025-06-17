@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Module 2 - Who, What, Where</title>
-  <link rel="stylesheet" href="/spaceberry/assets/css/style.css" />
+  <link rel="stylesheet" href="/spaceberry/assets/css/modul.css" />
 </head>
 
 <body>
@@ -15,7 +15,6 @@
       <img src="/spaceberry/assets/img/logo (2).png" alt="Spaceberry" />
       <nav>
         <a href="/spaceberry/index.html" class="nav-item active"><i data-feather="home"></i><span>Dashboard</span></a>
-        <a href="#" class="nav-item"><i data-feather="compass"></i><span>Explore</span></a>
         <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"><i
             data-feather="book-open"></i><span>Dictionary</span></a>
         <a href="#" class="nav-item"><i data-feather="calendar"></i><span>Schedule</span></a>
@@ -143,16 +142,26 @@
       </section>
 
       <footer>
-        <p>© Lembaga Bahasa Universitas Pamulang</p>
+        <p>© Lembaga Bahasa Universitas Pamulang | BASIC ACADEMIC ENGLISH</p>
       </footer>
     </div>
     <!-- MODUL END -->
   </div>
 
+  <div class="contact-query">
+    <a href="#"><i data-feather="help-circle"></i></a>
+  </div>
+
+  <button id="scrollTopBtn" aria-label="Scroll to top"><i data-feather="arrow-up"></i></button>
+  <script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
   <script src="/spaceberry/assets/js/feather.min.js"></script>
   <script src="/spaceberry/assets/js/script.js"></script>
-  <script src="/spaceberry/assets/js/apexcharts.min.js"></script>
-  <script src="/spaceberry/assets/js/chart-script.js"></script>
 
   <script>
     feather.replace();
