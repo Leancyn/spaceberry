@@ -177,7 +177,7 @@ nav .nav-item span {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.card-icon {
+.card-icon , .c1-modul{
   width: 100px;
   height: auto;
   position: absolute;
@@ -507,6 +507,14 @@ nav .nav-item span {
     font-size: 13px;
     margin-bottom: 4px;
     color: #666;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   .c1-modul {
