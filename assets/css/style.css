@@ -516,6 +516,11 @@ nav .nav-item span {
     left: 0;
     top: 0;
   }
+
+  .card-title-book {
+    margin-left: 80px;
+  }
+
   .sidebar {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -560,13 +565,6 @@ nav .nav-item span {
     height: 30px;
   }
 
-  .card-icon {
-    width: 60px;
-    height: auto;
-    position: absolute;
-    left: 8px;
-    top: 0;
-  }
 }
 
 /* Small Mobile (≤ 480px) */
