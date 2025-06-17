@@ -380,10 +380,34 @@ nav .nav-item span {
 }
 /* QUIZ END */
 
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: transparent;
+  color: rgb(46, 45, 45);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: none; /* sembunyikan default */
+  transition: background-color 0.3s ease;
+}
+
 /* === RESPONSIVE MEDIA QUERY === */
 
 /* Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
+  #scrollTopBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .container {
     flex-direction: column;
   }

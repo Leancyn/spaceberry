@@ -5,17 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spaceberry</title>
-    <link rel="stylesheet" href="/assets/css/dictionary.css" />
+    <link rel="stylesheet" href="/spaceberry/assets/css/dictionary.css" />
 </head>
 
 <body>
     <div class="container">
         <!-- SIDEBAR START -->
         <aside class="sidebar">
-            <img src="/assets/img/logo (2).png" Spaceberry" />
+            <img src="/spaceberry/assets/img/logo (2).png" Spaceberry" />
             <nav>
-                <a href="/index.html" class="nav-item active"><i data-feather="home"></i><span>Dashboard</span></a>
-                <a href="/assets/page/booksAndLibrary/main.html" class="nav-item"><i
+                <a href="/spaceberry/index.html" class="nav-item active"><i
+                        data-feather="home"></i><span>Dashboard</span></a>
+                <a href="/spaceberry/assets/page/booksAndLibrary/main.html" class="nav-item"><i
                         data-feather="compass"></i><span>Explore</span></a>
                 <a href="#" class="nav-item"><i data-feather="book-open"></i><span>Dictionary</span></a>
                 <a href="#" class="nav-item"><i data-feather="calendar"></i><span>Schedule</span></a>
@@ -32,14 +33,15 @@
         <!-- DICTIONARY START -->
         <main class="app-container" role="main" aria-label="English Indonesian words searchable list">
             <header>
-                <h1>Your Dictionary EN-ID</h1>
+                <h1 class="h-desktop">Your Dictionary English - Indonesia</h1>
+                <h1 class="h-none">Your Dictionary EN-ID</h1>
             </header>
             <section>
                 <label for="searchInput" class="sr-only" style=" margin-bottom:6px;">Search words</label>
                 <div class="search-bar" role="search">
                     <span class="material-icons" aria-hidden="true"><i data-feather="search"></i></span>
                     <input type="search" id="searchInput"
-                        style="margin-top: 4px; margin-left:15px; color:white; display:block; text-align:center;"
+                        style="margin-top: 3px; margin-left:15px; color:white; display:block;"
                         placeholder="Search English or Indonesian words..." aria-describedby="searchHelp"
                         autocomplete="off" spellcheck="false" />
                 </div>
@@ -77,10 +79,10 @@
         });
     </script>
 
-    <script src="/assets/js/feather.min.js"></script>
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/chart-script.js"></script>
-    <script src="/assets/js/dictionary.js"></script>
+    <script src="/spaceberry/assets/js/feather.min.js"></script>
+    <script src="/spaceberry/assets/js/script.js"></script>
+    <script src="/spaceberry/assets/js/chart-script.js"></script>
+    <script src="/spaceberry/assets/js/dictionary.js"></script>
 
     <script>
         feather.replace();
