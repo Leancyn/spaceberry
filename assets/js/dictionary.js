@@ -202,7 +202,6 @@ prevPageBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     renderTable(currentPage, searchInput.value);
-    searchInput.focus();
   }
 });
 nextPageBtn.addEventListener("click", () => {
@@ -210,7 +209,6 @@ nextPageBtn.addEventListener("click", () => {
   if (currentPage * rowsPerPage < filteredCount) {
     currentPage++;
     renderTable(currentPage, searchInput.value);
-    searchInput.focus();
   }
 });
 

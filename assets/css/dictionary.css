@@ -182,7 +182,7 @@ nav .nav-item span {
   background: transparent;
   width: 100%;
   color: white;
-  align-items: left ;
+  align-items: left;
   font-weight: 400;
 }
 
@@ -289,21 +289,20 @@ nav .nav-item span {
 
 .h-none {
   display: none;
-
 }
 
 /* === RESPONSIVE MEDIA QUERY === */
 
 /* Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
-.h-desktop {
+  .h-desktop {
     display: none;
   }
 
   .h-none {
     display: block;
   }
-  
+
   .container {
     flex-direction: column;
   }
@@ -370,6 +369,11 @@ nav .nav-item span {
     font-size: 2.5rem;
     margin-bottom: 4px;
     margin-top: 100px;
+  }
+
+  .sidebar {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 }
 

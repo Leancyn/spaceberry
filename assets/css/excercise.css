@@ -306,6 +306,11 @@ button:hover {
     margin-left: 50px;
     padding: 20px;
   }
+
+  .sidebar {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
 }
 
 /* Mobile (≤ 768px) */
