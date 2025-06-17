@@ -324,12 +324,15 @@ nav .nav-item span {
 
   nav {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
   }
 
   nav .nav-item {
-    margin: 6px;
+    flex-direction: row;
+    margin: 5px 10px;
     padding: 8px 12px;
   }
 
