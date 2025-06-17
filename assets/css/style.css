@@ -431,7 +431,7 @@ nav .nav-item span {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-}
+  }
 
   .container {
     flex-direction: column;
@@ -509,7 +509,7 @@ nav .nav-item span {
     color: #666;
   }
 
-  .card-icon {
+  .c1-modul {
     width: 80px;
     height: auto;
     position: absolute;
@@ -564,7 +564,6 @@ nav .nav-item span {
     width: 30px;
     height: 30px;
   }
-
 }
 
 /* Small Mobile (≤ 480px) */
