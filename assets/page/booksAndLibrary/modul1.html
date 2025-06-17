@@ -197,17 +197,18 @@
   </div>
 
   <button id="scrollTopBtn" aria-label="Scroll to top"><i data-feather="arrow-up"></i></button>
+  <script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 
   <script src="/spaceberry/assets/js/feather.min.js"></script>
   <script src="/spaceberry/assets/js/script.js"></script>
 
   <script>
     feather.replace();
-
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
   </script>
 </body>
 

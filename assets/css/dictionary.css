@@ -303,6 +303,10 @@ nav .nav-item span {
     display: none;
   }
 
+  .h-none {
+    display: block;
+  }
+
   .contact-query {
     display: block;
     position: fixed;
