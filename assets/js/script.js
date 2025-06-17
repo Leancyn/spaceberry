@@ -14,8 +14,11 @@ function updateDigitalClock() {
     day: "numeric",
   });
 
-  document.getElementById("digitalClock").textContent = timeString;
-  document.getElementById("clockDate").textContent = dateString;
+  const clockEl = document.getElementById("digitalClock");
+  const dateEl = document.getElementById("clockDate");
+
+  if (clockEl) clockEl.textContent = timeString;
+  if (dateEl) dateEl.textContent = dateString;
 }
 
 setInterval(updateDigitalClock, 1000);
@@ -27,14 +30,14 @@ let score = 0;
 
 function checkMultipleChoice() {
   const answer = document.querySelector('input[name="q1"]:checked');
-  const feedback = document.getElementById('feedback-q1');
-  if (answer && answer.value === 'Jakarta') {
-    feedback.textContent = 'Benar!';
-    feedback.style.color = 'green';
+  const feedback = document.getElementById("feedback-q1");
+  if (answer && answer.value === "Jakarta") {
+    feedback.textContent = "Benar!";
+    feedback.style.color = "green";
     score += 10;
   } else {
-    feedback.textContent = 'Salah, jawabannya Jakarta.';
-    feedback.style.color = 'red';
+    feedback.textContent = "Salah, jawabannya Jakarta.";
+    feedback.style.color = "red";
   }
   updateScore();
 }
@@ -56,39 +59,39 @@ function drop(ev) {
 
 function checkDragDrop() {
   let correct = 0;
-  document.querySelectorAll('.drop-zone').forEach((zone) => {
+  document.querySelectorAll(".drop-zone").forEach((zone) => {
     const answer = zone.firstChild?.textContent;
     if (answer === zone.dataset.correct) {
       correct++;
     }
   });
-  const feedback = document.getElementById('feedback-q2');
+  const feedback = document.getElementById("feedback-q2");
   if (correct === 2) {
-    feedback.textContent = 'Semua jawaban benar!';
-    feedback.style.color = 'green';
+    feedback.textContent = "Semua jawaban benar!";
+    feedback.style.color = "green";
     score += 10;
   } else {
-    feedback.textContent = 'Masih ada jawaban salah.';
-    feedback.style.color = 'red';
+    feedback.textContent = "Masih ada jawaban salah.";
+    feedback.style.color = "red";
   }
   updateScore();
 }
 
 function checkFillBlank() {
-  const answer = document.getElementById('q3').value.trim().toLowerCase();
-  const feedback = document.getElementById('feedback-q3');
-  if (answer === 'thomas edison') {
-    feedback.textContent = 'Benar!';
-    feedback.style.color = 'green';
+  const answer = document.getElementById("q3").value.trim().toLowerCase();
+  const feedback = document.getElementById("feedback-q3");
+  if (answer === "thomas edison") {
+    feedback.textContent = "Benar!";
+    feedback.style.color = "green";
     score += 10;
   } else {
-    feedback.textContent = 'Salah, jawabannya Thomas Edison.';
-    feedback.style.color = 'red';
+    feedback.textContent = "Salah, jawabannya Thomas Edison.";
+    feedback.style.color = "red";
   }
   updateScore();
 }
 
 function updateScore() {
-  document.getElementById('score').textContent = score;
+  document.getElementById("score").textContent = score;
 }
 // QUIZ END

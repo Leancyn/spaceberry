@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spaceberry</title>
+    <link rel="stylesheet" href="/assets/css/dictionary.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- SIDEBAR START -->
+        <aside class="sidebar">
+            <img src="/assets/img/logo (2).png" Spaceberry" />
+            <nav>
+                <a href="/index.html" class="nav-item active"><i data-feather="home"></i><span>Dashboard</span></a>
+                <a href="/assets/page/booksAndLibrary/main.html" class="nav-item"><i
+                        data-feather="compass"></i><span>Explore</span></a>
+                <a href="#" class="nav-item"><i data-feather="book-open"></i><span>Dictionary</span></a>
+                <a href="#" class="nav-item"><i data-feather="calendar"></i><span>Schedule</span></a>
+                <a href="#" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
+            </nav>
+            <div class="contact-box">
+                <i data-feather="mail" class="contact-icon"></i>
+                <p class="contact-text">Need help or have questions?</p>
+                <button class="contact-btn">Contact Us</button>
+            </div>
+        </aside>
+        <!-- SIDEBAR END -->
+
+        <!-- DICTIONARY START -->
+        <main class="app-container" role="main" aria-label="English Indonesian words searchable list">
+            <header>
+                <h1>Your Dictionary EN-ID</h1>
+            </header>
+            <section>
+                <label for="searchInput" class="sr-only" style=" margin-bottom:6px;">Search words</label>
+                <div class="search-bar" role="search">
+                    <span class="material-icons" aria-hidden="true"><i data-feather="search"></i></span>
+                    <input type="search" id="searchInput"
+                        style="margin-top: 4px; margin-left:15px; color:white; display:block; text-align:center;"
+                        placeholder="Search English or Indonesian words..." aria-describedby="searchHelp"
+                        autocomplete="off" spellcheck="false" />
+                </div>
+                <small id="searchHelp" style="display:block; color:#475569; margin-top:6px;">You can search by English
+                    or Indonesian word</small>
+            </section>
+            <section aria-live="polite" aria-atomic="true" aria-relevant="additions removals">
+                <table class="word-list" role="table" aria-label="English Indonesian words table">
+                    <thead>
+                        <tr>
+                            <th scope="col" aria-sort="none">Rank</th>
+                            <th scope="col">English</th>
+                            <th scope="col">Indonesian</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wordTableBody">
+                        <!-- words inserted by JS -->
+                    </tbody>
+                </table>
+                <nav class="pagination" aria-label="Pagination controls">
+                    <button id="prevPageBtn" aria-label="Previous page" disabled><span class="material-icons"><i
+                                data-feather="chevron-left"></i></span></button>
+                    <button id="nextPageBtn" aria-label="Next page"><span class="material-icons"><i
+                                data-feather="chevron-right"></i></span></button>
+                </nav>
+            </section>
+        </main>
+        <!-- DICTIONARY END -->
+    </div>
+    <button id="scrollTopBtn" aria-label="Scroll to top"><i data-feather="arrow-up"></i></button>
+    <script>
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <script src="/assets/js/feather.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/chart-script.js"></script>
+    <script src="/assets/js/dictionary.js"></script>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
