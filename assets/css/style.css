@@ -586,18 +586,6 @@ nav .nav-item span {
     top: 0;
   }
 
-  .c1-modul {
-    width: 80px;
-    height: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  .card-title-book {
-    margin-left: 80px;
-  }
-
   .sidebar {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -640,6 +628,19 @@ nav .nav-item span {
     right: 23px;
     width: 30px;
     height: 30px;
+  }
+
+  .c1-modul {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .card-title-book {
+    margin-left: 80px;
+    font-size: 25px;
   }
 }
 
