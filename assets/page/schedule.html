@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spaceberry</title>
+    <link rel="stylesheet" href="/spaceberry/assets/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- SIDEBAR START -->
+        <aside class="sidebar">
+            <img src="/spaceberry/assets/img/logo (2).png" Spaceberry" />
+            <nav>
+                <a href="/spaceberry/index.html" class="nav-item active"><i data-feather="home"></i><span>Dashboard</span></a>
+                <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"><i
+                        data-feather="book-open"></i><span>Dictionary</span></a>
+                <a href="#" class="nav-item"><i data-feather="calendar"></i><span>Schedule</span></a>
+                <a href="#" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
+            </nav>
+            <div class="contact-box">
+                <i data-feather="mail" class="contact-icon"></i>
+                <p class="contact-text">Need help or have questions?</p>
+                <button class="contact-btn">Contact Us</button>
+            </div>
+        </aside>
+        <!-- SIDEBAR END -->
+
+        <main class="main-content">
+            <section class="schedule-section">
+                <h2>Study Planner</h2>
+                <div class="schedule-controls">
+                    <label for="planDays">Choose duration:</label>
+                    <select id="planDays">
+                        <option value="3">3 days</option>
+                        <option value="6">6 days</option>
+                        <option value="12" selected>12 days</option>
+                        <option value="24">24 days</option>
+                        <option value="32">32 days</option>
+                    </select>
+                    <button onclick="generatePlanner()">Generate Plan</button>
+                    <button onclick="downloadPDF()">Export to PDF</button>
+                </div>
+
+                <table class="schedule-table" id="plannerTable">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Date</th>
+                            <th>Material</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plannerBody"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="contact-query">
+        <a href="#"><i data-feather="help-circle"></i></a>
+    </div>
+
+    <script src="/spaceberry/assets/js/html2pdf.bundle.min.js"></script>
+    <script src="/spaceberry/assets/js/feather.min.js"></script>
+    <script src="/spaceberry/assets/js/script.js"></script>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

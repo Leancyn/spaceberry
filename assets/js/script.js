@@ -95,3 +95,53 @@ function updateScore() {
   document.getElementById("score").textContent = score;
 }
 // QUIZ END
+
+// SCHEDULE START
+const baseDate = new Date();
+const materials = [
+  { name: "Modul 1", link: "/spaceberry/assets/page/booksAndLibrary/modul1.html" },
+  { name: "Modul 2", link: "/spaceberry/assets/page/booksAndLibrary/modul2.html" },
+  { name: "Modul 3", link: "/spaceberry/assets/page/booksAndLibrary/modul3.html" },
+  { name: "Modul 4", link: "/spaceberry/assets/page/booksAndLibrary/modul4.html" },
+  { name: "Modul 5", link: "/spaceberry/assets/page/booksAndLibrary/modul5.html" },
+  { name: "Modul 6", link: "/spaceberry/assets/page/booksAndLibrary/modul6.html" },
+  { name: "Modul 7", link: "/spaceberry/assets/page/booksAndLibrary/modul7.html" },
+  { name: "Modul 8", link: "/spaceberry/assets/page/booksAndLibrary/modul8.html" },
+  { name: "Modul 9", link: "/spaceberry/assets/page/booksAndLibrary/modul9.html" },
+  { name: "Dictionary", link: "/spaceberry/assets/page/dictionary.html" },
+];
+
+function formatDate(date) {
+  return date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+function generatePlanner() {
+  const days = parseInt(document.getElementById("planDays").value);
+  const tbody = document.getElementById("plannerBody");
+  tbody.innerHTML = "";
+
+  for (let i = 0; i < days; i++) {
+    const d = new Date(baseDate);
+    d.setDate(baseDate.getDate() + i);
+    const material = materials[i % materials.length];
+    tbody.innerHTML += `
+        <tr>
+          <td>Day ${i + 1}</td>
+          <td>${formatDate(d)}</td>
+          <td><a href="${material.link}" target="_blank">${material.name}</a></td>
+        </tr>
+      `;
+  }
+}
+
+function downloadPDF() {
+  const element = document.querySelector(".schedule-section");
+  html2pdf().from(element).save("study-plan.pdf");
+}
+
+window.addEventListener("load", generatePlanner);
+// SCHEDULE END

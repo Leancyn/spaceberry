@@ -177,7 +177,8 @@ nav .nav-item span {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.card-icon , .c1-modul{
+.card-icon,
+.c1-modul {
   width: 100px;
   height: auto;
   position: absolute;
@@ -383,6 +384,74 @@ nav .nav-item span {
   font-size: 18px;
 }
 /* QUIZ END */
+
+/* SCHEDULE START */
+.schedule-section {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  font-family: "comic-relief", sans-serif;
+}
+.schedule-section h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #1f1b3f;
+}
+.schedule-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.schedule-controls select,
+.schedule-controls button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  font-family: inherit;
+}
+.schedule-controls button {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.schedule-controls button:hover {
+  background-color: #5b21b6;
+}
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #f8fafc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.schedule-table th,
+.schedule-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+.schedule-table th {
+  background-color: #dbeafe;
+  color: #1e1b4b;
+}
+.schedule-table td a {
+  text-decoration: none;
+  color: #7c3aed;
+}
+.schedule-table td a:hover {
+  text-decoration: underline;
+}
+
+/* SCHEDULE END */
 
 #scrollTopBtn {
   position: fixed;
