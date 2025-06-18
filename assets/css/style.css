@@ -396,7 +396,7 @@ nav .nav-item span {
 .schedule-section h2 {
   font-size: 24px;
   margin-bottom: 16px;
-  color: #1f1b3f;
+  color: #ffffff;
 }
 .schedule-controls {
   display: flex;
@@ -438,13 +438,20 @@ nav .nav-item span {
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
 }
+.schedule-table td {
+  color: #fff9f9 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+}
 .schedule-table th {
   background-color: #df80c5;
-  color: #1e1b4b;
+  color: #fff9f9 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .schedule-table td a {
   text-decoration: none;
-  color: #7c3aed;
+  color: #fbc2eb;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .schedule-table td a:hover {
   text-decoration: underline;
@@ -467,7 +474,8 @@ nav .nav-item span {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 999;
   display: none;
-  /*sembunyikandefault*/transition: background-color 0.3s ease;
+  /*sembunyikandefault*/
+  transition: background-color 0.3s ease;
   -webkit-transition: background-color 0.3s ease;
   -moz-transition: background-color 0.3s ease;
   -ms-transition: background-color 0.3s ease;
@@ -521,7 +529,7 @@ nav .nav-item span {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
-}
+  }
 
   .sidebar img {
     display: none;
@@ -648,6 +656,12 @@ nav .nav-item span {
   .card-title-book {
     margin-left: 80px;
     font-size: 25px;
+  }
+
+  .schedule-table td {
+    color: #fff9f9 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 0.8rem;
   }
 }
 
