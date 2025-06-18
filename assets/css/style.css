@@ -201,7 +201,6 @@ nav .nav-item span {
   margin-top: auto;
   z-index: 1;
   text-shadow: black;
-  filter: drop-shadow(0 2px 3px rgba(8, 8, 8, 0.5));
 }
 
 .arrow-icon {
@@ -467,8 +466,12 @@ nav .nav-item span {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 999;
-  display: none; /* sembunyikan default */
-  transition: background-color 0.3s ease;
+  display: none;
+  /*sembunyikandefault*/transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
 }
 
 /* === RESPONSIVE MEDIA QUERY === */
@@ -514,7 +517,11 @@ nav .nav-item span {
     justify-content: space-around;
     align-items: center;
     padding: 10px 0;
-  }
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
 
   .sidebar img {
     display: none;
