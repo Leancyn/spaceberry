@@ -391,7 +391,6 @@ nav .nav-item span {
   background: linear-gradient(to right, #a18cd1, #fbc2eb);
   padding: 24px;
   border-radius: 16px;
-  height: 90%;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   font-family: "comic-relief", sans-serif;
 }
@@ -430,7 +429,7 @@ nav .nav-item span {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  background: linear-gradient(to right,#fbc2eb, #a18cd1);
+  background: linear-gradient(to right, #fbc2eb, #a18cd1);
   border-radius: 8px;
   overflow: hidden;
 }
