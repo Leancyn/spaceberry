@@ -7,9 +7,10 @@
     <title>Your Dictionary EN-ID</title>
     <link rel="icon" href="/spaceberry/assets/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="/spaceberry/assets/css/dictionary.css" />
+    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css">
 </head>
 
-<body>
+<body class="settings-page">
     <div class="container">
         <!-- SIDEBAR START -->
         <aside class="sidebar">
@@ -20,7 +21,7 @@
                 <a href="#" class="nav-item"><i data-feather="book-open"></i><span>Dictionary</span></a>
                 <a href="/spaceberry/assets/page/schedule.html" class="nav-item"><i
                         data-feather="calendar"></i><span>Schedule</span></a>
-                <a href="#" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
+                <a href="/spaceberry/assets/page/settings.html" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
             </nav>
             <div class="contact-box">
                 <i data-feather="mail" class="contact-icon"></i>
@@ -45,7 +46,7 @@
                         placeholder="Search English or Indonesian words..." aria-describedby="searchHelp"
                         autocomplete="off" spellcheck="false" />
                 </div>
-                <small id="searchHelp" style="display:block; color:#475569; margin-top:6px;">You can search by English
+                <small id="searchHelp" class="searchHelp" style="display:block; margin-top:6px;">You can search by English
                     or Indonesian word</small>
             </section>
             <section aria-live="polite" aria-atomic="true" aria-relevant="additions removals">
@@ -57,7 +58,7 @@
                             <th scope="col">Indonesian</th>
                         </tr>
                     </thead>
-                    <tbody id="wordTableBody">
+                    <tbody id="wordTableBody" class="wordTableBody">
                         <!-- words inserted by JS -->
                     </tbody>
                 </table>
@@ -87,6 +88,7 @@
     <script src="/spaceberry/assets/js/feather.min.js"></script>
     <script src="/spaceberry/assets/js/script.js"></script>
     <script src="/spaceberry/assets/js/dictionary.js"></script>
+    <script src="/spaceberry/assets/js/settings.js"></script>
 
     <script>
         feather.replace();

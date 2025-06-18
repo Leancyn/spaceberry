@@ -189,11 +189,36 @@ nav .nav-item span {
 /* Table */
 .app-container table.word-list {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
   font-size: 1rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+table.word-list tbody tr + tr {
+  border-top: 10px solid #2d2d44; /* untuk dark */
+}
+
+body:not(.dark-mode) table.word-list tbody tr + tr {
+  border-top: 10px solid #d4dce9; /* untuk terang */
+}
+
+/* Table Header Color for Light Mode */
+body:not(.dark-mode) table.word-list thead th {
+  font-weight: 600;
+  font-size: 1.1rem;
   color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  background: #818cf8;
+  border-bottom: 10px solid #d4dce9;
+}
+
+/* Table Header Color for Dark Mode */
+body.dark-mode table.word-list thead th {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffffff;
+  border-bottom: 10px solid #2d2d44;
 }
 
 .app-container table.word-list th,
@@ -216,7 +241,7 @@ nav .nav-item span {
   transition: box-shadow 0.3s ease;
 }
 
-.app-container table.word-list tbody tr:hover {
+app-container table.word-list tbody tr:hover {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.18), 0 2px 8px rgba(79, 70, 229, 0.2);
   cursor: pointer;
 }
@@ -228,6 +253,10 @@ nav .nav-item span {
   padding: 0 2px;
   border-radius: 3px;
   font-weight: 600;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 
 /* Pagination */
