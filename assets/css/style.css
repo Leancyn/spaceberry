@@ -459,6 +459,153 @@ nav .nav-item span {
 
 /* SCHEDULE END */
 
+/* EXAM START */
+.option-item {
+  margin-bottom: 12px;
+  display: block;
+}
+
+.option-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.option-item input[type="radio"] {
+  margin: 0;
+  transform: scale(1.1);
+}
+
+.option-letter {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.option-text {
+  display: flex;
+  align-items: center;
+}
+
+.interactive-practice {
+  margin-top: 40px;
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#floatingTimer {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background: #ffffff;
+  color: #333;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  z-index: 999;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.qc-content {
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.qc-title {
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+.qc-title-2 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* EXAM END */
+
+/* WRITING START */
+.qc-content #wordCount {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.wrapper-writing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.wrapper-writing textarea {
+  width: 100%;
+  max-width: 800px;
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  border: none;
+  font-size: 16px;
+  font-family: inherit;
+  color: #333;
+  resize: vertical;
+}
+
+.wrapper-writing p,
+.wrapper-writing button,
+.wrapper-writing .score {
+  margin-top: 5px;
+  max-width: 800px;
+  text-align: left;
+}
+
+#writingInput::placeholder {
+  color: #ffffff;
+}
+
+#writingInput {
+  color: #ffffff;
+}
+
+textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 12px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+#wordCount {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+#submitMessage {
+  margin-top: 16px;
+  font-weight: bold;
+  color: green;
+}
+
+/* WRITING END */
+
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
@@ -662,6 +809,22 @@ nav .nav-item span {
     color: #fff9f9 !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     font-size: 0.8rem;
+  }
+
+  #floatingTimer {
+    top: 10px;
+    right: 10px;
+    font-size: 13px;
+    padding: 8px 12px;
+    margin-top: 70px;
+  }
+
+  .qc-title {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
   }
 }
 

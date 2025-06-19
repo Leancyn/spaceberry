@@ -1,0 +1,77 @@
+[
+  {
+    "question": "Which is a correct use of present perfect tense?",
+    "options": ["I have eat breakfast.", "I has eaten breakfast.", "I have eaten breakfast."],
+    "answerIndex": 2
+  },
+  {
+    "question": "Which sentence uses the correct comparative form?",
+    "options": ["She is more tall than her brother.", "She is taller than her brother.", "She is tallest than her brother."],
+    "answerIndex": 1
+  },
+  {
+    "question": "Identify the correct sentence.",
+    "options": ["He don't like pizza.", "He doesn't likes pizza.", "He doesn't like pizza."],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the past participle of 'go'?",
+    "options": ["Went", "Gone", "Goed"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which sentence is in passive voice?",
+    "options": ["The dog bit the man.", "The man was bitten by the dog.", "The dog has bitten the man."],
+    "answerIndex": 1
+  },
+  {
+    "question": "Choose the correct sentence.",
+    "options": ["There is a lot of cars on the road.", "There are a lot of cars on the road.", "There is many cars on the road."],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which is a proper question tag?",
+    "options": ["You are coming, isn't it?", "You are coming, aren't you?", "You are coming, is you?"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which sentence is conditional type 2?",
+    "options": ["If I had wings, I would fly.", "If it rains, I will stay home.", "If she studies, she passes."],
+    "answerIndex": 0
+  },
+  {
+    "question": "Identify the correct plural form.",
+    "options": ["Childs", "Childes", "Children"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Which is the correct article usage?",
+    "options": ["He is an honest man.", "He is a honest man.", "He is the honest man."],
+    "answerIndex": 0
+  },
+  {
+    "question": "Choose the correct indirect speech.",
+    "options": ["He said he will go.", "He said he would go.", "He said he goes."],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which word is an adjective?",
+    "options": ["Quickly", "Quick", "Quickness"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which is a correct use of 'much'?",
+    "options": ["How much apples do you have?", "How many apples do you have?", "How much water do you have?"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Choose the correct verb form.",
+    "options": ["He can sings well.", "He can sing well.", "He can to sing well."],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which sentence is grammatically correct?",
+    "options": ["Neither of the answers are correct.", "Neither of the answers is correct.", "Neither of the answers were correct."],
+    "answerIndex": 1
+  }
+]

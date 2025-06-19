@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Which sentence is grammatically correct?",
+    "options": ["He go to school every day.", "He goes to school every day.", "He going to school every day."],
+    "answerIndex": 1
+  },
+  {
+    "question": "I ______ a movie last night.",
+    "options": ["watch", "watched", "watches"],
+    "answerIndex": 1
+  },
+  {
+    "question": "She ______ breakfast every morning.",
+    "options": ["eat", "eating", "eats"],
+    "answerIndex": 2
+  },
+  {
+    "question": "They ______ playing soccer when I saw them.",
+    "options": ["was", "were", "are"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Choose the correct past form: 'go'",
+    "options": ["goed", "went", "gone"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which one is a question tag?",
+    "options": ["You like coffee, don't you?", "You like coffee. You?", "You like coffee, do you?"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Select the correct passive voice: 'They build houses.'",
+    "options": ["Houses are built by them.", "Houses were builded by them.", "They are building houses."],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which sentence uses the correct article?",
+    "options": ["I saw an elephant.", "I saw a apple.", "I saw the orange an."],
+    "answerIndex": 0
+  },
+  {
+    "question": "What is the comparative form of 'good'?",
+    "options": ["gooder", "more good", "better"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Choose the correct sentence.",
+    "options": ["He can sings well.", "He can sing well.", "He can to sing well."],
+    "answerIndex": 1
+  }
+]

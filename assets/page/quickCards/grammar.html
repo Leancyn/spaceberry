@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Grammar</title>
+    <link rel="icon" href="/spaceberry/assets/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/spaceberry/assets/css/style.css" />
+    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css">
+</head>
+
+<body class="settings-page">
+
+    <div id="floatingTimer">⏱: <span id="timer">17:00</span></div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <img src="/spaceberry/assets/img/logo (2).png" alt="Spaceberry" />
+            <nav>
+                <a href="/spaceberry/index.html" class="nav-item"><i data-feather="home"></i><span>Dashboard</span></a>
+                <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"><i
+                        data-feather="book-open"></i><span>Dictionary</span></a>
+                <a href="/spaceberry/assets/page/schedule.html" class="nav-item"><i
+                        data-feather="calendar"></i><span>Schedule</span></a>
+                <a href="/spaceberry/assets/page/settings.html" class="nav-item"><i
+                        data-feather="settings"></i><span>Settings</span></a>
+            </nav>
+            <div class="contact-box">
+                <i data-feather="mail" class="contact-icon"></i>
+                <p class="contact-text">Need help or have questions?</p>
+                <button class="contact-btn">Contact Us</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="qc-title">Quick Grammar</h2>
+            <p class="qc-title-2">Choose the correct answers below. Each question is worth 1 point.</p>
+
+            <div class="interactive-practice">
+                <div id="quizContainer">Loading questions...</div>
+                <button type="button" class="contact-btn" onclick="submitAnswers()">Submit Answers</button>
+                <div class="score" id="scoreDisplay"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/spaceberry/assets/js/feather.min.js"></script>
+    <script src="/spaceberry/assets/js/settings.js"></script>
+    <script src="/spaceberry/assets/js/quickCards.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
