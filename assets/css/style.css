@@ -186,11 +186,28 @@ nav .nav-item span {
   top: 0;
 }
 
+.quick-card-icon {
+  width: 120px;
+  margin-top: 10px;
+  height: auto;
+  position: absolute;
+  left: 30px;
+  top: 0;
+}
+
 .card-title {
   font-weight: bold;
   font-size: 15px;
   text-align: center;
   margin-top: auto;
+  z-index: 1;
+}
+
+.quick-card-title {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
   z-index: 1;
 }
 
@@ -748,6 +765,23 @@ textarea {
     top: 0;
   }
 
+  .quick-card-icon {
+    width: 80px;
+    margin-top: 35px;
+    height: auto;
+    position: absolute;
+    left: 5px;
+    top: 0;
+  }
+
+  .quick-card-title {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 50px;
+    z-index: 1;
+  }
+
   .sidebar {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -825,6 +859,22 @@ textarea {
     margin-bottom: 10px;
     color: #333;
     text-align: center;
+  }
+
+  .quick-card-icon {
+    width: 80px;
+    margin-top: 15px;
+    height: auto;
+    position: absolute;
+    left: 10px;
+    top: 0;
+  }
+
+  .quick-card-title {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1;
   }
 }
 
