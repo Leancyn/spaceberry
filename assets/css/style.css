@@ -187,11 +187,11 @@ nav .nav-item span {
 }
 
 .quick-card-icon {
-  width: 100px;
-  margin-top: 20px;
+  width: 80px;
+  margin-top: 40px;
   height: auto;
   position: absolute;
-  left: 30px;
+  left: 10px;
   top: 0;
 }
 
