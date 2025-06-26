@@ -153,6 +153,10 @@ body.dark-mode svg {
   stroke: #ffffff;
 }
 
+body.dark-mode .arrow-icon svg {
+  stroke: #000000;
+}
+
 /* === MODUL PAGE STYLING === */
 
 body.dark-mode .modul-container {
