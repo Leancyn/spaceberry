@@ -109,32 +109,48 @@
         "#e0f7fa",
       ];
 
+      function displayQuote(text, author) {
+        const randomColor =
+          bgColors[Math.floor(Math.random() * bgColors.length)];
+        quoteBox.style.backgroundColor = randomColor;
+
+        quoteText.textContent = `“${text}”`;
+        quoteAuthor.textContent = `— ${author}`;
+
+        quoteText.classList.remove("fade-in");
+        quoteAuthor.classList.remove("fade-in");
+        void quoteText.offsetWidth;
+        quoteText.classList.add("fade-in");
+        quoteAuthor.classList.add("fade-in");
+      }
+
       function fetchQuote() {
         fetch("https://api.quotable.io/random")
-          .then((res) => res.json())
-          .then((data) => {
-            const randomColor =
-              bgColors[Math.floor(Math.random() * bgColors.length)];
-            quoteBox.style.backgroundColor = randomColor;
-            quoteText.textContent = `“${data.content}”`;
-            quoteAuthor.textContent = `— ${data.author}`;
-
-            // animasi
-            quoteText.classList.remove("fade-in");
-            quoteAuthor.classList.remove("fade-in");
-            void quoteText.offsetWidth;
-            quoteText.classList.add("fade-in");
-            quoteAuthor.classList.add("fade-in");
+          .then((res) => {
+            if (!res.ok) throw new Error("API down");
+            return res.json();
           })
-          .catch((err) => {
-            quoteText.textContent = "❌ Failed to load quote.";
-            quoteAuthor.textContent = "";
-            console.error(err);
+          .then((data) => {
+            displayQuote(data.content, data.author);
+          })
+          .catch(() => {
+            console.warn("API failed. Loading local quotes...");
+            fetch("/spaceberry/assets/data/quotes.json")
+              .then((res) => res.json())
+              .then((localQuotes) => {
+                const random =
+                  localQuotes[Math.floor(Math.random() * localQuotes.length)];
+                displayQuote(random.text, random.author);
+              })
+              .catch((err) => {
+                console.error("Both API & local failed:", err);
+                quoteText.textContent = "❌ No quote available.";
+                quoteAuthor.textContent = "";
+              });
           });
       }
 
-      // pastikan event terhubung
-      window.addEventListener("load", fetchQuote);
+      window.onload = fetchQuote;
     </script>
   </body>
 </html>

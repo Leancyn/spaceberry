@@ -232,10 +232,14 @@ nav .nav-item span {
   border-radius: 50%;
   padding: 5px;
   transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
-  -webkit-transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-  -moz-transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-  -ms-transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-  -o-transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+  -webkit-transition: transform 0.4s ease, background-color 0.4s ease,
+    color 0.4s ease;
+  -moz-transition: transform 0.4s ease, background-color 0.4s ease,
+    color 0.4s ease;
+  -ms-transition: transform 0.4s ease, background-color 0.4s ease,
+    color 0.4s ease;
+  -o-transition: transform 0.4s ease, background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 .arrow-icon:hover {
@@ -653,6 +657,14 @@ textarea {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+.ikb-exam, .ikb-grammar, .ikb-writing{
+  width: 300px;
+  height: auto;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 /* === RESPONSIVE MEDIA QUERY === */
