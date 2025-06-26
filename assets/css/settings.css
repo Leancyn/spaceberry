@@ -8,6 +8,10 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode .settings-section {
+  background: linear-gradient(to right, #7171fd, #a948f8);
+}
+
 .settings-section h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -115,8 +119,16 @@ body.dark-mode .settings-section {
 }
 
 body.dark-mode .sidebar {
-  background: linear-gradient(to right, #7171fd, #d5a1ff);
+  background: linear-gradient(to right, #7171fd, #a948f8);
   color: #f4f4f4;
+}
+
+body.dark-mode .card {
+  background: linear-gradient(to right, #7171fd, #a948f8);
+}
+
+body.dark-mode .quick-card {
+  background: linear-gradient(to right, #7171fd, #a948f8);
 }
 
 body.dark-mode .sidebar .nav-item {
@@ -153,7 +165,7 @@ body.dark-mode svg {
   stroke: #ffffff;
 }
 
-body.dark-mode .arrow-icon svg {
+body.dark-mode .arrow-icon {
   stroke: #000000;
 }
 
