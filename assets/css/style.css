@@ -679,9 +679,10 @@ textarea {
   }
 
   .ikb-1 {
-    width: 200px;
+    width: 150px;
     height: auto;
     display: block;
+    right: 50px;
     bottom: 0;
   }
 
