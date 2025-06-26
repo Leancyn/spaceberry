@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote of the Day - Spaceberry</title>
+    <link
+      rel="icon"
+      href="/spaceberry/assets/img/favicon.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="/spaceberry/assets/css/style.css" />
+    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css" />
+    <style>
+      .fade-in {
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .interactive-practice {
+        transition: background-color 0.4s ease;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body class="settings-page">
+    <img
+      src="/spaceberry/assets/img/quote-pojok-kanan-bawah-1.png"
+      alt="quote-image-22"
+      class="imgKananBawah ikb-1"
+    />
+    <div class="container">
+      <aside class="sidebar">
+        <img src="/spaceberry/assets/img/logo (2).png" alt="Spaceberry" />
+        <nav>
+          <a href="/spaceberry/index.html" class="nav-item"
+            ><i data-feather="home"></i><span>Dashboard</span></a
+          >
+          <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"
+            ><i data-feather="book-open"></i><span>Dictionary</span></a
+          >
+          <a href="/spaceberry/assets/page/schedule.html" class="nav-item"
+            ><i data-feather="calendar"></i><span>Schedule</span></a
+          >
+          <a href="/spaceberry/assets/page/settings.html" class="nav-item"
+            ><i data-feather="settings"></i><span>Settings</span></a
+          >
+        </nav>
+        <div class="contact-box">
+          <i data-feather="mail" class="contact-icon"></i>
+          <p class="contact-text">Need help or have questions?</p>
+          <button class="contact-btn">Contact Us</button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <h2 class="qc-title">Quote of the Day</h2>
+        <div
+          class="interactive-practice"
+          style="text-align: center"
+          id="quoteBox"
+        >
+          <blockquote
+            id="quoteText"
+            style="font-size: 1.4rem; margin-bottom: 15px; color: #333"
+          ></blockquote>
+          <p id="quoteAuthor" style="font-weight: bold; color: #666"></p>
+          <button
+            class="contact-btn"
+            onclick="fetchQuote()"
+            style="margin-top: 20px"
+          >
+            Get Another Quote
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="/spaceberry/assets/js/feather.min.js"></script>
+    <script src="/spaceberry/assets/js/settings.js"></script>
+    <script>
+      feather.replace();
+
+      const quoteText = document.getElementById("quoteText");
+      const quoteAuthor = document.getElementById("quoteAuthor");
+      const quoteBox = document.getElementById("quoteBox");
+
+      const bgColors = [
+        "#fce4ec",
+        "#e3f2fd",
+        "#f3e5f5",
+        "#fff3e0",
+        "#f1f8e9",
+        "#ede7f6",
+        "#e0f7fa",
+      ];
+
+      function fetchQuote() {
+        fetch("https://api.quotable.io/random")
+          .then((res) => res.json())
+          .then((data) => {
+            const randomColor =
+              bgColors[Math.floor(Math.random() * bgColors.length)];
+            quoteBox.style.backgroundColor = randomColor;
+            quoteText.textContent = `“${data.content}”`;
+            quoteAuthor.textContent = `— ${data.author}`;
+
+            // animasi
+            quoteText.classList.remove("fade-in");
+            quoteAuthor.classList.remove("fade-in");
+            void quoteText.offsetWidth;
+            quoteText.classList.add("fade-in");
+            quoteAuthor.classList.add("fade-in");
+          })
+          .catch((err) => {
+            quoteText.textContent = "❌ Failed to load quote.";
+            quoteAuthor.textContent = "";
+            console.error(err);
+          });
+      }
+
+      // pastikan event terhubung
+      window.addEventListener("load", fetchQuote);
+    </script>
+  </body>
+</html>

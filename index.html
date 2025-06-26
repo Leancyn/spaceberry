@@ -1,112 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spaceberry</title>
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/settings.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spaceberry</title>
-  <link rel="icon" href="assets/img/favicon.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/settings.css">
-</head>
-
-<body class="settings-page">
-  <div class="container">
-    <!-- SIDEBAR START -->
-    <aside class="sidebar">
-      <img src="assets/img/logo (2).png" alt="Spaceberry" />
-      <nav>
-        <a href="#" class="nav-item active"><i data-feather="home"></i><span>Dashboard</span></a>
-        <a href="assets/page/dictionary.html" class="nav-item"><i
-            data-feather="book-open"></i><span>Dictionary</span></a>
-        <a href="assets/page/schedule.html" class="nav-item"><i data-feather="calendar"></i><span>Schedule</span></a>
-        <a href="assets/page/settings.html" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
-      </nav>
-      <div class="contact-box">
-        <i data-feather="mail" class="contact-icon"></i>
-        <p class="contact-text">Need help or have questions?</p>
-        <a href="https://wa.me/6289503711530"><button class="contact-btn">Contact Us</button></a>
-      </div>
-    </aside>
-    <!-- SIDEBAR END -->
-
-    <main class="main-content">
-      <header class="header">
-        <input type="text" placeholder="Search..." />
-      </header>
-
-      <!-- CARD START -->
-      <section class="word-sets">
-        <h3>Word Sets</h3>
-        <div class="cards">
-          <div class="card">
-            <a href="assets/page/booksAndLibrary/main.html"><i data-feather="arrow-up-right" class="arrow-icon"></i></a>
-            <img src="assets/img/books.png" alt="Books" class="card-icon" />
-            <div class="card-title">Books and Library</div>
-          </div>
-          <div class="card">
-            <a href="assets/page/exercise.html"><i data-feather="arrow-up-right" class="arrow-icon"></i></a>
-            <img src="assets/img/brain.png" alt="Books" class="card-icon" />
-            <div class="card-title">Interactive Exercises</div>
-          </div>
-          <div class="card">
-            <a href="assets/page/exercise.html"><i data-feather="arrow-up-right" class="arrow-icon"></i></a>
-            <img src="assets/img/quote.png" alt="Books" class="card-icon" />
-            <div class="card-title">Quote of the Day</div>
-          </div>
-          <div class="card world-clock-card">
-            <div class="card-title">What is o'clock now?</div>
-            <div class="digital-clock" id="digitalClock">00:00:00</div>
-            <div class="clock-date" id="clockDate">Loading date...</div>
-          </div>
+  <body class="settings-page">
+    <div class="container">
+      <!-- SIDEBAR START -->
+      <aside class="sidebar">
+        <img src="assets/img/logo (2).png" alt="Spaceberry" />
+        <nav>
+          <a href="#" class="nav-item active"
+            ><i data-feather="home"></i><span>Dashboard</span></a
+          >
+          <a href="assets/page/dictionary.html" class="nav-item"
+            ><i data-feather="book-open"></i><span>Dictionary</span></a
+          >
+          <a href="assets/page/schedule.html" class="nav-item"
+            ><i data-feather="calendar"></i><span>Schedule</span></a
+          >
+          <a href="assets/page/settings.html" class="nav-item"
+            ><i data-feather="settings"></i><span>Settings</span></a
+          >
+        </nav>
+        <div class="contact-box">
+          <i data-feather="mail" class="contact-icon"></i>
+          <p class="contact-text">Need help or have questions?</p>
+          <a href="https://wa.me/6289503711530"
+            ><button class="contact-btn">Contact Us</button></a
+          >
         </div>
-      </section>
-      <!-- CARD END -->
+      </aside>
+      <!-- SIDEBAR END -->
 
-      <!-- STATISTIK START -->
-      <section class="statistics">
-        <h3>Statistics</h3>
-        <div id="realtimeChart" class="chart-placeholder"></div>
-      </section>
-      <!-- STATISTIK END -->
+      <main class="main-content">
+        <header class="header">
+          <input type="text" placeholder="Search..." />
+        </header>
 
-      <!-- BELOM DI ISI -->
-      <section class="quick-start">
-        <h3>Quick Start</h3>
-        <div class="quick-cards">
-          <div class="quick-card">
-            <a href="assets/page/quickCards/exam.html"><i data-feather="arrow-up-right" class="arrow-icon"></i></a>
-            <img src="assets/img/exam.png" alt="Books" class="quick-card-icon" />
-            <div class="quick-card-title">Exam - 20 min</div>
+        <!-- CARD START -->
+        <section class="word-sets">
+          <h3>Word Sets</h3>
+          <div class="cards">
+            <div class="card">
+              <a href="assets/page/booksAndLibrary/main.html"
+                ><i data-feather="arrow-up-right" class="arrow-icon"></i
+              ></a>
+              <img src="assets/img/books.png" alt="Books" class="card-icon" />
+              <div class="card-title">Books and Library</div>
+            </div>
+            <div class="card">
+              <a href="assets/page/exercise.html"
+                ><i data-feather="arrow-up-right" class="arrow-icon"></i
+              ></a>
+              <img src="assets/img/brain.png" alt="Books" class="card-icon" />
+              <div class="card-title">Interactive Exercises</div>
+            </div>
+            <div class="card">
+              <a href="assets/page/qotd.html"
+                ><i data-feather="arrow-up-right" class="arrow-icon"></i
+              ></a>
+              <img src="assets/img/quote.png" alt="Books" class="card-icon" />
+              <div class="card-title">Quote of the Day</div>
+            </div>
+            <div class="card world-clock-card">
+              <div class="card-title">What is o'clock now?</div>
+              <div class="digital-clock" id="digitalClock">00:00:00</div>
+              <div class="clock-date" id="clockDate">Loading date...</div>
+            </div>
           </div>
-          <div class="quick-card">
-            <a href="assets/page/quickCards/writing.html"><i data-feather="arrow-up-right" class="arrow-icon"></i></a>
-            <img src="assets/img/writing.png" alt="Books" class="quick-card-icon" />
-            <div class="quick-card-title">Writing - 20 min</div>
+        </section>
+        <!-- CARD END -->
+
+        <!-- STATISTIK START -->
+        <section class="statistics">
+          <h3>Statistics</h3>
+          <div id="realtimeChart" class="chart-placeholder"></div>
+        </section>
+        <!-- STATISTIK END -->
+
+        <!-- BELOM DI ISI -->
+        <section class="quick-start">
+          <h3>Quick Start</h3>
+          <div class="quick-cards">
+            <div class="quick-card">
+              <a href="assets/page/quickCards/exam.html"
+                ><i data-feather="arrow-up-right" class="arrow-icon"></i
+              ></a>
+              <img
+                src="assets/img/exam.png"
+                alt="Books"
+                class="quick-card-icon"
+              />
+              <div class="quick-card-title">Exam - 20 min</div>
+            </div>
+            <div class="quick-card">
+              <a href="assets/page/quickCards/writing.html"
+                ><i data-feather="arrow-up-right" class="arrow-icon"></i
+              ></a>
+              <img
+                src="assets/img/writing.png"
+                alt="Books"
+                class="quick-card-icon"
+              />
+              <div class="quick-card-title">Writing - 20 min</div>
+            </div>
+            <div class="quick-card">
+              <a href="assets/page/quickCards/grammar.html"
+                ><i data-feather="arrow-up-right" class="arrow-icon"></i
+              ></a>
+              <img
+                src="assets/img/grammar.png"
+                alt="Books"
+                class="quick-card-icon"
+              />
+              <div class="quick-card-title">Grammar - 20 min</div>
+            </div>
           </div>
-          <div class="quick-card">
-            <a href="assets/page/quickCards/grammar.html"><i data-feather="arrow-up-right" class="arrow-icon"></i></a>
-            <img src="assets/img/grammar.png" alt="Books" class="quick-card-icon" />
-            <div class="quick-card-title">Grammar - 20 min</div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
+        </section>
+      </main>
+    </div>
 
-  <div class="contact-query">
-    <a href="https://wa.me/6289503711530"><i data-feather="help-circle"></i></a>
-  </div>
+    <div class="contact-query">
+      <a href="https://wa.me/6289503711530"
+        ><i data-feather="help-circle"></i
+      ></a>
+    </div>
 
-  <script src="assets/js/feather.min.js"></script>
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/apexcharts.min.js"></script>
-  <script src="assets/js/chart-script.js"></script>
-  <script src="assets/js/settings.js"></script>
+    <script src="assets/js/feather.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/apexcharts.min.js"></script>
+    <script src="assets/js/chart-script.js"></script>
+    <script src="assets/js/settings.js"></script>
 
-  <script>
-    feather.replace();
-  </script>
-</body>
-
+    <script>
+      feather.replace();
+    </script>
+  </body>
 </html>

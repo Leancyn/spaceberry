@@ -1,298 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Exercises</title>
-    <link rel="icon" href="/spaceberry/assets/img/favicon.png" type="image/png">
+    <title>Interactive Exercises - Spaceberry</title>
+    <link
+      rel="icon"
+      href="/spaceberry/assets/img/favicon.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="/spaceberry/assets/css/excercise.css" />
-    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css">
-</head>
+    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css" />
+  </head>
 
-<body class="settings-page">
+  <body class="settings-page">
     <div class="container">
-        <!-- SIDEBAR START -->
-        <aside class="sidebar">
-            <img src="/spaceberry/assets/img/logo (2).png" alt="Spaceberry" />
-            <nav>
-                <a href="/spaceberry/index.html" class="nav-item active"><i
-                        data-feather="home"></i><span>Dashboard</span></a>
-                <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"><i
-                        data-feather="book-open"></i><span>Dictionary</span></a>
-                <a href="/spaceberry/assets/page/schedule.html" class="nav-item"><i
-                        data-feather="calendar"></i><span>Schedule</span></a>
-                <a href="/spaceberry/assets/page/settings.html" class="nav-item"><i
-                        data-feather="settings"></i><span>Settings</span></a>
-            </nav>
-            <div class="contact-box">
-                <i data-feather="mail" class="contact-icon"></i>
-                <p class="contact-text">Need help or have questions?</p>
-                <a href="https://wa.me/6289503711530"><button class="contact-btn">Contact Us</button></a>
-            </div>
-        </aside>
-        <!-- SIDEBAR END -->
-
-        <div class="quiz-container">
-            <h1>Interactive Review Exercises: Modules 1 - 9</h1>
-
-            <!-- MODULE 1 -->
-            <section class="modul">
-                <h2>Module 1: Basic Greetings and Introductions</h2>
-                <label for="m1q1">Complete the greeting: Hello, my name is ...</label>
-                <input type="text" id="m1q1" placeholder="Type your name here" />
-                <button class="check-btn" onclick="checkM1Q1()">Check Answer</button>
-                <div class="feedback" id="m1q1-feedback"></div>
-            </section>
-
-            <!-- MODULE 2 -->
-            <section class="modul">
-                <h2>Module 2: Asking and Giving Directions</h2>
-                <blockquote>
-                    Person A: Excuse me, how do I get to the library?<br />
-                    Person B: Go straight and turn left at the second traffic light.
-                </blockquote>
-                <label for="m2q1">Where should Person A turn?</label>
-                <input type="text" id="m2q1" placeholder="Your answer here" />
-                <button class="check-btn" onclick="checkM2Q1()">Check Answer</button>
-                <div class="feedback" id="m2q1-feedback"></div>
-
-                <label for="m2q2">What is the first direction Person B gives?</label>
-                <input type="text" id="m2q2" placeholder="Your answer here" />
-                <button class="check-btn" onclick="checkM2Q2()">Check Answer</button>
-                <div class="feedback" id="m2q2-feedback"></div>
-            </section>
-
-            <!-- MODULE 3 -->
-            <section class="modul" id="modul-1">
-                <h2>Module 3: Daily Routines</h2>
-                <p>Put these daily routines in the correct order (type numbers separated by commas):</p>
-                <ol>
-                    <li>Wake up</li>
-                    <li>Brush teeth</li>
-                    <li>Eat breakfast</li>
-                    <li>Go to school</li>
-                </ol>
-                <input type="text" id="m3q1" placeholder="Example: 1,2,3,4" />
-                <button class="check-btn" onclick="checkM3Q1()">Check Answer</button>
-                <div class="feedback" id="m3q1-feedback"></div>
-            </section>
-
-            <!-- MODULE 4 -->
-            <section class="modul" id="modul-2">
-                <h2>Module 4: Agreement, Suggestion, and Uncertainty</h2>
-                <label>Identify the response type in the conversation:</label>
-                <blockquote>
-                    Man: This should be a two-semester course.<br />
-                    Woman: You can say that again!
-                </blockquote>
-                <select id="m4q1">
-                    <option value="">--Select--</option>
-                    <option value="agreement">Agreement</option>
-                    <option value="suggestion">Suggestion</option>
-                    <option value="uncertainty">Uncertainty</option>
-                </select>
-                <button class="check-btn" onclick="checkM4Q1()">Check Answer</button>
-                <div class="feedback" id="m4q1-feedback"></div>
-
-                <label>Identify the response type in the conversation:</label>
-                <blockquote>
-                    Man: We need to discuss our presentation.<br />
-                    Woman: How about over lunch today?
-                </blockquote>
-                <select id="m4q2">
-                    <option value="">--Select--</option>
-                    <option value="agreement">Agreement</option>
-                    <option value="suggestion">Suggestion</option>
-                    <option value="uncertainty">Uncertainty</option>
-                </select>
-                <button class="check-btn" onclick="checkM4Q2()">Check Answer</button>
-                <div class="feedback" id="m4q2-feedback"></div>
-
-                <label>Identify the response type in the conversation:</label>
-                <blockquote>
-                    Woman: Is the bill due on the first or the fifteenth?<br />
-                    Man: On the fifteenth, as far as I know.
-                </blockquote>
-                <select id="m4q3">
-                    <option value="">--Select--</option>
-                    <option value="agreement">Agreement</option>
-                    <option value="suggestion">Suggestion</option>
-                    <option value="uncertainty">Uncertainty</option>
-                </select>
-                <button class="check-btn" onclick="checkM4Q3()">Check Answer</button>
-                <div class="feedback" id="m4q3-feedback"></div>
-            </section>
-
-            <!-- MODULE 5 -->
-            <section class="modul">
-                <h2>Module 5: Related Time Expressions</h2>
-                <p>Fill in the blanks with the correct time expression: before, after, during, since</p>
-
-                <label for="m5q1">We had lunch ________ the meeting.</label>
-                <input type="text" id="m5q1" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM5Q1()">Check Answer</button>
-                <div class="feedback" id="m5q1-feedback"></div>
-
-                <label for="m5q2">She has been working here ________ 2019.</label>
-                <input type="text" id="m5q2" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM5Q2()">Check Answer</button>
-                <div class="feedback" id="m5q2-feedback"></div>
-
-                <label for="m5q3">Finish your homework ________ dinner.</label>
-                <input type="text" id="m5q3" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM5Q3()">Check Answer</button>
-                <div class="feedback" id="m5q3-feedback"></div>
-
-                <label for="m5q4">He rested ________ the break.</label>
-                <input type="text" id="m5q4" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM5Q4()">Check Answer</button>
-                <div class="feedback" id="m5q4-feedback"></div>
-            </section>
-
-            <!-- MODULE 6 -->
-            <section class="modul">
-                <h2>Module 6: Idiomatic Expressions</h2>
-                <p>Choose the correct meaning of the idiomatic expression in each conversation.</p>
-
-                <blockquote>
-                    Man: I have to hit the books tonight.<br />
-                    Woman: Good luck!
-                </blockquote>
-                <label for="m6q1">What does "hit the books" mean?</label>
-                <select id="m6q1">
-                    <option value="">--Select--</option>
-                    <option value="a">To read a book for fun</option>
-                    <option value="b">To study hard</option>
-                    <option value="c">To throw books</option>
-                </select>
-                <button class="check-btn" onclick="checkM6Q1()">Check Answer</button>
-                <div class="feedback" id="m6q1-feedback"></div>
-
-                <blockquote>
-                    Woman: I’m feeling under the weather today.<br />
-                    Man: Maybe you should rest.
-                </blockquote>
-                <label for="m6q2">What does "under the weather" mean?</label>
-                <select id="m6q2">
-                    <option value="">--Select--</option>
-                    <option value="a">Feeling sick</option>
-                    <option value="b">Standing outside</option>
-                    <option value="c">Happy</option>
-                </select>
-                <button class="check-btn" onclick="checkM6Q2()">Check Answer</button>
-                <div class="feedback" id="m6q2-feedback"></div>
-            </section>
-
-            <!-- MODULE 7 -->
-            <section class="modul">
-                <h2>Module 7: Agreement</h2>
-                <label>Is the response agreement or disagreement?</label>
-                <blockquote>
-                    Man: The test was really difficult.<br />
-                    Woman: I don’t think so.
-                </blockquote>
-                <select id="m7q1">
-                    <option value="">--Select--</option>
-                    <option value="agreement">Agreement</option>
-                    <option value="disagreement">Disagreement</option>
-                </select>
-                <button class="check-btn" onclick="checkM7Q1()">Check Answer</button>
-                <div class="feedback" id="m7q1-feedback"></div>
-
-                <label>Is the response agreement or disagreement?</label>
-                <blockquote>
-                    Man: I think this movie is great.<br />
-                    Woman: Exactly!
-                </blockquote>
-                <select id="m7q2">
-                    <option value="">--Select--</option>
-                    <option value="agreement">Agreement</option>
-                    <option value="disagreement">Disagreement</option>
-                </select>
-                <button class="check-btn" onclick="checkM7Q2()">Check Answer</button>
-                <div class="feedback" id="m7q2-feedback"></div>
-            </section>
-
-            <!-- MODULE 8 -->
-            <section class="modul">
-                <h2>Module 8: Suggestions & Uncertainty</h2>
-                <blockquote>
-                    Woman: What should we do this weekend?<br />
-                    Man: Why don’t we go hiking?
-                </blockquote>
-                <label for="m8q1">Underline the suggestion expression:</label>
-                <input type="text" id="m8q1" placeholder="Type the suggestion phrase" />
-                <button class="check-btn" onclick="checkM8Q1()">Check Answer</button>
-                <div class="feedback" id="m8q1-feedback"></div>
-
-                <blockquote>
-                    Woman: Are you sure the meeting is tomorrow?<br />
-                    Man: I’m not sure, but I think so.
-                </blockquote>
-                <label for="m8q2">Underline the uncertainty expression:</label>
-                <input type="text" id="m8q2" placeholder="Type the uncertainty phrase" />
-                <button class="check-btn" onclick="checkM8Q2()">Check Answer</button>
-                <div class="feedback" id="m8q2-feedback"></div>
-            </section>
-
-            <!-- MODULE 9 -->
-            <section class="modul">
-                <h2>Module 9: Idiomatic Expressions - Review</h2>
-                <p>Complete the sentences using the correct idioms:</p>
-                <p><em>hit the books, break the ice, under the weather, piece of cake, costs an arm and a leg, let the
-                        cat
-                        out
-                        of the bag, once in a blue moon</em></p>
-
-                <label for="m9q1">Don’t forget to ________ for your final exams.</label>
-                <input type="text" id="m9q1" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM9Q1()">Check Answer</button>
-                <div class="feedback" id="m9q1-feedback"></div>
-
-                <label for="m9q2">It was hard to ________ when we first met.</label>
-                <input type="text" id="m9q2" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM9Q2()">Check Answer</button>
-                <div class="feedback" id="m9q2-feedback"></div>
-
-                <label for="m9q3">She was feeling ________ yesterday and stayed home.</label>
-                <input type="text" id="m9q3" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM9Q3()">Check Answer</button>
-                <div class="feedback" id="m9q3-feedback"></div>
-
-                <label for="m9q4">This project was a ________ compared to the last one.</label>
-                <input type="text" id="m9q4" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM9Q4()">Check Answer</button>
-                <div class="feedback" id="m9q4-feedback"></div>
-
-                <label for="m9q5">The new car ________, so I’m saving money.</label>
-                <input type="text" id="m9q5" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM9Q5()">Check Answer</button>
-                <div class="feedback" id="m9q5-feedback"></div>
-
-                <label for="m9q6">He accidentally ________ about the surprise party.</label>
-                <input type="text" id="m9q6" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM9Q6()">Check Answer</button>
-                <div class="feedback" id="m9q6-feedback"></div>
-
-                <label for="m9q7">We visit our relatives ________ because they live far away.</label>
-                <input type="text" id="m9q7" placeholder="Your answer" />
-                <button class="check-btn" onclick="checkM9Q7()">Check Answer</button>
-                <div class="feedback" id="m9q7-feedback"></div>
-            </section>
+      <!-- SIDEBAR START -->
+      <aside class="sidebar">
+        <img src="/spaceberry/assets/img/logo (2).png" alt="Spaceberry" />
+        <nav>
+          <a href="/spaceberry/index.html" class="nav-item active"
+            ><i data-feather="home"></i><span>Dashboard</span></a
+          >
+          <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"
+            ><i data-feather="book-open"></i><span>Dictionary</span></a
+          >
+          <a href="/spaceberry/assets/page/schedule.html" class="nav-item"
+            ><i data-feather="calendar"></i><span>Schedule</span></a
+          >
+          <a href="/spaceberry/assets/page/settings.html" class="nav-item"
+            ><i data-feather="settings"></i><span>Settings</span></a
+          >
+        </nav>
+        <div class="contact-box">
+          <i data-feather="mail" class="contact-icon"></i>
+          <p class="contact-text">Need help or have questions?</p>
+          <a href="https://wa.me/6289503711530"
+            ><button class="contact-btn">Contact Us</button></a
+          >
         </div>
+      </aside>
+      <!-- SIDEBAR END -->
+
+      <div class="quiz-container">
+        <h1>Interactive Review Exercises: Modules 1 - 9</h1>
+
+        <!-- MODULE 1 -->
+        <section class="modul">
+          <h2>Module 1: Basic Greetings and Introductions</h2>
+          <label for="m1q1">Complete the greeting: Hello, my name is ...</label>
+          <input type="text" id="m1q1" placeholder="Type your name here" />
+          <button class="check-btn" onclick="checkM1Q1()">Check Answer</button>
+          <div class="feedback" id="m1q1-feedback"></div>
+        </section>
+
+        <!-- MODULE 2 -->
+        <section class="modul">
+          <h2>Module 2: Asking and Giving Directions</h2>
+          <blockquote>
+            Person A: Excuse me, how do I get to the library?<br />
+            Person B: Go straight and turn left at the second traffic light.
+          </blockquote>
+          <label for="m2q1">Where should Person A turn?</label>
+          <input type="text" id="m2q1" placeholder="Your answer here" />
+          <button class="check-btn" onclick="checkM2Q1()">Check Answer</button>
+          <div class="feedback" id="m2q1-feedback"></div>
+
+          <label for="m2q2">What is the first direction Person B gives?</label>
+          <input type="text" id="m2q2" placeholder="Your answer here" />
+          <button class="check-btn" onclick="checkM2Q2()">Check Answer</button>
+          <div class="feedback" id="m2q2-feedback"></div>
+        </section>
+
+        <!-- MODULE 3 -->
+        <section class="modul" id="modul-1">
+          <h2>Module 3: Daily Routines</h2>
+          <p>
+            Put these daily routines in the correct order (type numbers
+            separated by commas):
+          </p>
+          <ol>
+            <li>Wake up</li>
+            <li>Brush teeth</li>
+            <li>Eat breakfast</li>
+            <li>Go to school</li>
+          </ol>
+          <input type="text" id="m3q1" placeholder="Example: 1,2,3,4" />
+          <button class="check-btn" onclick="checkM3Q1()">Check Answer</button>
+          <div class="feedback" id="m3q1-feedback"></div>
+        </section>
+
+        <!-- MODULE 4 -->
+        <section class="modul" id="modul-2">
+          <h2>Module 4: Agreement, Suggestion, and Uncertainty</h2>
+          <label>Identify the response type in the conversation:</label>
+          <blockquote>
+            Man: This should be a two-semester course.<br />
+            Woman: You can say that again!
+          </blockquote>
+          <select id="m4q1">
+            <option value="">--Select--</option>
+            <option value="agreement">Agreement</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="uncertainty">Uncertainty</option>
+          </select>
+          <button class="check-btn" onclick="checkM4Q1()">Check Answer</button>
+          <div class="feedback" id="m4q1-feedback"></div>
+
+          <label>Identify the response type in the conversation:</label>
+          <blockquote>
+            Man: We need to discuss our presentation.<br />
+            Woman: How about over lunch today?
+          </blockquote>
+          <select id="m4q2">
+            <option value="">--Select--</option>
+            <option value="agreement">Agreement</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="uncertainty">Uncertainty</option>
+          </select>
+          <button class="check-btn" onclick="checkM4Q2()">Check Answer</button>
+          <div class="feedback" id="m4q2-feedback"></div>
+
+          <label>Identify the response type in the conversation:</label>
+          <blockquote>
+            Woman: Is the bill due on the first or the fifteenth?<br />
+            Man: On the fifteenth, as far as I know.
+          </blockquote>
+          <select id="m4q3">
+            <option value="">--Select--</option>
+            <option value="agreement">Agreement</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="uncertainty">Uncertainty</option>
+          </select>
+          <button class="check-btn" onclick="checkM4Q3()">Check Answer</button>
+          <div class="feedback" id="m4q3-feedback"></div>
+        </section>
+
+        <!-- MODULE 5 -->
+        <section class="modul">
+          <h2>Module 5: Related Time Expressions</h2>
+          <p>
+            Fill in the blanks with the correct time expression: before, after,
+            during, since
+          </p>
+
+          <label for="m5q1">We had lunch ________ the meeting.</label>
+          <input type="text" id="m5q1" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM5Q1()">Check Answer</button>
+          <div class="feedback" id="m5q1-feedback"></div>
+
+          <label for="m5q2">She has been working here ________ 2019.</label>
+          <input type="text" id="m5q2" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM5Q2()">Check Answer</button>
+          <div class="feedback" id="m5q2-feedback"></div>
+
+          <label for="m5q3">Finish your homework ________ dinner.</label>
+          <input type="text" id="m5q3" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM5Q3()">Check Answer</button>
+          <div class="feedback" id="m5q3-feedback"></div>
+
+          <label for="m5q4">He rested ________ the break.</label>
+          <input type="text" id="m5q4" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM5Q4()">Check Answer</button>
+          <div class="feedback" id="m5q4-feedback"></div>
+        </section>
+
+        <!-- MODULE 6 -->
+        <section class="modul">
+          <h2>Module 6: Idiomatic Expressions</h2>
+          <p>
+            Choose the correct meaning of the idiomatic expression in each
+            conversation.
+          </p>
+
+          <blockquote>
+            Man: I have to hit the books tonight.<br />
+            Woman: Good luck!
+          </blockquote>
+          <label for="m6q1">What does "hit the books" mean?</label>
+          <select id="m6q1">
+            <option value="">--Select--</option>
+            <option value="a">To read a book for fun</option>
+            <option value="b">To study hard</option>
+            <option value="c">To throw books</option>
+          </select>
+          <button class="check-btn" onclick="checkM6Q1()">Check Answer</button>
+          <div class="feedback" id="m6q1-feedback"></div>
+
+          <blockquote>
+            Woman: I’m feeling under the weather today.<br />
+            Man: Maybe you should rest.
+          </blockquote>
+          <label for="m6q2">What does "under the weather" mean?</label>
+          <select id="m6q2">
+            <option value="">--Select--</option>
+            <option value="a">Feeling sick</option>
+            <option value="b">Standing outside</option>
+            <option value="c">Happy</option>
+          </select>
+          <button class="check-btn" onclick="checkM6Q2()">Check Answer</button>
+          <div class="feedback" id="m6q2-feedback"></div>
+        </section>
+
+        <!-- MODULE 7 -->
+        <section class="modul">
+          <h2>Module 7: Agreement</h2>
+          <label>Is the response agreement or disagreement?</label>
+          <blockquote>
+            Man: The test was really difficult.<br />
+            Woman: I don’t think so.
+          </blockquote>
+          <select id="m7q1">
+            <option value="">--Select--</option>
+            <option value="agreement">Agreement</option>
+            <option value="disagreement">Disagreement</option>
+          </select>
+          <button class="check-btn" onclick="checkM7Q1()">Check Answer</button>
+          <div class="feedback" id="m7q1-feedback"></div>
+
+          <label>Is the response agreement or disagreement?</label>
+          <blockquote>
+            Man: I think this movie is great.<br />
+            Woman: Exactly!
+          </blockquote>
+          <select id="m7q2">
+            <option value="">--Select--</option>
+            <option value="agreement">Agreement</option>
+            <option value="disagreement">Disagreement</option>
+          </select>
+          <button class="check-btn" onclick="checkM7Q2()">Check Answer</button>
+          <div class="feedback" id="m7q2-feedback"></div>
+        </section>
+
+        <!-- MODULE 8 -->
+        <section class="modul">
+          <h2>Module 8: Suggestions & Uncertainty</h2>
+          <blockquote>
+            Woman: What should we do this weekend?<br />
+            Man: Why don’t we go hiking?
+          </blockquote>
+          <label for="m8q1">Underline the suggestion expression:</label>
+          <input
+            type="text"
+            id="m8q1"
+            placeholder="Type the suggestion phrase"
+          />
+          <button class="check-btn" onclick="checkM8Q1()">Check Answer</button>
+          <div class="feedback" id="m8q1-feedback"></div>
+
+          <blockquote>
+            Woman: Are you sure the meeting is tomorrow?<br />
+            Man: I’m not sure, but I think so.
+          </blockquote>
+          <label for="m8q2">Underline the uncertainty expression:</label>
+          <input
+            type="text"
+            id="m8q2"
+            placeholder="Type the uncertainty phrase"
+          />
+          <button class="check-btn" onclick="checkM8Q2()">Check Answer</button>
+          <div class="feedback" id="m8q2-feedback"></div>
+        </section>
+
+        <!-- MODULE 9 -->
+        <section class="modul">
+          <h2>Module 9: Idiomatic Expressions - Review</h2>
+          <p>Complete the sentences using the correct idioms:</p>
+          <p>
+            <em
+              >hit the books, break the ice, under the weather, piece of cake,
+              costs an arm and a leg, let the cat out of the bag, once in a blue
+              moon</em
+            >
+          </p>
+
+          <label for="m9q1"
+            >Don’t forget to ________ for your final exams.</label
+          >
+          <input type="text" id="m9q1" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM9Q1()">Check Answer</button>
+          <div class="feedback" id="m9q1-feedback"></div>
+
+          <label for="m9q2">It was hard to ________ when we first met.</label>
+          <input type="text" id="m9q2" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM9Q2()">Check Answer</button>
+          <div class="feedback" id="m9q2-feedback"></div>
+
+          <label for="m9q3"
+            >She was feeling ________ yesterday and stayed home.</label
+          >
+          <input type="text" id="m9q3" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM9Q3()">Check Answer</button>
+          <div class="feedback" id="m9q3-feedback"></div>
+
+          <label for="m9q4"
+            >This project was a ________ compared to the last one.</label
+          >
+          <input type="text" id="m9q4" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM9Q4()">Check Answer</button>
+          <div class="feedback" id="m9q4-feedback"></div>
+
+          <label for="m9q5">The new car ________, so I’m saving money.</label>
+          <input type="text" id="m9q5" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM9Q5()">Check Answer</button>
+          <div class="feedback" id="m9q5-feedback"></div>
+
+          <label for="m9q6"
+            >He accidentally ________ about the surprise party.</label
+          >
+          <input type="text" id="m9q6" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM9Q6()">Check Answer</button>
+          <div class="feedback" id="m9q6-feedback"></div>
+
+          <label for="m9q7"
+            >We visit our relatives ________ because they live far away.</label
+          >
+          <input type="text" id="m9q7" placeholder="Your answer" />
+          <button class="check-btn" onclick="checkM9Q7()">Check Answer</button>
+          <div class="feedback" id="m9q7-feedback"></div>
+        </section>
+      </div>
     </div>
 
     <div class="contact-query">
-        <a href="#"><i data-feather="help-circle"></i></a>
+      <a href="#"><i data-feather="help-circle"></i></a>
     </div>
 
-    <button id="scrollTopBtn" aria-label="Scroll to top"><i data-feather="arrow-up"></i></button>
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+      <i data-feather="arrow-up"></i>
+    </button>
     <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     </script>
 
     <script src="/spaceberry/assets/js/excercise.js"></script>
@@ -301,8 +342,7 @@
     <script src="/spaceberry/assets/js/settings.js"></script>
 
     <script>
-        feather.replace();
+      feather.replace();
     </script>
-</body>
-
+  </body>
 </html>

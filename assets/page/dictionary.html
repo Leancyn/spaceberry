@@ -1,88 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Dictionary EN-ID</title>
-    <link rel="icon" href="/spaceberry/assets/img/favicon.png" type="image/png">
+    <title>Your Dictionary EN-ID - Spaceberry</title>
+    <link
+      rel="icon"
+      href="/spaceberry/assets/img/favicon.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="/spaceberry/assets/css/dictionary.css" />
-    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css">
-</head>
+    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css" />
+  </head>
 
-<body class="settings-page">
+  <body class="settings-page">
     <div class="container">
-        <!-- SIDEBAR START -->
-        <aside class="sidebar">
-            <img src="/spaceberry/assets/img/logo (2).png" Spaceberry" />
-            <nav>
-                <a href="/spaceberry/index.html" class="nav-item"><i
-                        data-feather="home"></i><span>Dashboard</span></a>
-                <a href="#" class="nav-item active"><i data-feather="book-open"></i><span>Dictionary</span></a>
-                <a href="/spaceberry/assets/page/schedule.html" class="nav-item"><i
-                        data-feather="calendar"></i><span>Schedule</span></a>
-                <a href="/spaceberry/assets/page/settings.html" class="nav-item"><i data-feather="settings"></i><span>Settings</span></a>
-            </nav>
-            <div class="contact-box">
-                <i data-feather="mail" class="contact-icon"></i>
-                <p class="contact-text">Need help or have questions?</p>
-                <a href="https://wa.me/6289503711530"><button class="contact-btn">Contact Us</button></a>
-            </div>
-        </aside>
-        <!-- SIDEBAR END -->
+      <!-- SIDEBAR START -->
+      <aside class="sidebar">
+        <img src="/spaceberry/assets/img/logo (2).png" Spaceberry" />
+        <nav>
+          <a href="/spaceberry/index.html" class="nav-item"
+            ><i data-feather="home"></i><span>Dashboard</span></a
+          >
+          <a href="#" class="nav-item active"
+            ><i data-feather="book-open"></i><span>Dictionary</span></a
+          >
+          <a href="/spaceberry/assets/page/schedule.html" class="nav-item"
+            ><i data-feather="calendar"></i><span>Schedule</span></a
+          >
+          <a href="/spaceberry/assets/page/settings.html" class="nav-item"
+            ><i data-feather="settings"></i><span>Settings</span></a
+          >
+        </nav>
+        <div class="contact-box">
+          <i data-feather="mail" class="contact-icon"></i>
+          <p class="contact-text">Need help or have questions?</p>
+          <a href="https://wa.me/6289503711530"
+            ><button class="contact-btn">Contact Us</button></a
+          >
+        </div>
+      </aside>
+      <!-- SIDEBAR END -->
 
-        <!-- DICTIONARY START -->
-        <main class="app-container" role="main" aria-label="English Indonesian words searchable list">
-            <header>
-                <h1 class="h-desktop">Your Dictionary English - Indonesia</h1>
-                <h1 class="h-none">Your Dictionary EN-ID</h1>
-            </header>
-            <section>
-                <label for="searchInput" class="sr-only" style=" margin-bottom:6px;">Search words</label>
-                <div class="search-bar" role="search">
-                    <span class="material-icons" aria-hidden="true"><i data-feather="search"></i></span>
-                    <input type="search" id="searchInput"
-                        style="margin-top: 3px; margin-left:15px; color:white; display:block;"
-                        placeholder="Search English or Indonesian words..." aria-describedby="searchHelp"
-                        autocomplete="off" spellcheck="false" />
-                </div>
-                <small id="searchHelp" class="searchHelp" style="display:block; margin-top:6px;">You can search by English
-                    or Indonesian word</small>
-            </section>
-            <section aria-live="polite" aria-atomic="true" aria-relevant="additions removals">
-                <table class="word-list" role="table" aria-label="English Indonesian words table">
-                    <thead>
-                        <tr>
-                            <th scope="col" aria-sort="none">Rank</th>
-                            <th scope="col">English</th>
-                            <th scope="col">Indonesian</th>
-                        </tr>
-                    </thead>
-                    <tbody id="wordTableBody" class="wordTableBody">
-                        <!-- words inserted by JS -->
-                    </tbody>
-                </table>
-                <nav class="pagination" aria-label="Pagination controls">
-                    <button id="prevPageBtn" aria-label="Previous page" disabled><span class="material-icons"><i
-                                data-feather="chevron-left"></i></span></button>
-                    <button id="nextPageBtn" aria-label="Next page"><span class="material-icons"><i
-                                data-feather="chevron-right"></i></span></button>
-                </nav>
-            </section>
-        </main>
-        <!-- DICTIONARY END -->
+      <!-- DICTIONARY START -->
+      <main
+        class="app-container"
+        role="main"
+        aria-label="English Indonesian words searchable list"
+      >
+        <header>
+          <h1 class="h-desktop">Your Dictionary English - Indonesia</h1>
+          <h1 class="h-none">Your Dictionary EN-ID</h1>
+        </header>
+        <section>
+          <label for="searchInput" class="sr-only" style="margin-bottom: 6px"
+            >Search words</label
+          >
+          <div class="search-bar" role="search">
+            <span class="material-icons" aria-hidden="true"
+              ><i data-feather="search"></i
+            ></span>
+            <input
+              type="search"
+              id="searchInput"
+              style="
+                margin-top: 3px;
+                margin-left: 15px;
+                color: white;
+                display: block;
+              "
+              placeholder="Search English or Indonesian words..."
+              aria-describedby="searchHelp"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+          <small
+            id="searchHelp"
+            class="searchHelp"
+            style="display: block; margin-top: 6px"
+            >You can search by English or Indonesian word</small
+          >
+        </section>
+        <section
+          aria-live="polite"
+          aria-atomic="true"
+          aria-relevant="additions removals"
+        >
+          <table
+            class="word-list"
+            role="table"
+            aria-label="English Indonesian words table"
+          >
+            <thead>
+              <tr>
+                <th scope="col" aria-sort="none">Rank</th>
+                <th scope="col">English</th>
+                <th scope="col">Indonesian</th>
+              </tr>
+            </thead>
+            <tbody id="wordTableBody" class="wordTableBody">
+              <!-- words inserted by JS -->
+            </tbody>
+          </table>
+          <nav class="pagination" aria-label="Pagination controls">
+            <button id="prevPageBtn" aria-label="Previous page" disabled>
+              <span class="material-icons"
+                ><i data-feather="chevron-left"></i
+              ></span>
+            </button>
+            <button id="nextPageBtn" aria-label="Next page">
+              <span class="material-icons"
+                ><i data-feather="chevron-right"></i
+              ></span>
+            </button>
+          </nav>
+        </section>
+      </main>
+      <!-- DICTIONARY END -->
     </div>
 
     <div class="contact-query">
-        <a href="#"><i data-feather="help-circle"></i></a>
+      <a href="#"><i data-feather="help-circle"></i></a>
     </div>
 
-    <button id="scrollTopBtn" aria-label="Scroll to top"><i data-feather="arrow-up"></i></button>
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+      <i data-feather="arrow-up"></i>
+    </button>
     <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     </script>
 
     <script src="/spaceberry/assets/js/feather.min.js"></script>
@@ -91,8 +140,7 @@
     <script src="/spaceberry/assets/js/settings.js"></script>
 
     <script>
-        feather.replace();
+      feather.replace();
     </script>
-</body>
-
+  </body>
 </html>

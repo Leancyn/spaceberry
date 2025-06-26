@@ -646,10 +646,27 @@ textarea {
   -o-transition: background-color 0.3s ease;
 }
 
+/* GAMBAR POJOK KANAN BAWAH */
+.imgKananBawah {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 /* === RESPONSIVE MEDIA QUERY === */
 
 /* Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
+  .imgKananBawah {
+    display: none;
+  }
+
+  .ikb-1 {
+    display: block;
+  }
+
   #scrollTopBtn {
     display: flex;
     align-items: center;
