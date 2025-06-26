@@ -661,7 +661,8 @@ textarea {
 
 .ikb-exam,
 .ikb-grammar,
-.ikb-writing {
+.ikb-writing,
+.ikb-brain {
   width: 200px;
   height: auto;
   position: absolute;
