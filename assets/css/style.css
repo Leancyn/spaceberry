@@ -678,14 +678,6 @@ textarea {
     display: none;
   }
 
-  .ikb-1 {
-    width: 150px;
-    height: auto;
-    display: block;
-    right: 50px;
-    bottom: 0;
-  }
-
   #scrollTopBtn {
     display: flex;
     align-items: center;
