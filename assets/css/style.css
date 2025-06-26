@@ -408,7 +408,7 @@ nav .nav-item span {
 /* SCHEDULE START */
 .schedule-section {
   margin-top: 30px;
-  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  background: #ffb9eb;
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -449,7 +449,7 @@ nav .nav-item span {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  background: linear-gradient(to right, #fbc2eb, #a18cd1);
+  background: #a18cd1;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -471,7 +471,7 @@ nav .nav-item span {
 }
 .schedule-table td a {
   text-decoration: none;
-  color: #fbc2eb;
+  color: #412cff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .schedule-table td a:hover {
