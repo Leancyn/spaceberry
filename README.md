@@ -2,7 +2,7 @@
 
 **Spaceberry** is a modern and interactive web-based platform for learning English, designed with a clean dashboard interface. It provides learners with tools such as vocabulary practice, grammar quizzes, writing exercises, daily quotes, and customizable schedules — all in one place.
 
-![Spaceberry Screenshot](assets/img/screenshot-preview.png)
+![Spaceberry Screenshot](assets/img/homepage.png)
 
 ---
 
@@ -21,33 +21,6 @@
 
 ---
 
-## 📁 Project Structure
-
-spaceberry/
-├── index.html # Main dashboard
-├── assets/
-│ ├── css/
-│ │ ├── style.css # Main stylesheet
-│ │ └── settings.css # Settings & themes
-│ ├── img/ # Icons, logos, backgrounds
-│ ├── js/
-│ │ ├── feather.min.js
-│ │ ├── chart-script.js
-│ │ ├── quickCards.js # Logic for Exam, Grammar, Writing
-│ └── data/
-│ ├── quiz-exam.json
-│ ├── quiz-grammar.json
-│ └── dictionary.json
-├── assets/page/
-│ ├── dictionary.html
-│ ├── schedule.html
-│ ├── settings.html
-│ ├── exam.html
-│ ├── writing.html
-│ ├── grammar.html
-│ └── quote.html
-
----
 
 ## 🛠️ Tech Stack
 
@@ -63,6 +36,6 @@ spaceberry/
 
 1. Clone or download the repository:
    ```bash
-   git clone https://github.com/yourusername/spaceberry.git
+   git clone https://github.com/Leancyn/spaceberry.git
    cd spaceberry
    ```
