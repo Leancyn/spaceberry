@@ -659,7 +659,9 @@ textarea {
   bottom: 0;
 }
 
-.ikb-exam, .ikb-grammar, .ikb-writing{
+.ikb-exam,
+.ikb-grammar,
+.ikb-writing {
   width: 300px;
   height: auto;
   position: absolute;
@@ -676,7 +678,10 @@ textarea {
   }
 
   .ikb-1 {
+    width: 200px;
+    height: auto;
     display: block;
+    bottom: 0;
   }
 
   #scrollTopBtn {
