@@ -259,7 +259,7 @@ button:hover {
 .ikb-brain {
   width: 200px;
   height: auto;
-  position: absolute;
+  position: fixed;
   right: 20px;
   bottom: 20px;
 }
