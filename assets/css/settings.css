@@ -325,6 +325,12 @@ body.dark-mode #quoteAuthor {
   color: #ffffff;
 }
 
+/* CHART PLACEHOLDER START */
+body.dark-mode .chart-placeholder {
+  color: #333;
+}
+/* CHART PLACEHOLDER END */
+
 /* Theme colors */
 body[data-theme="blue"] {
   --primary: #3b82f6;
