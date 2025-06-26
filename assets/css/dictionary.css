@@ -57,6 +57,18 @@ nav .nav-item {
   transition: all 0.3s ease;
 }
 
+svg {
+  stroke: #333;
+}
+
+.nav-item svg {
+  stroke: white;
+}
+
+.nav-item.active svg {
+  stroke: #333;
+}
+
 nav .nav-item i {
   width: 20px;
   height: 20px;
@@ -242,7 +254,8 @@ body.dark-mode table.word-list thead th {
 }
 
 app-container table.word-list tbody tr:hover {
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.18), 0 2px 8px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.18),
+    0 2px 8px rgba(79, 70, 229, 0.2);
   cursor: pointer;
 }
 

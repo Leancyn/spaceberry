@@ -44,6 +44,18 @@ body {
   -webkit-filter: drop-shadow(0 2px 3px rgba(255, 255, 255, 0.9));
 }
 
+svg {
+  stroke: #333;
+}
+
+.nav-item svg {
+  stroke: white;
+}
+
+.nav-item.active svg {
+  stroke: #333;
+}
+
 nav .nav-item {
   display: flex;
   align-items: center;
@@ -642,7 +654,6 @@ textarea {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 999;
   display: none;
-  /*sembunyikandefault*/
   transition: background-color 0.3s ease;
   -webkit-transition: background-color 0.3s ease;
   -moz-transition: background-color 0.3s ease;

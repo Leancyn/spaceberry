@@ -132,6 +132,10 @@ body.dark-mode .sidebar .nav-item.active {
   color: #fff;
 }
 
+body.dark-mode .nav-item.active svg {
+  stroke: #ffffff;
+}
+
 body.dark-mode .contact-box {
   background: #383850;
   color: #ffffff;
@@ -143,6 +147,10 @@ body.dark-mode .contact-box p {
 
 body.dark-mode .contact-box .contact-icon {
   color: #ffffff;
+}
+
+body.dark-mode svg {
+  stroke: #ffffff;
 }
 
 /* === MODUL PAGE STYLING === */
