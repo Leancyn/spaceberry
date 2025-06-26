@@ -637,6 +637,10 @@ textarea {
   color: green;
 }
 
+#quoteAuthor {
+  color: #666;
+}
+
 /* WRITING END */
 
 #scrollTopBtn {

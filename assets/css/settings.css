@@ -313,6 +313,18 @@ body.dark-mode .qc-content #writingInput::placeholder {
   color: #ffffff;
 }
 
+body.dark-mode .interactive-practice {
+  background: linear-gradient(to right, #7171fd, #a948f8);
+}
+
+body.dark-mode .contact-btn {
+  background-color: #444;
+}
+
+body.dark-mode #quoteAuthor {
+  color: #ffffff;
+}
+
 /* Theme colors */
 body[data-theme="blue"] {
   --primary: #3b82f6;
@@ -328,7 +340,6 @@ body[data-theme="pink"] {
 }
 
 .reset-btn,
-.contact-btn,
 .schedule-controls button {
   background-color: var(--primary, #7c3aed);
 }
