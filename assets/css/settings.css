@@ -337,6 +337,20 @@ body.dark-mode .chart-placeholder {
 }
 /* CHART PLACEHOLDER END */
 
+/* SCHEDULE START */
+body.dark-mode .schedule-section {
+  background: linear-gradient(to right, #7171fd, #a948f8);
+}
+
+body.dark-mode .schedule-table {
+  background: #333;
+}
+
+body.dark-mode .schedule-table th {
+  background-color: #a18cd1;
+}
+/* SCHEDULE END */
+
 /* Theme colors */
 body[data-theme="blue"] {
   --primary: #3b82f6;
