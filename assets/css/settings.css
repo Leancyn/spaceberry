@@ -309,6 +309,10 @@ body.dark-mode .qc-content #wordCount {
   margin-bottom: 10px;
 }
 
+body.dark-mode .wrapper-writing textarea {
+  background: linear-gradient(to right, #7171fd, #a948f8);
+}
+
 body.dark-mode .qc-content #writingInput::placeholder {
   color: #ffffff;
 }
