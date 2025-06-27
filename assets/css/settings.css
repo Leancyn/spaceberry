@@ -161,12 +161,12 @@ body.dark-mode .contact-box .contact-icon {
   color: #ffffff;
 }
 
-body.dark-mode svg {
+body.dark-mode svg.feather.feather-help-circle {
   stroke: #ffffff;
 }
 
-body.dark-mode .arrow-icon {
-  stroke: #000000;
+body.dark-mode svg.feather.feather-arrow-up {
+  stroke: #ffffff;
 }
 
 /* === MODUL PAGE STYLING === */
@@ -327,6 +327,8 @@ body.dark-mode #quoteAuthor {
 
 /* CHART PLACEHOLDER START */
 body.dark-mode .chart-placeholder {
+  background: #444;
+  stroke: rgb(255, 255, 255);
   color: #333;
 }
 /* CHART PLACEHOLDER END */
