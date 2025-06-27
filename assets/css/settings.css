@@ -266,6 +266,14 @@ body.dark-mode table td {
   color: #1e1b4b;
 }
 
+body.dark-mode .app-container table.word-list tbody tr {
+  background: linear-gradient(to right, #7171fd, #a948f8);
+}
+
+body.dark-mode .app-container table.word-list thead th {
+  background: #a18cd1;
+}
+
 body.dark-mode .wordTableBody td {
   color: #ffffff;
 }
