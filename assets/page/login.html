@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Spaceberry</title>
+    <title>Login - Spaceberry</title>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   </head>
@@ -35,7 +35,7 @@
         const password = passwordInput.value;
         auth
           .signInWithEmailAndPassword(email, password)
-          .then(() => (location.href = "/index.html"))
+          .then(() => (location.href = "/spaceberry/index.html"))
           .catch((err) => (msg.innerText = err.message));
       }
 
@@ -59,7 +59,7 @@
       auth.onAuthStateChanged((user) => {
         if (user) {
           // Sudah login, langsung masuk dashboard
-          location.href = "/index.html";
+          location.href = "/spaceberry/index.html";
         }
       });
     </script>
