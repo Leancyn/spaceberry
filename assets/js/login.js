@@ -23,7 +23,7 @@ function login() {
   auth
     .signInWithEmailAndPassword(email, password)
     .then(() => {
-      location.href = "/index.html";
+      location.href = "/spaceberry/index.html";
     })
     .catch((err) => {
       msg.style.color = "crimson";
@@ -51,6 +51,6 @@ function register() {
 // Auto redirect if already logged in
 auth.onAuthStateChanged((user) => {
   if (user) {
-    location.href = "/index.html";
+    location.href = "/spaceberry/index.html";
   }
 });
