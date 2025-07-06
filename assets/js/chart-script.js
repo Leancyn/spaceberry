@@ -1,16 +1,13 @@
 (function () {
   const now = new Date();
-  const currentMonth = now.getMonth(); // 0–11
+  const currentMonth = now.getMonth();
   const currentYear = now.getFullYear();
-  const monthKey = `${currentYear}-${currentMonth + 1}`; // ex: "2025-7"
+  const monthKey = `${currentYear}-${currentMonth + 1}`;
   const storageKey = "spaceberry-visits";
 
-  // Ambil data kunjungan dari localStorage
   const stored = JSON.parse(localStorage.getItem(storageKey) || "{}");
-
-  // Cek apakah kunjungan hari ini sudah tercatat
   const lastVisitDate = localStorage.getItem("last-visit-date");
-  const today = now.toISOString().split("T")[0]; // "2025-07-06"
+  const today = now.toISOString().split("T")[0];
 
   if (lastVisitDate !== today) {
     stored[monthKey] = (stored[monthKey] || 0) + 1;
@@ -18,11 +15,8 @@
     localStorage.setItem(storageKey, JSON.stringify(stored));
   }
 
-  // Siapkan data 12 bulan
-  const months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-  ];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const monthlyData = Array(12).fill(0);
 
   for (let i = 0; i < 12; i++) {
@@ -30,11 +24,10 @@
     monthlyData[i] = stored[key] || 0;
   }
 
-  // Buat chart
   const options = {
     chart: {
       type: "line",
-      height: 250,
+      height: 420,
       toolbar: { show: false },
       animations: {
         enabled: true,
@@ -63,6 +56,24 @@
       },
     },
     colors: ["#7F00FF"],
+    responsive: [
+      {
+        breakpoint: 768,
+        options: {
+          chart: {
+            height: 300,
+          },
+          xaxis: {
+            labels: {
+              rotate: -45,
+              style: {
+                fontSize: "10px",
+              },
+            },
+          },
+        },
+      },
+    ],
   };
 
   const chart = new ApexCharts(document.querySelector("#realtimeChart"), options);

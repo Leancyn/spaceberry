@@ -7,6 +7,9 @@
     <link rel="icon" href="assets/img/favicon.png" type="image/png" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/settings.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   </head>
 
   <body class="settings-page">
@@ -41,88 +44,146 @@
       <main class="main-content">
         <header class="header">
           <input type="text" id="searchInput" placeholder="Search..." />
+
+          <div class="header-avatar" id="headerAvatarContainer">
+            <img
+              id="headerAvatar"
+              src="assets/img/user-profile.jpg"
+              alt="User"
+            />
+            <div class="user-dropdown" id="userDropdown">
+              <p id="dropdownNameMobile">Annie Leonchart</p>
+              <p id="dropdownEmailMobile">annie_leonchart@mail.com</p>
+              <button id="logoutBtnMobile">Logout</button>
+            </div>
+          </div>
         </header>
 
-        <!-- CARD START -->
-        <section class="word-sets">
-          <h3>Word Sets</h3>
-          <div class="cards">
-            <div class="card">
-              <a href="assets/page/booksAndLibrary/main.html"
-                ><i data-feather="arrow-up-right" class="arrow-icon"></i
-              ></a>
-              <img src="assets/img/books.png" alt="Books" class="card-icon" />
-              <div class="card-title">Books and Library</div>
-            </div>
-            <div class="card">
-              <a href="assets/page/exercise.html"
-                ><i data-feather="arrow-up-right" class="arrow-icon"></i
-              ></a>
-              <img src="assets/img/brain.png" alt="Books" class="card-icon" />
-              <div class="card-title">Interactive Exercises</div>
-            </div>
-            <div class="card">
-              <a href="assets/page/qotd.html"
-                ><i data-feather="arrow-up-right" class="arrow-icon"></i
-              ></a>
-              <img src="assets/img/quote.png" alt="Books" class="card-icon" />
-              <div class="card-title">Quote of the Day</div>
-            </div>
-            <div class="card world-clock-card">
-              <div class="card-title">What is o'clock now?</div>
-              <div class="digital-clock" id="digitalClock">00:00:00</div>
-              <div class="clock-date" id="clockDate">Loading date...</div>
-            </div>
-          </div>
-        </section>
-        <!-- CARD END -->
+        <div class="dashboard-grid">
+          <div class="left-column">
+            <!-- CARD START -->
+            <section class="word-sets">
+              <h3>Word Sets</h3>
+              <div class="cards">
+                <div class="card">
+                  <a href="assets/page/booksAndLibrary/main.html"
+                    ><i data-feather="arrow-up-right" class="arrow-icon"></i
+                  ></a>
+                  <img
+                    src="assets/img/books.png"
+                    alt="Books"
+                    class="card-icon"
+                  />
+                  <div class="card-title">Books and Library</div>
+                </div>
+                <div class="card">
+                  <a href="assets/page/exercise.html"
+                    ><i data-feather="arrow-up-right" class="arrow-icon"></i
+                  ></a>
+                  <img
+                    src="assets/img/brain.png"
+                    alt="Books"
+                    class="card-icon"
+                  />
+                  <div class="card-title">Interactive Exercises</div>
+                </div>
+                <div class="card">
+                  <a href="assets/page/qotd.html"
+                    ><i data-feather="arrow-up-right" class="arrow-icon"></i
+                  ></a>
+                  <img
+                    src="assets/img/quote.png"
+                    alt="Books"
+                    class="card-icon"
+                  />
+                  <div class="card-title">Quote of the Day</div>
+                </div>
+                <div class="card world-clock-card">
+                  <div class="card-title">What is o'clock now?</div>
+                  <div class="digital-clock" id="digitalClock">00:00:00</div>
+                  <div class="clock-date" id="clockDate">Loading date...</div>
+                </div>
+              </div>
+            </section>
+            <!-- CARD END -->
 
-        <!-- STATISTIK START -->
-        <section class="statistics">
-          <h3>Statistics</h3>
-          <div id="realtimeChart" class="chart-placeholder"></div>
-        </section>
-        <!-- STATISTIK END -->
-
-        <!-- BELOM DI ISI -->
-        <section class="quick-start">
-          <h3>Quick Start</h3>
-          <div class="quick-cards">
-            <div class="quick-card">
-              <a href="assets/page/quickCards/exam.html"
-                ><i data-feather="arrow-up-right" class="arrow-icon"></i
-              ></a>
-              <img
-                src="assets/img/exam.png"
-                alt="Books"
-                class="quick-card-icon"
-              />
-              <div class="quick-card-title">Exam - 20 min</div>
-            </div>
-            <div class="quick-card">
-              <a href="assets/page/quickCards/writing.html"
-                ><i data-feather="arrow-up-right" class="arrow-icon"></i
-              ></a>
-              <img
-                src="assets/img/writing.png"
-                alt="Books"
-                class="quick-card-icon"
-              />
-              <div class="quick-card-title">Writing - 20 min</div>
-            </div>
-            <div class="quick-card">
-              <a href="assets/page/quickCards/grammar.html"
-                ><i data-feather="arrow-up-right" class="arrow-icon"></i
-              ></a>
-              <img
-                src="assets/img/grammar.png"
-                alt="Books"
-                class="quick-card-icon"
-              />
-              <div class="quick-card-title">Grammar - 20 min</div>
-            </div>
+            <!-- STATISTIK START -->
+            <section class="statistics">
+              <h3>Statistics</h3>
+              <div id="realtimeChart" class="chart-placeholder"></div>
+            </section>
+            <!-- STATISTIK END -->
           </div>
-        </section>
+
+          <div class="right-column">
+            <!-- USER PROFILE START -->
+            <section class="user-profile-card">
+              <div class="user-profile full-profile" id="userProfileCard">
+                <div class="profile-container">
+                  <img
+                    id="dropdownPhoto"
+                    src="assets/img/user-profile.jpg"
+                    alt="User"
+                    class="avatar-profile"
+                  />
+
+                  <div class="profile-info">
+                    <h3 id="dropdownName">Annie Leonchart</h3>
+                    <p id="dropdownEmail">annie_leonchart@mail.com</p>
+                    <div class="user-stats">
+                      <div><strong>24</strong><br />Lessons</div>
+                      <div><strong>1</strong><br />Terms</div>
+                    </div>
+                    <button id="logoutBtn">Logout</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- USER PROFILE END -->
+
+            <!-- QUICK START -->
+            <section class="quick-start">
+              <h3>Quick Start</h3>
+              <div class="quick-cards">
+                <div class="quick-card">
+                  <a href="assets/page/quickCards/exam.html"
+                    ><i data-feather="arrow-up-right" class="arrow-icon"></i
+                  ></a>
+                  <img
+                    src="assets/img/exam.png"
+                    alt="Books"
+                    class="quick-card-icon"
+                  />
+                  <div class="quick-card-title">Exam - 20 min</div>
+                </div>
+                <div class="quick-card">
+                  <a href="assets/page/quickCards/writing.html"
+                    ><i data-feather="arrow-up-right" class="arrow-icon"></i
+                  ></a>
+                  <img
+                    src="assets/img/writing.png"
+                    alt="Books"
+                    class="quick-card-icon"
+                  />
+                  <div class="quick-card-title">Writing - 20 min</div>
+                </div>
+                <div class="quick-card">
+                  <a href="assets/page/quickCards/grammar.html"
+                    ><i data-feather="arrow-up-right" class="arrow-icon"></i
+                  ></a>
+                  <img
+                    src="assets/img/grammar.png"
+                    alt="Books"
+                    class="quick-card-icon"
+                  />
+                  <div class="quick-card-title">Grammar - 20 min</div>
+                </div>
+              </div>
+            </section>
+            <!-- QUICK START -->
+          </div>
+        </div>
       </main>
     </div>
 
@@ -138,8 +199,116 @@
     <script src="assets/js/chart-script.js"></script>
     <script src="assets/js/settings.js"></script>
 
-    <script>
-      feather.replace();
-    </script>
+<script>
+  feather.replace();
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBDIYWlSgxpjdpHAs6xKFJGaTvM86EKe-4",
+    authDomain: "spaceberry-bf68b.firebaseapp.com",
+    projectId: "spaceberry-bf68b",
+    storageBucket: "spaceberry-bf68b.firebasestorage.app",
+    messagingSenderId: "185481236967",
+    appId: "1:185481236967:web:222422307c4218517fed42",
+    measurementId: "G-2E7GZY8NNE",
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const auth = firebase.auth();
+
+    // Desktop
+    const avatar = document.getElementById("dropdownPhoto");
+    const dropdown = document.getElementById("userDropdown");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    // Mobile
+    const headerAvatar = document.getElementById("headerAvatar");
+    const userDropdown = document.getElementById("userDropdown");
+    const dropdownNameMobile = document.getElementById("dropdownNameMobile");
+    const dropdownEmailMobile = document.getElementById("dropdownEmailMobile");
+    const logoutBtnMobile = document.getElementById("logoutBtnMobile");
+
+    // Toggle dropdown saat avatar desktop diklik
+    if (avatar) {
+      avatar.addEventListener("click", () => {
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
+      });
+    }
+
+    // Toggle dropdown saat avatar mobile diklik
+    if (headerAvatar) {
+      headerAvatar.addEventListener("click", () => {
+        userDropdown.style.display =
+          userDropdown.style.display === "block" ? "none" : "block";
+      });
+    }
+
+    // Tutup dropdown saat klik di luar (berlaku untuk mobile & desktop)
+    window.addEventListener("click", (e) => {
+      if (!e.target.closest(".user-dropdown") && !e.target.closest("#headerAvatar")) {
+        if (dropdown) dropdown.style.display = "none";
+        if (userDropdown) userDropdown.style.display = "none";
+      }
+    });
+
+    // Proteksi dan tampilkan data pengguna
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        location.href = "assets/page/login.html";
+        return;
+      }
+
+      const photo = user.photoURL || "assets/img/user-profile.jpg";
+      const name = user.displayName || "Anonymous";
+      const email = user.email || "-";
+
+      // Desktop
+      if (avatar) avatar.src = photo;
+      if (document.getElementById("dropdownPhoto"))
+        document.getElementById("dropdownPhoto").src = photo;
+      if (document.getElementById("dropdownName"))
+        document.getElementById("dropdownName").textContent = name;
+      if (document.getElementById("dropdownEmail"))
+        document.getElementById("dropdownEmail").textContent = email;
+
+      // Mobile
+      if (headerAvatar) headerAvatar.src = photo;
+      if (dropdownNameMobile) dropdownNameMobile.textContent = name;
+      if (dropdownEmailMobile) dropdownEmailMobile.textContent = email;
+    });
+
+    // Logout Desktop
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", () => {
+        auth
+          .signOut()
+          .then(() => {
+            location.href = "assets/page/login.html";
+          })
+          .catch((error) => {
+            console.error("Logout error:", error);
+          });
+      });
+    }
+
+    // Logout Mobile
+    if (logoutBtnMobile) {
+      logoutBtnMobile.addEventListener("click", () => {
+        auth
+          .signOut()
+          .then(() => {
+            location.href = "assets/page/login.html";
+          })
+          .catch((error) => {
+            console.error("Logout error:", error);
+          });
+      });
+    }
+  });
+</script>
+
   </body>
 </html>
