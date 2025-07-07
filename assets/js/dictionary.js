@@ -249,7 +249,7 @@ function translateText() {
 
   resultEl.innerText = "Translating...";
 
-  fetch("https://translate.mentality.rip/translate", {
+  fetch("https://libretranslate.de/translate", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
