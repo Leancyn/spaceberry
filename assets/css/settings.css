@@ -341,6 +341,10 @@ body.dark-mode #dropdownEmail {
   color: #ffffff;
 }
 
+body.dark-mode .user-profile-card {
+  background-color: #444;
+}
+
 /* CHART PLACEHOLDER START */
 body.dark-mode .chart-placeholder {
   background: #444;
