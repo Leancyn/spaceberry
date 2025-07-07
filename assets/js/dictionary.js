@@ -249,7 +249,7 @@ function translateText() {
 
   resultEl.innerText = "Translating...";
 
-  fetch("https://libretranslate.de/translate", {
+  fetch("https://corsproxy.io/?https://libretranslate.de/translate", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
