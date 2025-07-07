@@ -337,6 +337,10 @@ body.dark-mode #quoteAuthor {
   color: #ffffff;
 }
 
+body.dark-mode #dropdownEmail {
+  color: #ffffff;
+}
+
 /* CHART PLACEHOLDER START */
 body.dark-mode .chart-placeholder {
   background: #444;
