@@ -44,10 +44,6 @@ body {
   -webkit-filter: drop-shadow(0 2px 3px rgba(255, 255, 255, 0.9));
 }
 
-svg {
-  stroke: #333;
-}
-
 .nav-item svg {
   stroke: white;
 }
