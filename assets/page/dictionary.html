@@ -81,6 +81,32 @@
             style="display: block; margin-top: 6px"
             >You can search by English or Indonesian word</small
           >
+
+          <div class="translate-box">
+            <textarea
+              id="translateInput"
+              placeholder="Enter text to translate..."
+              rows="4"
+            ></textarea>
+
+            <div class="translate-controls">
+              <select id="sourceLang">
+                <option value="id">🇮🇩 Indonesian</option>
+                <option value="en">🇺🇸 English</option>
+              </select>
+              <span>→</span>
+              <select id="targetLang">
+                <option value="en">🇺🇸 English</option>
+                <option value="id">🇮🇩 Indonesian</option>
+              </select>
+
+              <button onclick="translateText()">Translate</button>
+            </div>
+
+            <div class="translate-result" id="translateResult">
+              Translated result...
+            </div>
+          </div>
         </section>
         <section
           aria-live="polite"
@@ -121,7 +147,9 @@
     </div>
 
     <div class="contact-query">
-      <a href="https://wa.me/6289503711530"><i data-feather="help-circle"></i></a>
+      <a href="https://wa.me/6289503711530"
+        ><i data-feather="help-circle"></i
+      ></a>
     </div>
 
     <button id="scrollTopBtn" aria-label="Scroll to top">

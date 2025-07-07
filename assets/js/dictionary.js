@@ -157,18 +157,26 @@ function highlight(text, query) {
   if (!query) return text;
   const escaped = query.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
   const regex = new RegExp(escaped, "gi");
-  return text.replace(regex, (match) => '<mark class="highlight">' + match + "</mark>");
+  return text.replace(
+    regex,
+    (match) => '<mark class="highlight">' + match + "</mark>"
+  );
 }
 // Render table rows based on pagination + search filtered data
 function renderTable(page, filter = "") {
-  const filteredList = wordList.filter((w) => w.english.toLowerCase().includes(filter.toLowerCase()) || w.indonesian.toLowerCase().includes(filter.toLowerCase()));
+  const filteredList = wordList.filter(
+    (w) =>
+      w.english.toLowerCase().includes(filter.toLowerCase()) ||
+      w.indonesian.toLowerCase().includes(filter.toLowerCase())
+  );
   const start = (page - 1) * rowsPerPage;
   const end = start + rowsPerPage;
   const pageItems = filteredList.slice(start, end);
 
   tableBody.innerHTML = "";
   if (pageItems.length === 0) {
-    tableBody.innerHTML = '<tr><td colspan="3" style="text-align:center; color:#64748b; padding:24px;">No words found</td></tr>';
+    tableBody.innerHTML =
+      '<tr><td colspan="3" style="text-align:center; color:#64748b; padding:24px;">No words found</td></tr>';
     prevPageBtn.disabled = true;
     nextPageBtn.disabled = true;
     return;
@@ -208,7 +216,11 @@ prevPageBtn.addEventListener("click", () => {
   }
 });
 nextPageBtn.addEventListener("click", () => {
-  const filteredCount = wordList.filter((w) => w.english.toLowerCase().includes(searchInput.value.toLowerCase()) || w.indonesian.toLowerCase().includes(searchInput.value.toLowerCase())).length;
+  const filteredCount = wordList.filter(
+    (w) =>
+      w.english.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+      w.indonesian.toLowerCase().includes(searchInput.value.toLowerCase())
+  ).length;
   if (currentPage * rowsPerPage < filteredCount) {
     currentPage++;
     renderTable(currentPage, searchInput.value);
@@ -221,3 +233,40 @@ nextPageBtn.addEventListener("click", () => {
 
 // Initial render
 renderTable(currentPage);
+
+// === TRANSLATE FEATURE (LibreTranslate) ===
+
+function translateText() {
+  const text = document.getElementById("translateInput").value.trim();
+  const source = document.getElementById("sourceLang").value;
+  const target = document.getElementById("targetLang").value;
+  const resultEl = document.getElementById("translateResult");
+
+  if (!text) {
+    resultEl.innerText = "Please enter text.";
+    return;
+  }
+
+  resultEl.innerText = "Translating...";
+
+  fetch("https://translate.mentality.rip/translate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      q: text,
+      source: source,
+      target: target,
+      format: "text",
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      resultEl.innerText = data.translatedText;
+    })
+    .catch((err) => {
+      console.error(err);
+      resultEl.innerText = "Translation failed.";
+    });
+}

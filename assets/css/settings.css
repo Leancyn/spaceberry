@@ -345,6 +345,51 @@ body.dark-mode .user-profile-card {
   background-color: #444;
 }
 
+/* FITUR TRANSLATE DICTIONARY */
+body.dark-mode .translate-box {
+  background: #444;
+}
+
+body.dark-mode #sourceLang {
+  background: #444;
+}
+
+body.dark-mode #targetLang {
+  background: #444;
+}
+
+body.dark-mode #translateResult {
+  background: #444;
+}
+
+body.dark-mode #translateInput {
+  background: #444;
+}
+
+body.dark-mode .translate-box {
+  color: #ffffff;
+}
+
+body.dark-mode #sourceLang {
+  color: #ffffff;
+}
+
+body.dark-mode #targetLang {
+  color: #ffffff;
+}
+
+body.dark-mode #translateResult {
+  color: #ffffff;
+}
+
+body.dark-mode #translateInput {
+  color: #ffffff;
+}
+
+body.dark-mode .translate-box {
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
+}
+
 /* CHART PLACEHOLDER START */
 body.dark-mode .chart-placeholder {
   background: #444;

@@ -337,6 +337,68 @@ app-container table.word-list tbody tr:hover {
   display: none;
 }
 
+/* === TRANSLATION MODULE === */
+
+.translate-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+}
+
+.translate-box textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.translate-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.translate-controls select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 0.95rem;
+}
+
+.translate-controls button {
+  padding: 10px 16px;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.translate-controls button:hover {
+  background-color: #5b21b6;
+}
+
+.translate-result {
+  margin-top: 10px;
+  padding: 14px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  min-height: 40px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+}
+
 /* === RESPONSIVE MEDIA QUERY === */
 
 /* Tablet (≤ 1024px) */
