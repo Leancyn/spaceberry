@@ -75,9 +75,13 @@ function submit() {
       })
       .then(() => {
         const user = auth.currentUser;
+
+        // TAMBAHAN: Simpan data lengkap + statistik awal
         return db.collection("users").doc(user.uid).set({
           username: user.displayName,
           email: user.email,
+          lessons: 0,
+          terms: 0,
         });
       })
       .then(() => {
