@@ -253,19 +253,22 @@
       const db = firebase.firestore();
 
       document.addEventListener("DOMContentLoaded", () => {
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-        const moduleLinks = document.querySelectorAll("a[href*='modul']"); // 🔧 FIX
+        const moduleLinks = document.querySelectorAll("a[href*='modul']");
 
         auth.onAuthStateChanged((user) => {
-          if (!user) return;
+          if (!user) {
+            alert("You must be logged in to access this content.");
+            location.href = "/spaceberry/assets/page/login.html";
+            return;
+          }
 
           moduleLinks.forEach((link) => {
             link.addEventListener("click", (e) => {
               e.preventDefault();
 
               const target = link.getAttribute("href");
-              console.log("Modul diklik:", target);
+
+              // Cegah spam klik ganda
               link.style.pointerEvents = "none";
 
               db.collection("users")
@@ -277,10 +280,11 @@
                   { merge: true }
                 )
                 .then(() => {
+                  console.log("📘 Lesson ditambahkan +1");
                   window.location.href = target;
                 })
                 .catch((err) => {
-                  console.error("Gagal menambah lesson:", err);
+                  console.error("❌ Gagal menambah lesson:", err);
                   window.location.href = target;
                 });
             });
