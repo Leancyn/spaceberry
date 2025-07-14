@@ -287,6 +287,55 @@
           if (dropdownEmailMobile) dropdownEmailMobile.textContent = email;
         });
 
+        // Tambahkan Firestore
+        const db = firebase.firestore();
+
+        auth.onAuthStateChanged((user) => {
+          if (!user) {
+            location.href = "assets/page/login.html";
+            return;
+          }
+
+          const photo = user.photoURL || "assets/img/user-profile.png";
+          const name = user.displayName || "Anonymous";
+          const email = user.email || "-";
+
+          // Tampilkan data user
+          if (avatar) avatar.src = photo;
+          if (document.getElementById("dropdownPhoto"))
+            document.getElementById("dropdownPhoto").src = photo;
+          if (document.getElementById("dropdownName"))
+            document.getElementById("dropdownName").textContent = name;
+          if (document.getElementById("dropdownEmail"))
+            document.getElementById("dropdownEmail").textContent = email;
+          if (headerAvatar) headerAvatar.src = photo;
+          if (dropdownNameMobile) dropdownNameMobile.textContent = name;
+          if (dropdownEmailMobile) dropdownEmailMobile.textContent = email;
+
+          // Ambil statistik dari Firestore
+          db.collection("users")
+            .doc(user.uid)
+            .get()
+            .then((doc) => {
+              if (doc.exists) {
+                const data = doc.data();
+                if (document.getElementById("userLessons")) {
+                  document.getElementById("userLessons").textContent =
+                    data.lessons ?? 0;
+                }
+                if (document.getElementById("userTerms")) {
+                  document.getElementById("userTerms").textContent =
+                    data.terms ?? 0;
+                }
+              } else {
+                console.warn("📭 Dokumen user tidak ditemukan di Firestore.");
+              }
+            })
+            .catch((error) => {
+              console.error("❌ Gagal mengambil statistik:", error);
+            });
+        });
+
         // Logout Desktop
         if (logoutBtn) {
           logoutBtn.addEventListener("click", () => {
