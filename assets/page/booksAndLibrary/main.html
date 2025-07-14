@@ -270,9 +270,12 @@
 
               db.collection("users")
                 .doc(user.uid)
-                .update({
-                  lessons: firebase.firestore.FieldValue.increment(1),
-                })
+                .set(
+                  {
+                    lessons: firebase.firestore.FieldValue.increment(1),
+                  },
+                  { merge: true }
+                )
                 .then(() => {
                   window.location.href = target;
                 })
