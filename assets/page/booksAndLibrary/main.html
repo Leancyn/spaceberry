@@ -253,18 +253,19 @@
       const db = firebase.firestore();
 
       document.addEventListener("DOMContentLoaded", () => {
-        const moduleLinks = document.querySelectorAll(".card a[href*='modul']");
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const moduleLinks = document.querySelectorAll("a[href*='modul']"); // 🔧 FIX
 
         auth.onAuthStateChanged((user) => {
           if (!user) return;
 
           moduleLinks.forEach((link) => {
             link.addEventListener("click", (e) => {
-              e.preventDefault(); // cegah pindah langsung
+              e.preventDefault();
 
               const target = link.getAttribute("href");
-
-              // Cegah dobel klik
+              console.log("Modul diklik:", target);
               link.style.pointerEvents = "none";
 
               db.collection("users")
@@ -273,12 +274,11 @@
                   lessons: firebase.firestore.FieldValue.increment(1),
                 })
                 .then(() => {
-                  // Pindah ke modul setelah update sukses
                   window.location.href = target;
                 })
                 .catch((err) => {
                   console.error("Gagal menambah lesson:", err);
-                  window.location.href = target; // tetap lanjut walau error
+                  window.location.href = target;
                 });
             });
           });
