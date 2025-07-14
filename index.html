@@ -213,66 +213,24 @@
         measurementId: "G-2E7GZY8NNE",
       };
 
-      // Initialize Firebase
-      const app = firebase.initializeApp(firebaseConfig);
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
 
       document.addEventListener("DOMContentLoaded", () => {
-        const auth = firebase.auth();
-
-        // Desktop
         const avatar = document.getElementById("dropdownPhoto");
-        const dropdown = document.getElementById("userDropdown");
         const logoutBtn = document.getElementById("logoutBtn");
 
-        // Mobile
-        const headerAvatar = document.getElementById("headerAvatar");
-        const userDropdown = document.getElementById("userDropdown");
-        const dropdownNameMobile =
-          document.getElementById("dropdownNameMobile");
-        const dropdownEmailMobile = document.getElementById(
-          "dropdownEmailMobile"
-        );
-        const logoutBtnMobile = document.getElementById("logoutBtnMobile");
-
-        // Toggle dropdown saat avatar desktop diklik
-        if (avatar) {
-          avatar.addEventListener("click", () => {
-            dropdown.style.display =
-              dropdown.style.display === "block" ? "none" : "block";
-          });
-        }
-
-        // Toggle dropdown saat avatar mobile diklik
-        if (headerAvatar) {
-          headerAvatar.addEventListener("click", () => {
-            userDropdown.style.display =
-              userDropdown.style.display === "block" ? "none" : "block";
-          });
-        }
-
-        // Tutup dropdown saat klik di luar (berlaku untuk mobile & desktop)
-        window.addEventListener("click", (e) => {
-          if (
-            !e.target.closest(".user-dropdown") &&
-            !e.target.closest("#headerAvatar")
-          ) {
-            if (dropdown) dropdown.style.display = "none";
-            if (userDropdown) userDropdown.style.display = "none";
-          }
-        });
-
-        // Proteksi dan tampilkan data pengguna
         auth.onAuthStateChanged((user) => {
           if (!user) {
             location.href = "assets/page/login.html";
             return;
           }
 
-          const photo = user.photoURL || "assets/img/user-profile.png";
+          const photo = user.photoURL || "assets/img/user-profile.jpg";
           const name = user.displayName || "Anonymous";
           const email = user.email || "-";
 
-          // Desktop
           if (avatar) avatar.src = photo;
           if (document.getElementById("dropdownPhoto"))
             document.getElementById("dropdownPhoto").src = photo;
@@ -281,86 +239,35 @@
           if (document.getElementById("dropdownEmail"))
             document.getElementById("dropdownEmail").textContent = email;
 
-          // Mobile
-          if (headerAvatar) headerAvatar.src = photo;
-          if (dropdownNameMobile) dropdownNameMobile.textContent = name;
-          if (dropdownEmailMobile) dropdownEmailMobile.textContent = email;
-        });
-
-        // Tambahkan Firestore
-        const db = firebase.firestore();
-
-        auth.onAuthStateChanged((user) => {
-          if (!user) {
-            location.href = "assets/page/login.html";
-            return;
-          }
-
-          const photo = user.photoURL || "assets/img/user-profile.png";
-          const name = user.displayName || "Anonymous";
-          const email = user.email || "-";
-
-          // Tampilkan data user
-          if (avatar) avatar.src = photo;
-          if (document.getElementById("dropdownPhoto"))
-            document.getElementById("dropdownPhoto").src = photo;
-          if (document.getElementById("dropdownName"))
-            document.getElementById("dropdownName").textContent = name;
-          if (document.getElementById("dropdownEmail"))
-            document.getElementById("dropdownEmail").textContent = email;
-          if (headerAvatar) headerAvatar.src = photo;
-          if (dropdownNameMobile) dropdownNameMobile.textContent = name;
-          if (dropdownEmailMobile) dropdownEmailMobile.textContent = email;
-
-          // Ambil statistik dari Firestore
+          // Ambil data statistik dari Firestore
           db.collection("users")
             .doc(user.uid)
             .get()
             .then((doc) => {
               if (doc.exists) {
                 const data = doc.data();
-                if (document.getElementById("userLessons")) {
-                  document.getElementById("userLessons").textContent =
-                    data.lessons ?? 0;
-                }
-                if (document.getElementById("userTerms")) {
-                  document.getElementById("userTerms").textContent =
-                    data.terms ?? 0;
-                }
+                console.log(" Statistik user:", data);
+
+                // Pastikan elemen ID-nya ada
+                const lessonsEl = document.getElementById("userLessons");
+                const termsEl = document.getElementById("userTerms");
+
+                if (lessonsEl) lessonsEl.textContent = data.lessons ?? 0;
+                if (termsEl) termsEl.textContent = data.terms ?? 0;
               } else {
-                console.warn("📭 Dokumen user tidak ditemukan di Firestore.");
+                console.warn(" Dokumen tidak ditemukan.");
               }
             })
-            .catch((error) => {
-              console.error("❌ Gagal mengambil statistik:", error);
+            .catch((err) => {
+              console.error(" Gagal ambil statistik:", err);
             });
         });
 
-        // Logout Desktop
         if (logoutBtn) {
           logoutBtn.addEventListener("click", () => {
-            auth
-              .signOut()
-              .then(() => {
-                location.href = "assets/page/login.html";
-              })
-              .catch((error) => {
-                console.error("Logout error:", error);
-              });
-          });
-        }
-
-        // Logout Mobile
-        if (logoutBtnMobile) {
-          logoutBtnMobile.addEventListener("click", () => {
-            auth
-              .signOut()
-              .then(() => {
-                location.href = "assets/page/login.html";
-              })
-              .catch((error) => {
-                console.error("Logout error:", error);
-              });
+            auth.signOut().then(() => {
+              location.href = "assets/page/login.html";
+            });
           });
         }
       });
