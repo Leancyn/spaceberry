@@ -237,36 +237,39 @@ renderTable(currentPage);
 // === TRANSLATE FEATURE (LibreTranslate) ===
 
 function translateText() {
-  const text = document.getElementById("translateInput").value.trim();
-  const source = document.getElementById("sourceLang").value;
-  const target = document.getElementById("targetLang").value;
-  const resultEl = document.getElementById("translateResult");
+  const inputText = document.getElementById("translateInput").value;
+  const sourceLang = document.getElementById("sourceLang").value;
+  const targetLang = document.getElementById("targetLang").value;
+  const resultBox = document.getElementById("translateResult");
 
-  if (!text) {
-    resultEl.innerText = "Please enter text.";
+  if (!inputText.trim()) {
+    resultBox.textContent = "Please enter text to translate.";
     return;
   }
 
-  resultEl.innerText = "Translating...";
+  resultBox.textContent = "Translating...";
 
-  fetch("https://corsproxy.io/?https://libretranslate.de/translate", {
+  fetch("https://translate-proxy.levere08.workers.dev", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      q: text,
-      source: source,
-      target: target,
+      q: inputText,
+      source: sourceLang,
+      target: targetLang,
       format: "text",
     }),
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error("Translation failed.");
+      return res.json();
+    })
     .then((data) => {
-      resultEl.innerText = data.translatedText;
+      resultBox.textContent = data.translatedText;
     })
     .catch((err) => {
-      console.error(err);
-      resultEl.innerText = "Translation failed.";
+      resultBox.textContent = "Translation failed. Please try again later.";
+      console.error("Translation error:", err);
     });
 }
