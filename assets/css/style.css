@@ -265,11 +265,11 @@ svg.feather.feather-help-circle {
 }
 
 .avatar-profile {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  margin-left: 80px;
+  margin-left: 20px;
 }
 
 .profile-info {
@@ -1126,6 +1126,7 @@ svg.feather.feather-arrow-up {
 
   .header-avatar {
     display: block;
+    left: auto;
   }
 
   .header {
