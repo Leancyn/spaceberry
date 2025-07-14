@@ -94,7 +94,9 @@
         auth.onAuthStateChanged((user) => {
           if (!user) return;
 
-          const sessionKey = `term-incremented-${user.uid}`;
+          const page = location.pathname.split("/").pop(); // exam.html / grammar.html / writing.html
+          const sessionKey = `term-added-${user.uid}-${page}`;
+
           if (sessionStorage.getItem(sessionKey)) return;
 
           db.collection("users")
@@ -106,7 +108,7 @@
               { merge: true }
             )
             .then(() => {
-              console.log("Term bertambah +1");
+              console.log(`Term bertambah +1 dari halaman: ${page}`);
               sessionStorage.setItem(sessionKey, "true");
             })
             .catch((err) => {

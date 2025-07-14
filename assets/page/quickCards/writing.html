@@ -89,6 +89,11 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
     <script>
       const firebaseConfig = {
         apiKey: "AIzaSyBDIYWlSgxpjdpHAs6xKFJGaTvM86EKe-4",
@@ -108,7 +113,9 @@
         auth.onAuthStateChanged((user) => {
           if (!user) return;
 
-          const sessionKey = `term-incremented-${user.uid}`;
+          const page = location.pathname.split("/").pop(); // exam.html / grammar.html / writing.html
+          const sessionKey = `term-added-${user.uid}-${page}`;
+
           if (sessionStorage.getItem(sessionKey)) return;
 
           db.collection("users")
@@ -120,7 +127,7 @@
               { merge: true }
             )
             .then(() => {
-              console.log("Term bertambah +1");
+              console.log(`Term bertambah +1 dari halaman: ${page}`);
               sessionStorage.setItem(sessionKey, "true");
             })
             .catch((err) => {
