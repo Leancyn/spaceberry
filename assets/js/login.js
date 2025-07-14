@@ -10,47 +10,92 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+const db = firebase.firestore();
 
+let isLoginMode = true;
+
+// Element references
+const loginIdentity = document.getElementById("loginIdentity");
 const emailInput = document.getElementById("email");
+const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
+const submitBtn = document.getElementById("submitBtn");
+const toggleText = document.getElementById("toggleText");
 const msg = document.getElementById("msg");
 
-function login() {
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
-  msg.textContent = "";
+// Toggle between login and register
+function toggleMode(toLogin) {
+  isLoginMode = toLogin;
 
-  auth
-    .signInWithEmailAndPassword(email, password)
-    .then(() => {
-      location.href = "/spaceberry/index.html";
-    })
-    .catch((err) => {
-      msg.style.color = "crimson";
-      msg.textContent = err.message;
-    });
+  loginIdentity.style.display = toLogin ? "block" : "none";
+  emailInput.style.display = toLogin ? "none" : "block";
+  usernameInput.style.display = toLogin ? "none" : "block";
+
+  submitBtn.textContent = toLogin ? "Login" : "Submit";
+  toggleText.innerHTML = toLogin
+    ? `Belum punya akun? <a href="#" onclick="toggleMode(false)">Register</a>`
+    : ""; // Hilangkan teks saat register
+
+  msg.textContent = "";
 }
 
-function register() {
+// Submit handler
+function submit() {
   const email = emailInput.value.trim();
+  const identity = loginIdentity.value.trim();
   const password = passwordInput.value.trim();
+  const username = usernameInput.value.trim();
   msg.textContent = "";
 
-  auth
-    .createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      msg.style.color = "green";
-      msg.textContent = "Registration successful. You can now login.";
-    })
-    .catch((err) => {
+  if (isLoginMode) {
+    if (!identity || !password) {
       msg.style.color = "crimson";
-      msg.textContent = err.message;
-    });
+      msg.textContent = "Mohon isi semua kolom.";
+      return;
+    }
+
+    auth
+      .signInWithEmailAndPassword(identity, password)
+      .then(() => (location.href = "/spaceberry/index.html"))
+      .catch((err) => {
+        msg.style.color = "crimson";
+        msg.textContent = err.message;
+      });
+  } else {
+    if (!email || !username || !password) {
+      msg.style.color = "crimson";
+      msg.textContent = "Mohon isi semua kolom.";
+      return;
+    }
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        return userCredential.user.updateProfile({ displayName: username });
+      })
+      .then(() => {
+        const user = auth.currentUser;
+        return db.collection("users").doc(user.uid).set({
+          username: user.displayName,
+          email: user.email,
+        });
+      })
+      .then(() => {
+        msg.style.color = "green";
+        msg.textContent = "Registrasi berhasil. Silakan login.";
+        auth.signOut();
+        toggleMode(true); // kembali ke login
+      })
+      .catch((err) => {
+        msg.style.color = "crimson";
+        msg.textContent = err.message;
+      });
+  }
 }
 
-// Auto redirect if already logged in
+// Auto redirect jika sudah login
 auth.onAuthStateChanged((user) => {
-  if (user) {
+  if (user && isLoginMode) {
     location.href = "/spaceberry/index.html";
   }
 });

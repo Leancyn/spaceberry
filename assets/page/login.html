@@ -11,23 +11,37 @@
     />
     <link rel="stylesheet" href="/spaceberry/assets/css/style.css" />
     <link rel="stylesheet" href="/spaceberry/assets/css/login.css" />
+    <!-- Firebase Core -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
   </head>
   <body>
     <div class="login-wrapper">
-      <img
-        src="/spaceberry/assets/img/logo (2).png"
-        alt="Spaceberry Logo"
-        class="logo"
-      />
+      <img src="/spaceberry/assets/img/logo (2).png" alt="Logo" class="logo" />
       <h2>Welcome to Spaceberry</h2>
 
-      <input type="email" id="email" placeholder="Email" />
+      <!-- Login input -->
+      <input type="text" id="loginIdentity" placeholder="Email" />
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        style="display: none"
+      />
+      <input
+        type="email"
+        id="email"
+        placeholder="Email"
+        style="display: none"
+      />
       <input type="password" id="password" placeholder="Password" />
 
-      <button onclick="login()">Login</button>
-      <button onclick="register()">Register</button>
+      <!-- Tombol -->
+      <button id="submitBtn" onclick="submit()">Login</button>
+      <p id="toggleText" style="margin-top: 20px">
+        Belum punya akun? <a href="#" onclick="toggleMode(false)">Register</a>
+      </p>
 
       <p id="msg"></p>
     </div>
