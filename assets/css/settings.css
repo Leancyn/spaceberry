@@ -386,6 +386,20 @@ body.dark-mode #translateInput {
   color: #ffffff;
 }
 
+body.dark-mode .header-avatar {
+  background: #444;
+}
+
+body.dark-mode .header input::placeholder {
+  color: rgb(214, 214, 214);
+}
+
+body.dark-mode #searchInput {
+  background: #444;
+  color: white;
+  border: #444;
+}
+
 body.dark-mode .translate-box {
   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
 }
