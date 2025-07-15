@@ -150,11 +150,16 @@ svg.feather.feather-help-circle {
   position: relative;
   margin-left: 10px;
   display: none;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 50px;
+  height: 50px;
 }
 
 #headerAvatar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: auto;
   object-fit: cover;
   border-radius: 50%;
   cursor: pointer;
@@ -170,9 +175,15 @@ svg.feather.feather-help-circle {
   padding: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 180px;
+  width: 200px;
+  height: auto;
   text-align: center;
-  z-index: 1000;
+  z-index: 9999;
+  margin: 10px 0;
+}
+
+#dropdownNameMobile {
+  font-weight: 800;
 }
 
 .user-dropdown p {
@@ -182,7 +193,8 @@ svg.feather.feather-help-circle {
 }
 
 .user-dropdown button {
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   background: #7f00ff;
   color: white;
   border: none;
@@ -195,6 +207,22 @@ svg.feather.feather-help-circle {
 
 .user-dropdown button:hover {
   background: #6200cc;
+}
+
+.user-stats-mobile {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 35px;
+  font-size: 0.875rem;
+  color: #374151;
+}
+.user-stats-mobile div {
+  text-align: center;
+}
+.user-stats-mobile strong {
+  font-size: 1rem;
+  color: #111827;
 }
 
 .header {
@@ -1126,7 +1154,6 @@ svg.feather.feather-arrow-up {
 
   .header-avatar {
     display: block;
-    left: auto;
   }
 
   .header {

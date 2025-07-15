@@ -55,6 +55,10 @@
             <div class="user-dropdown" id="userDropdown">
               <p id="dropdownNameMobile">Annie Leonchart</p>
               <p id="dropdownEmailMobile">annie_leonchart@mail.com</p>
+              <div class="user-stats-mobile">
+                <div><strong id="mobileLessons">0</strong><br />Lessons</div>
+                <div><strong id="mobileTerms">0</strong><br />Terms</div>
+              </div>
               <button id="logoutBtnMobile">Logout</button>
             </div>
           </div>
@@ -141,7 +145,6 @@
                 </div>
               </div>
             </section>
-
             <!-- USER PROFILE END -->
 
             <!-- QUICK START -->
@@ -221,7 +224,46 @@
       document.addEventListener("DOMContentLoaded", () => {
         const avatar = document.getElementById("dropdownPhoto");
         const logoutBtn = document.getElementById("logoutBtn");
+        const headerAvatar = document.getElementById("headerAvatar");
+        const userDropdown = document.getElementById("userDropdown");
+        const logoutBtnMobile = document.getElementById("logoutBtnMobile");
 
+        // Toggle dropdown saat avatar mobile diklik
+        if (headerAvatar && userDropdown) {
+          headerAvatar.addEventListener("click", () => {
+            userDropdown.style.display =
+              userDropdown.style.display === "block" ? "none" : "block";
+          });
+
+          window.addEventListener("click", (e) => {
+            if (
+              !e.target.closest("#headerAvatar") &&
+              !e.target.closest("#userDropdown")
+            ) {
+              userDropdown.style.display = "none";
+            }
+          });
+        }
+
+        // Logout versi mobile
+        if (logoutBtnMobile) {
+          logoutBtnMobile.addEventListener("click", () => {
+            auth.signOut().then(() => {
+              location.href = "assets/page/login.html";
+            });
+          });
+        }
+
+        // Logout versi desktop
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", () => {
+            auth.signOut().then(() => {
+              location.href = "assets/page/login.html";
+            });
+          });
+        }
+
+        // Autentikasi dan ambil data pengguna
         auth.onAuthStateChanged((user) => {
           if (!user) {
             location.href = "assets/page/login.html";
@@ -233,44 +275,47 @@
           const email = user.email || "-";
 
           if (avatar) avatar.src = photo;
-          if (document.getElementById("dropdownPhoto"))
-            document.getElementById("dropdownPhoto").src = photo;
-          if (document.getElementById("dropdownName"))
-            document.getElementById("dropdownName").textContent = name;
-          if (document.getElementById("dropdownEmail"))
-            document.getElementById("dropdownEmail").textContent = email;
+          const dropdownPhoto = document.getElementById("dropdownPhoto");
+          if (dropdownPhoto) dropdownPhoto.src = photo;
 
-          // Ambil data statistik dari Firestore
+          const nameDesktop = document.getElementById("dropdownName");
+          const emailDesktop = document.getElementById("dropdownEmail");
+          if (nameDesktop) nameDesktop.textContent = name;
+          if (emailDesktop) emailDesktop.textContent = email;
+
+          const nameMobile = document.getElementById("dropdownNameMobile");
+          const emailMobile = document.getElementById("dropdownEmailMobile");
+          if (nameMobile) nameMobile.textContent = name;
+          if (emailMobile) emailMobile.textContent = email;
+
+          // Ambil statistik pengguna
           db.collection("users")
             .doc(user.uid)
             .get()
             .then((doc) => {
               if (doc.exists) {
                 const data = doc.data();
-                console.log(" Statistik user:", data);
+                const lessons = data.lessons ?? 0;
+                const terms = data.terms ?? 0;
 
-                // Pastikan elemen ID-nya ada
                 const lessonsEl = document.getElementById("userLessons");
                 const termsEl = document.getElementById("userTerms");
+                if (lessonsEl) lessonsEl.textContent = lessons;
+                if (termsEl) termsEl.textContent = terms;
 
-                if (lessonsEl) lessonsEl.textContent = data.lessons ?? 0;
-                if (termsEl) termsEl.textContent = data.terms ?? 0;
+                // Mobile
+                const mobileLessons = document.getElementById("mobileLessons");
+                const mobileTerms = document.getElementById("mobileTerms");
+                if (mobileLessons) mobileLessons.textContent = lessons;
+                if (mobileTerms) mobileTerms.textContent = terms;
               } else {
-                console.warn(" Dokumen tidak ditemukan.");
+                console.warn("Dokumen pengguna tidak ditemukan.");
               }
             })
             .catch((err) => {
-              console.error(" Gagal ambil statistik:", err);
+              console.error("Gagal ambil data statistik:", err);
             });
         });
-
-        if (logoutBtn) {
-          logoutBtn.addEventListener("click", () => {
-            auth.signOut().then(() => {
-              location.href = "assets/page/login.html";
-            });
-          });
-        }
       });
     </script>
   </body>
