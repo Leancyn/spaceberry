@@ -1,4 +1,4 @@
-# 🚀 Spaceberry – English Learning Dashboard
+# 🚀 Spaceberry – English Learning
 
 **Spaceberry** is a modern and interactive web-based platform for learning English, designed with a clean dashboard interface. It provides learners with tools such as vocabulary practice, grammar quizzes, writing exercises, daily quotes, and customizable schedules — all in one place.
 
@@ -8,48 +8,25 @@
 
 ## ✨ Fitur Utama
 
-- 🔐 **Login & Register Firebase Auth**
-- 📚 **Books & Library**: Akses modul pembelajaran
-- 🧠 **Interactive Exercises**: Kuis & latihan cepat
-- 💬 **Dictionary & Translation**: Kamus + penerjemah
-- ⏰ **World Clock & Quote of The Day**
-- 📈 **Statistik Penggunaan** (Chart kunjungan)
-- 💻 **UI Responsif** (desktop & mobile)
-
----
-
-## 📁 Struktur Proyek
-
-spaceberry/
-├── index.html # Dashboard utama
-├── README.md
-├── assets/
-│ ├── css/ # style.css, settings.css, login.css, dictionary.css, dll.
-│ ├── js/ # script.js, chart-script.js, login.js, settings.js, dll.
-│ ├── img/ # Logo, avatar, icon modul
-│ ├── font/ # Font custom seperti ComicRelief.ttf
-│ ├── data/ # Word list, JSON statis (jika ada)
-│ └── page/ # Halaman internal
-│ ├── login.html
-│ ├── dictionary.html
-│ ├── schedule.html
-│ ├── settings.html
-│ ├── booksAndLibrary/
-│ │ └── main.html, modulX.html
-│ └── quickCards/
-│ ├── exam.html
-│ ├── grammar.html
-│ └── writing.html
+- 🔐 **Login & Register** — Autentikasi aman menggunakan Firebase Authentication
+- 📚 **Books & Library** — Akses modul pembelajaran
+- 🧠 **Interactive Exercises** — Kuis & latihan cepat
+- 💬 **Dictionary & Translation** — Kamus + penerjemah
+- ⏰ **World Clock & Quote of The Day** — Jam dunia real-time dan kutipan harian inspiratif
+- 📈 **Statistik Penggunaan** — Grafik interaktif untuk melihat kunjungan
+- 💻 **UI Responsif** — Tampilan optimal di perangkat desktop maupun mobile
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **HTML5, CSS3, JavaScript**
-- **LocalStorage** – store quiz results & writing progress
-- **Fetch API** – dynamic content from JSON / online API
-- **ApexCharts** – for interactive data visualization
-- **Feather Icons** – lightweight icons
+- **HTML5, CSS3, JavaScript** — Pondasi utama antarmuka pengguna
+- **Firebase Authentication & Firestore** — Untuk login dan penyimpanan progres pengguna
+- **LocalStorage** — Menyimpan kunjungan, hasil quiz, dan kemajuan secara lokal
+- **Fetch API** — Mengambil data dinamis dari file JSON atau API eksternal
+- **ApexCharts.js** — Menampilkan statistik interaktif secara visual
+- **Feather Icons** — Ikon ringan untuk navigasi dan tampilan UI
+- **Cloudflare Workers** (opsional) — Digunakan sebagai proxy untuk menghindari masalah CORS saat menggunakan API translate
 
 ---
 
