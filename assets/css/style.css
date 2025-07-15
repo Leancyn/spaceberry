@@ -998,10 +998,9 @@ svg.feather.feather-arrow-up {
   }
 
   .digital-clock {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     color: #ffffff;
-    margin-top: 5px;
     z-index: 2;
   }
 
@@ -1011,7 +1010,15 @@ svg.feather.feather-arrow-up {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+  }
+
+  .world-clock-card .card-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .clock-date {
+    margin-bottom: 10px;
   }
 
   .contact-icon {
