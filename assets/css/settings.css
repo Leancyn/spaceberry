@@ -404,6 +404,26 @@ body.dark-mode .translate-box {
   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
 }
 
+body.dark-mode .user-dropdown{
+  background: #444;
+}
+
+body.dark-mode .user-dropdown p {
+  color: #eee;
+}
+
+body.dark-mode #dropdownEmailMobile{
+  color: #ccc;
+}
+
+body.dark-mode .user-stats-mobile {
+  color: #ccc;
+}
+
+body.dark-mode .user-stats-mobile strong{
+  color: #ffffff;
+}
+
 /* CHART PLACEHOLDER START */
 body.dark-mode .chart-placeholder {
   background: #444;
