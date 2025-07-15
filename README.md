@@ -6,21 +6,42 @@
 
 ---
 
-## ✨ Features
+## ✨ Fitur Utama
 
-- 📚 **Dictionary Page** – Lookup and manage vocabulary in English–Indonesian
-- 📆 **Schedule Manager** – Plan study sessions by day and topic
-- 🧠 **Quick Cards** – Practice through:
-  - **Exam** (20 minutes)
-  - **Writing** (15 minutes)
-  - **Grammar** (17 minutes)
-- 💬 **Quote of the Day** – Motivational quotes pulled from an API
-- 📊 **Statistics Dashboard** – Visual representation of progress
-- 🕒 **Digital Clock** – Real-time display on dashboard
-- ⚙ **Settings Page** – Theme, mode, and learning preferences
+- 🔐 **Login & Register Firebase Auth**
+- 📚 **Books & Library**: Akses modul pembelajaran
+- 🧠 **Interactive Exercises**: Kuis & latihan cepat
+- 💬 **Dictionary & Translation**: Kamus + penerjemah
+- ⏰ **World Clock & Quote of The Day**
+- 📈 **Statistik Penggunaan** (Chart kunjungan)
+- 💻 **UI Responsif** (desktop & mobile)
 
 ---
 
+## 📁 Struktur Proyek
+
+spaceberry/
+├── index.html # Dashboard utama
+├── README.md
+├── assets/
+│ ├── css/ # style.css, settings.css, login.css, dictionary.css, dll.
+│ ├── js/ # script.js, chart-script.js, login.js, settings.js, dll.
+│ ├── img/ # Logo, avatar, icon modul
+│ ├── font/ # Font custom seperti ComicRelief.ttf
+│ ├── data/ # Word list, JSON statis (jika ada)
+│ └── page/ # Halaman internal
+│ ├── login.html
+│ ├── dictionary.html
+│ ├── schedule.html
+│ ├── settings.html
+│ ├── booksAndLibrary/
+│ │ └── main.html, modulX.html
+│ └── quickCards/
+│ ├── exam.html
+│ ├── grammar.html
+│ └── writing.html
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -32,10 +53,13 @@
 
 ---
 
-## 🔧 How to Use
+## 🔧 Cara Menjalankan
 
 1. Clone or download the repository:
    ```bash
    git clone https://github.com/Leancyn/spaceberry.git
    cd spaceberry
    ```
+2. Jalankan secara lokal dengan Live Server (VSCode)
+3. Atau kunjungi versi live:
+👉 https://leancyn.github.io/spaceberry/
