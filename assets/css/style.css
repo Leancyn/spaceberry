@@ -293,8 +293,8 @@ svg.feather.feather-help-circle {
 }
 
 .avatar-profile {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: auto;
   object-fit: cover;
   border-radius: 50%;
   margin-left: 20px;
