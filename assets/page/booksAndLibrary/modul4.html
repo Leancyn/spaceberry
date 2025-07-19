@@ -234,9 +234,18 @@
       <i data-feather="arrow-up"></i>
     </button>
     <script>
-      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const modulContainer = document.querySelector(".modul-container");
+
+      modulContainer.addEventListener("scroll", () => {
+        if (modulContainer.scrollTop > 300) {
+          scrollTopBtn.style.display = "flex";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      });
+
       scrollTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        modulContainer.scrollTo({ top: 0, behavior: "smooth" });
       });
     </script>
 

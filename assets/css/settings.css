@@ -175,9 +175,6 @@ body.dark-mode .modul {
   background: linear-gradient(to right, #7171fd, #a948f8);
 }
 
-body.dark-mode .check-btn {
-  background-color: #444;
-}
 
 body.dark-mode .modul-container {
   flex: 1;
@@ -324,9 +321,6 @@ body.dark-mode .interactive-practice {
   background: linear-gradient(to right, #7171fd, #a948f8);
 }
 
-body.dark-mode .contact-btn {
-  background-color: #444;
-}
 
 body.dark-mode #quoteAuthor {
   color: #ffffff;
@@ -470,15 +464,12 @@ body[data-theme="pink"] {
 }
 
 .reset-btn,
-.schedule-controls,
+.schedule-controls button, #logoutBtn, .translate-controls button, .modul button,
 .contact-btn button {
   background-color: var(--primary, #7c3aed);
 }
 
-button.contact-btn,
-button.translate-controls,
-button.user-stats-mobile,
-button.user-stats, button.modul {
+.contact-btn {
   background-color: var(--primary, #7c3aed);
 }
 

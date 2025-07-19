@@ -207,8 +207,6 @@
 
     <script src="/spaceberry/assets/js/feather.min.js"></script>
     <script src="/spaceberry/assets/js/script.js"></script>
-    <script src="/spaceberry/assets/js/apexcharts.min.js"></script>
-    <script src="/spaceberry/assets/js/chart-script.js"></script>
     <script src="/spaceberry/assets/js/settings.js"></script>
 
     <script>
@@ -263,11 +261,11 @@
                   { merge: true }
                 )
                 .then(() => {
-                  console.log("📘 Lesson ditambahkan +1");
+                  console.log("Lesson ditambahkan +1");
                   window.location.href = target;
                 })
                 .catch((err) => {
-                  console.error("❌ Gagal menambah lesson:", err);
+                  console.error("Gagal menambah lesson:", err);
                   window.location.href = target;
                 });
             });
