@@ -61,6 +61,10 @@ nav .nav-item {
   stroke: white;
 }
 
+svg.feather.feather-help-circle {
+  stroke: #333;
+}
+
 .nav-item.active svg {
   stroke: #333;
 }
