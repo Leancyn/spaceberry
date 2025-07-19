@@ -158,19 +158,27 @@
 
   <button id="scrollTopBtn" aria-label="Scroll to top"><i data-feather="arrow-up"></i></button>
   <script>
-      const modulContainer = document.querySelector(".modul-container");
+    const modulContainer = document.querySelector(".modul-container");
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-      modulContainer.addEventListener("scroll", () => {
-        if (modulContainer.scrollTop > 300) {
-          scrollTopBtn.style.display = "flex";
-        } else {
-          scrollTopBtn.style.display = "none";
-        }
-      });
+    // Fungsi untuk cek apakah layar sedang di bawah 1024px
+    function isMobileOrTablet() {
+      return window.innerWidth <= 1024;
+    }
 
-      scrollTopBtn.addEventListener("click", () => {
-        modulContainer.scrollTo({ top: 0, behavior: "smooth" });
-      });
+    // Tampilkan tombol hanya jika scroll dan lebar sesuai
+    modulContainer.addEventListener("scroll", () => {
+      if (isMobileOrTablet() && modulContainer.scrollTop > 300) {
+        scrollTopBtn.style.display = "flex";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    });
+
+    // Scroll ke atas saat diklik
+    scrollTopBtn.addEventListener("click", () => {
+      modulContainer.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 
   <script src="/spaceberry/assets/js/feather.min.js"></script>

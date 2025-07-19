@@ -225,15 +225,23 @@
     </button>
     <script>
       const modulContainer = document.querySelector(".modul-container");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
 
+      // Fungsi untuk cek apakah layar sedang di bawah 1024px
+      function isMobileOrTablet() {
+        return window.innerWidth <= 1024;
+      }
+
+      // Tampilkan tombol hanya jika scroll dan lebar sesuai
       modulContainer.addEventListener("scroll", () => {
-        if (modulContainer.scrollTop > 300) {
+        if (isMobileOrTablet() && modulContainer.scrollTop > 300) {
           scrollTopBtn.style.display = "flex";
         } else {
           scrollTopBtn.style.display = "none";
         }
       });
 
+      // Scroll ke atas saat diklik
       scrollTopBtn.addEventListener("click", () => {
         modulContainer.scrollTo({ top: 0, behavior: "smooth" });
       });
