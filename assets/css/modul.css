@@ -19,7 +19,6 @@ body {
 
 .container {
   display: flex;
-  height: 100vh;
 }
 
 /* Sidebar */
@@ -256,6 +255,10 @@ footer {
   display: none;
 }
 
+svg.feather.feather-help-circle {
+  stroke: #333;
+}
+
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
@@ -270,7 +273,7 @@ footer {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 999;
-  display: none; /* sembunyikan default */
+  display: none; /* ini akan diubah oleh JS */
   transition: background-color 0.3s ease;
 }
 
