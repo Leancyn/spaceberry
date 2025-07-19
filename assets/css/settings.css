@@ -278,11 +278,6 @@ body.dark-mode .wordTableBody td {
   color: #ffffff;
 }
 
-body.dark-mode table thead {
-  background: linear-gradient(to right, #a18cd1, #fbc2eb);
-  color: #1e1b4b;
-}
-
 body.dark-mode footer {
   margin-top: 60px;
   padding: 20px;
@@ -404,7 +399,7 @@ body.dark-mode .translate-box {
   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
 }
 
-body.dark-mode .user-dropdown{
+body.dark-mode .user-dropdown {
   background: #444;
 }
 
@@ -412,7 +407,7 @@ body.dark-mode .user-dropdown p {
   color: #eee;
 }
 
-body.dark-mode #dropdownEmailMobile{
+body.dark-mode #dropdownEmailMobile {
   color: #ccc;
 }
 
@@ -420,7 +415,7 @@ body.dark-mode .user-stats-mobile {
   color: #ccc;
 }
 
-body.dark-mode .user-stats-mobile strong{
+body.dark-mode .user-stats-mobile strong {
   color: #ffffff;
 }
 
@@ -438,11 +433,25 @@ body.dark-mode .schedule-section {
 }
 
 body.dark-mode .schedule-table {
-  background: #333;
+  background: transparent;
+}
+
+body.dark-mode .schedule-section h2 {
+  color: white;
 }
 
 body.dark-mode .schedule-table th {
-  background-color: #a18cd1;
+  background: transparent;
+  color: white;
+}
+
+body.dark-mode .schedule-table td {
+  font-size: 1.2rem;
+  color: white;
+}
+
+body.dark-mode .schedule-table td a {
+  color: white;
 }
 /* SCHEDULE END */
 
@@ -461,7 +470,15 @@ body[data-theme="pink"] {
 }
 
 .reset-btn,
-.schedule-controls button {
+.schedule-controls,
+.contact-btn button {
+  background-color: var(--primary, #7c3aed);
+}
+
+button.contact-btn,
+button.translate-controls,
+button.user-stats-mobile,
+button.user-stats, button.modul {
   background-color: var(--primary, #7c3aed);
 }
 

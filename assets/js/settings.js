@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const darkMode = localStorage.getItem("darkMode") === "true";
   if (darkMode) body.classList.add("dark-mode");
 
-  const theme = localStorage.getItem("theme") || "blue";
+  const theme = localStorage.getItem("theme") || "purple";
   body.setAttribute("data-theme", theme);
 
   // Settings page only

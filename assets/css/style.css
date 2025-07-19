@@ -633,7 +633,7 @@ svg.feather.feather-help-circle {
 /* SCHEDULE START */
 .schedule-section {
   margin-top: 30px;
-  background: #ffb9eb;
+  background: linear-gradient(to top, #fbc2eb, #a18cd1);
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -642,7 +642,7 @@ svg.feather.feather-help-circle {
 .schedule-section h2 {
   font-size: 24px;
   margin-bottom: 16px;
-  color: #ffffff;
+  color: #1f1f1f;
 }
 .schedule-controls {
   display: flex;
@@ -674,7 +674,7 @@ svg.feather.feather-help-circle {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  background: #a18cd1;
+  background: transparent;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -685,22 +685,24 @@ svg.feather.feather-help-circle {
   border-bottom: 1px solid #e2e8f0;
 }
 .schedule-table td {
-  color: #fff9f9 !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  color: #1f1f1f;
   font-size: 1.2rem;
 }
 .schedule-table th {
-  background-color: #df80c5;
-  color: #fff9f9 !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  color: #1f1f1f;
 }
 .schedule-table td a {
-  text-decoration: none;
-  color: #412cff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+  font-style: italic;
+  color: #1f1f1f;
 }
 .schedule-table td a:hover {
   text-decoration: underline;
+}
+
+.schedule-section table {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* SCHEDULE END */
