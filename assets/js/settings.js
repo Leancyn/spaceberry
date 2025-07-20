@@ -118,6 +118,9 @@ avatarUpload.addEventListener("change", (e) => {
 // Load dari localStorage saat masuk
 window.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("customAvatar");
+  const avatarUpload = document.getElementById("avatarUpload");
+  const previewDesktop = document.getElementById("headerAvatar");
+  const previewMobile = document.getElementById("dropdownPhoto");
 });
 
 const avatarInput = document.getElementById("avatarUpload");
