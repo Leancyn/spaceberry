@@ -86,3 +86,34 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+const avatarOptions = document.querySelectorAll('.avatar-option');
+const avatarUpload = document.getElementById('avatarUpload');
+const preview = document.getElementById('headerAvatar'); // atau #dropdownPhoto
+
+// Klik galeri
+avatarOptions.forEach(img => {
+  img.addEventListener('click', () => {
+    const src = img.getAttribute('src');
+    localStorage.setItem('customAvatar', src);
+    preview.src = src;
+  });
+});
+
+// Upload custom
+avatarUpload.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    const imgData = evt.target.result;
+    localStorage.setItem('customAvatar', imgData);
+    preview.src = imgData;
+  };
+  if (file) reader.readAsDataURL(file);
+});
+
+// Load dari localStorage saat masuk
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('customAvatar');
+  if (saved) preview.src = saved;
+});

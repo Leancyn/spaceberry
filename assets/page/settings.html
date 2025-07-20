@@ -1,96 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings - Spaceberry</title>
-    <link rel="icon" href="/spaceberry/assets/img/favicon.png" type="image/png">
+    <link
+      rel="icon"
+      href="/spaceberry/assets/img/favicon.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="/spaceberry/assets/css/style.css" />
-    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css">
-</head>
+    <link rel="stylesheet" href="/spaceberry/assets/css/settings.css" />
+  </head>
 
-<body class="settings-page">
+  <body class="settings-page">
     <div class="container">
-        <!-- SIDEBAR START -->
-        <aside class="sidebar">
-            <img src="/spaceberry/assets/img/logo (2).png" alt="Spaceberry" />
-            <nav>
-                <a href="/spaceberry/index.html" class="nav-item"><i data-feather="home"></i><span>Dashboard</span></a>
-                <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"><i
-                        data-feather="book-open"></i><span>Dictionary</span></a>
-                <a href="/spaceberry/assets/page/schedule.html" class="nav-item"><i
-                        data-feather="calendar"></i><span>Schedule</span></a>
-                <a href="#" class="nav-item active"><i data-feather="settings"></i><span>Settings</span></a>
-            </nav>
-            <div class="contact-box">
-                <i data-feather="mail" class="contact-icon"></i>
-                <p class="contact-text">Need help or have questions?</p>
-                <a href="https://wa.me/6289503711530"><button class="contact-btn">Contact Us</button></a>
+      <!-- SIDEBAR START -->
+      <aside class="sidebar">
+        <img src="/spaceberry/assets/img/logo (2).png" alt="Spaceberry" />
+        <nav>
+          <a href="/spaceberry/index.html" class="nav-item"
+            ><i data-feather="home"></i><span>Dashboard</span></a
+          >
+          <a href="/spaceberry/assets/page/dictionary.html" class="nav-item"
+            ><i data-feather="book-open"></i><span>Dictionary</span></a
+          >
+          <a href="/spaceberry/assets/page/schedule.html" class="nav-item"
+            ><i data-feather="calendar"></i><span>Schedule</span></a
+          >
+          <a href="#" class="nav-item active"
+            ><i data-feather="settings"></i><span>Settings</span></a
+          >
+        </nav>
+        <div class="contact-box">
+          <i data-feather="mail" class="contact-icon"></i>
+          <p class="contact-text">Need help or have questions?</p>
+          <a href="https://wa.me/6289503711530"
+            ><button class="contact-btn">Contact Us</button></a
+          >
+        </div>
+      </aside>
+      <!-- SIDEBAR END -->
+
+      <main class="main-content">
+        <section class="settings-section">
+          <h2>Settings</h2>
+
+          <div class="setting-block">
+            <h4>Dark Mode</h4>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="setting-block">
+            <h4>Change Avatar</h4>
+            <div class="avatar-gallery">
+              <img src="/spaceberry/assets/img/avatar1.png" class="avatar-option" />
+              <img src="/spaceberry/assets/img/avatar2.png" class="avatar-option" />
+              <img src="/spaceberry/assets/img/user-profile.png" class="avatar-option" />
             </div>
-        </aside>
-        <!-- SIDEBAR END -->
 
-        <main class="main-content">
-            <section class="settings-section">
-                <h2>Settings</h2>
+            <!-- Upload Sendiri -->
+            <div class="upload-section">
+              <label for="avatarUpload" class="upload-label"
+                >Upload Your Avatar</label
+              >
+              <input type="file" id="avatarUpload" class="upload-input" />
+            </div>
+          </div>
 
-                <div class="setting-block">
-                    <h4>Dark Mode</h4>
-                    <label class="switch">
-                        <input type="checkbox" id="darkModeToggle">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
+          <div class="setting-block">
+            <h4>Button Color</h4>
+            <select id="themeColorSelect">
+              <option value="purple">Purple (Default)</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+              <option value="pink">Pink</option>
+            </select>
+          </div>
 
-                <div class="setting-block">
-                    <h4>Font Size</h4>
-                    <select id="fontSizeSelect">
-                        <option value="16">Default</option>
-                        <option value="18">Medium</option>
-                        <option value="20">Large</option>
-                    </select>
-                </div>
+          <div class="setting-block">
+            <h4>Language</h4>
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="id">Bahasa Indonesia</option>
+            </select>
+          </div>
 
-                <div class="setting-block">
-                    <h4>Button Color</h4>
-                    <select id="themeColorSelect">
-                        <option value="purple">Purple (Default)</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                        <option value="pink">Pink</option>
-                    </select>
-                </div>
+          <div class="setting-block">
+            <h4>Notifications</h4>
+            <label class="switch">
+              <input type="checkbox" id="notifToggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
 
-                <div class="setting-block">
-                    <h4>Language</h4>
-                    <select id="languageSelect">
-                        <option value="en">English</option>
-                        <option value="id">Bahasa Indonesia</option>
-                    </select>
-                </div>
-
-                <div class="setting-block">
-                    <h4>Notifications</h4>
-                    <label class="switch">
-                        <input type="checkbox" id="notifToggle">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-
-                <div class="setting-block">
-                    <h4>Reset Progress</h4>
-                    <button class="reset-btn" onclick="resetProgress()">Clear All Progress</button>
-                </div>
-            </section>
-        </main>
+          <div class="setting-block">
+            <h4>Reset Progress</h4>
+            <button class="reset-btn" onclick="resetProgress()">
+              Clear All Progress
+            </button>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script src="/spaceberry/assets/js/feather.min.js"></script>
     <script src="/spaceberry/assets/js/settings.js"></script>
     <script>
-        feather.replace();
+      feather.replace();
     </script>
-</body>
-
+  </body>
 </html>

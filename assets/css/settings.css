@@ -18,6 +18,51 @@ body.dark-mode .settings-section {
   color: #ffffff;
 }
 
+.avatar-gallery {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.avatar-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.avatar-option:hover {
+  border-color: var(--primary);
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.upload-label {
+  background-color: var(--primary, #7c3aed);
+  color: white;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.upload-label:hover {
+  background-color: #5b21b6;
+}
+
+.upload-input {
+  display: none;
+}
+
 .setting-block {
   margin-bottom: 25px;
 }
@@ -175,7 +220,6 @@ body.dark-mode .modul {
   background: linear-gradient(to right, #7171fd, #a948f8);
 }
 
-
 body.dark-mode .modul-container {
   flex: 1;
   padding: 40px 60px;
@@ -321,7 +365,6 @@ body.dark-mode .interactive-practice {
   background: linear-gradient(to right, #7171fd, #a948f8);
 }
 
-
 body.dark-mode #quoteAuthor {
   color: #ffffff;
 }
@@ -463,7 +506,10 @@ body[data-theme="pink"] {
 }
 
 .reset-btn,
-.schedule-controls button, #logoutBtn, .translate-controls button, .modul button,
+.schedule-controls button,
+#logoutBtn,
+.translate-controls button,
+.modul button,
 .contact-btn button {
   background-color: var(--primary, #7c3aed);
 }
