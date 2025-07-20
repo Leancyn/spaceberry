@@ -314,6 +314,13 @@
               } else {
                 console.warn("Dokumen pengguna tidak ditemukan.");
               }
+
+              const avatarUrl = data.avatar || "assets/img/user-profile.png";
+
+              document.getElementById("headerAvatar").src = avatarUrl;
+              document.getElementById("dropdownPhoto").src = avatarUrl;
+              document.getElementById("dropdownName").textContent = name;
+              document.getElementById("dropdownEmail").textContent = email;
             })
             .catch((err) => {
               console.error("Gagal ambil data statistik:", err);
