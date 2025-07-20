@@ -103,18 +103,6 @@ avatarOptions.forEach((img) => {
   });
 });
 
-// Upload custom
-avatarUpload.addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  const reader = new FileReader();
-  reader.onload = function (evt) {
-    const imgData = evt.target.result;
-    localStorage.setItem("customAvatar", imgData);
-    preview.src = imgData;
-  };
-  if (file) reader.readAsDataURL(file);
-});
-
 // Load dari localStorage saat masuk
 window.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("customAvatar");
