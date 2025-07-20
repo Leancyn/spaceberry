@@ -47,16 +47,24 @@
         <section class="word-sets">
           <h3 class="library-title">Books</h3>
           <div class="cards">
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul1.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul1.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
                 class="c1-modul"
               />
-              <div class="card-title-book">Module 1: Short Conversation Tips</div>
+              <div class="card-title-book">
+                Module 1: Short Conversation Tips
+              </div>
             </div>
 
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul2.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul2.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
@@ -64,7 +72,10 @@
               />
               <div class="card-title-book">Module 2: Who, What, Where</div>
             </div>
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul3.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul3.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
@@ -77,7 +88,10 @@
 
         <section class="word-sets">
           <div class="cards">
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul4.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul4.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
@@ -85,15 +99,23 @@
               />
               <div class="card-title-book">Module 4: Agree & Suggest</div>
             </div>
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul5.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul5.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
                 class="c1-modul"
               />
-              <div class="card-title-book">Module 5: Related Time Expressions</div>
+              <div class="card-title-book">
+                Module 5: Related Time Expressions
+              </div>
             </div>
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul6.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul6.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
@@ -106,7 +128,10 @@
 
         <section class="word-sets">
           <div class="cards">
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul7.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul7.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
@@ -114,7 +139,10 @@
               />
               <div class="card-title-book">Module 7: Agreement</div>
             </div>
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul8.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul8.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
@@ -122,7 +150,10 @@
               />
               <div class="card-title-book">Module 8: Making Suggestions</div>
             </div>
-            <div class="card bc-1" data-link="/spaceberry/assets/page/booksAndLibrary/modul9.html">
+            <div
+              class="card bc-1"
+              data-link="/spaceberry/assets/page/booksAndLibrary/modul9.html"
+            >
               <img
                 src="/spaceberry/assets/img/books.png"
                 alt="Books"
@@ -142,73 +173,11 @@
       ></a>
     </div>
 
-    <script src="/spaceberry/assets/js/feather.min.js"></script>
     <script src="/spaceberry/assets/js/script.js"></script>
     <script src="/spaceberry/assets/js/settings.js"></script>
 
     <script>
       feather.replace();
-    </script>
-
-    <!-- Firebase Core -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyBDIYWlSgxpjdpHAs6xKFJGaTvM86EKe-4",
-        authDomain: "spaceberry-bf68b.firebaseapp.com",
-        projectId: "spaceberry-bf68b",
-        storageBucket: "spaceberry-bf68b.firebasestorage.app",
-        messagingSenderId: "185481236967",
-        appId: "1:185481236967:web:222422307c4218517fed42",
-        measurementId: "G-2E7GZY8NNE",
-      };
-
-      firebase.initializeApp(firebaseConfig);
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const moduleLinks = document.querySelectorAll("a[href*='modul']");
-
-        auth.onAuthStateChanged((user) => {
-          if (!user) {
-            alert("You must be logged in to access this content.");
-            location.href = "/spaceberry/assets/page/login.html";
-            return;
-          }
-
-          moduleLinks.forEach((link) => {
-            link.addEventListener("click", (e) => {
-              e.preventDefault();
-
-              const target = link.getAttribute("href");
-
-              // Cegah spam klik ganda
-              link.style.pointerEvents = "none";
-
-              db.collection("users")
-                .doc(user.uid)
-                .set(
-                  {
-                    lessons: firebase.firestore.FieldValue.increment(1),
-                  },
-                  { merge: true }
-                )
-                .then(() => {
-                  console.log("Lesson ditambahkan +1");
-                  window.location.href = target;
-                })
-                .catch((err) => {
-                  console.error("Gagal menambah lesson:", err);
-                  window.location.href = target;
-                });
-            });
-          });
-        });
-      });
     </script>
   </body>
 </html>

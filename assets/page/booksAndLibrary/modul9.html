@@ -256,5 +256,52 @@
     <script>
       feather.replace();
     </script>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDIYWlSgxpjdpHAs6xKFJGaTvM86EKe-4",
+        authDomain: "spaceberry-bf68b.firebaseapp.com",
+        projectId: "spaceberry-bf68b",
+        storageBucket: "spaceberry-bf68b.firebasestorage.app",
+        messagingSenderId: "185481236967",
+        appId: "1:185481236967:web:222422307c4218517fed42",
+        measurementId: "G-2E7GZY8NNE",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        auth.onAuthStateChanged((user) => {
+          if (!user) {
+            console.warn("Belum login");
+            return;
+          }
+
+          const page = location.pathname.split("/").pop();
+          const sessionKey = `lesson-added-${user.uid}-${page}`;
+
+          db.collection("users")
+            .doc(user.uid)
+            .set(
+              { lessons: firebase.firestore.FieldValue.increment(1) },
+              { merge: true }
+            )
+            .then(() => {
+              console.log("Lesson +1 sukses");
+              sessionStorage.setItem(sessionKey, "true");
+            })
+            .catch((err) => {
+              console.error("Gagal tambah lesson:", err);
+            });
+        });
+      });
+    </script>
   </body>
 </html>
