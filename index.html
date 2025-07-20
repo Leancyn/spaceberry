@@ -301,13 +301,6 @@
                 const lessons = data.lessons ?? 0;
                 const terms = data.terms ?? 0;
 
-                const avatarUrl = data.avatar || "assets/img/user-profile.png";
-
-                document.getElementById("headerAvatar").src = avatarUrl;
-                document.getElementById("dropdownPhoto").src = avatarUrl;
-                document.getElementById("dropdownName").textContent = name;
-                document.getElementById("dropdownEmail").textContent = email;
-
                 const lessonsEl = document.getElementById("userLessons");
                 const termsEl = document.getElementById("userTerms");
                 if (lessonsEl) lessonsEl.textContent = lessons;
