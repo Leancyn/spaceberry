@@ -91,6 +91,35 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Pastikan Firebase sudah dimuat di HTML (via <script> tag)
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBDIYWlSgxpjdpHAs6xKFJGaTvM86EKe-4",
+  authDomain: "spaceberry-bf68b.firebaseapp.com",
+  projectId: "spaceberry-bf68b",
+  storageBucket: "spaceberry-bf68b.firebasestorage.app",
+  messagingSenderId: "185481236967",
+  appId: "1:185481236967:web:222422307c4218517fed42",
+  measurementId: "G-2E7GZY8NNE",
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+let currentUser = null;
+
+// Ambil user saat sudah login
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    currentUser = user;
+    console.log("User login:", user.email);
+  }
+});
+
 const avatarOptions = document.querySelectorAll(".avatar-option");
 const avatarUpload = document.getElementById("avatarUpload");
 const preview = document.getElementById("headerAvatar"); // atau #dropdownPhoto
