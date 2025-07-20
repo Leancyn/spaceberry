@@ -423,7 +423,7 @@ body.dark-mode .chart-placeholder {
 
 /* SCHEDULE START */
 body.dark-mode .schedule-section {
-  background: linear-gradient(to right, #7171fd, #a948f8);
+  background: linear-gradient(to bottom, #7171fd, #a948f8);
 }
 
 body.dark-mode .schedule-table {
@@ -436,16 +436,15 @@ body.dark-mode .schedule-section h2 {
 
 body.dark-mode .schedule-table th {
   background: transparent;
-  color: white;
+  color: #1f1f1f;
 }
 
 body.dark-mode .schedule-table td {
-  font-size: 1.2rem;
   color: white;
 }
 
 body.dark-mode .schedule-table td a {
-  color: white;
+  color: #1f1f1f;
 }
 /* SCHEDULE END */
 

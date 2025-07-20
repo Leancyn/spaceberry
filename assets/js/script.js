@@ -221,5 +221,19 @@ document.addEventListener("DOMContentLoaded", function () {
     statisticsSection.style.display = query === "" ? "" : "none";
   });
 });
-
 // SEARCHBAR INDEX END
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card[data-link], .quick-card[data-link]");
+
+  cards.forEach((card) => {
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", () => {
+      const link = card.getAttribute("data-link");
+      if (link) {
+        window.location.href = link;
+      }
+    });
+  });
+});
