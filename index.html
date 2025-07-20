@@ -320,7 +320,7 @@
             });
         });
 
-        firebase.auth.onAuthStateChanged(async (user) => {
+        auth.onAuthStateChanged(async (user) => {
           if (!user) return;
 
           try {
