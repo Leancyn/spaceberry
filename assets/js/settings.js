@@ -28,8 +28,10 @@ window.addEventListener("DOMContentLoaded", () => {
     if (darkModeToggle) darkModeToggle.checked = darkMode;
     if (fontSizeSelect) fontSizeSelect.value = fontSize.replace("px", "");
     if (themeColorSelect) themeColorSelect.value = theme;
-    if (languageSelect) languageSelect.value = localStorage.getItem("language") || "en";
-    if (notifToggle) notifToggle.checked = localStorage.getItem("notifications") === "true";
+    if (languageSelect)
+      languageSelect.value = localStorage.getItem("language") || "en";
+    if (notifToggle)
+      notifToggle.checked = localStorage.getItem("notifications") === "true";
 
     if (bgSound && bgSoundToggle) {
       const soundOn = localStorage.getItem("bgSound") === "true";
@@ -60,7 +62,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     languageSelect?.addEventListener("change", () => {
       localStorage.setItem("language", languageSelect.value);
-      alert("Language preference saved. (Fitur terjemahan masih dalam pengembangan)");
+      alert(
+        "Language preference saved. (Fitur terjemahan masih dalam pengembangan)"
+      );
     });
 
     window.resetProgress = function () {
@@ -87,33 +91,74 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const avatarOptions = document.querySelectorAll('.avatar-option');
-const avatarUpload = document.getElementById('avatarUpload');
-const preview = document.getElementById('headerAvatar'); // atau #dropdownPhoto
+const avatarOptions = document.querySelectorAll(".avatar-option");
+const avatarUpload = document.getElementById("avatarUpload");
+const preview = document.getElementById("headerAvatar"); // atau #dropdownPhoto
 
 // Klik galeri
-avatarOptions.forEach(img => {
-  img.addEventListener('click', () => {
-    const src = img.getAttribute('src');
-    localStorage.setItem('customAvatar', src);
-    preview.src = src;
+avatarOptions.forEach((img) => {
+  img.addEventListener("click", () => {
+    const src = img.getAttribute("src");
+    localStorage.setItem("customAvatar", src);
   });
 });
 
 // Upload custom
-avatarUpload.addEventListener('change', (e) => {
+avatarUpload.addEventListener("change", (e) => {
   const file = e.target.files[0];
   const reader = new FileReader();
-  reader.onload = function(evt) {
+  reader.onload = function (evt) {
     const imgData = evt.target.result;
-    localStorage.setItem('customAvatar', imgData);
+    localStorage.setItem("customAvatar", imgData);
     preview.src = imgData;
   };
   if (file) reader.readAsDataURL(file);
 });
 
 // Load dari localStorage saat masuk
-window.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('customAvatar');
-  if (saved) preview.src = saved;
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("customAvatar");
 });
+
+const avatarInput = document.getElementById("avatarUpload");
+
+if (avatarInput) {
+  avatarInput.addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onloadend = async () => {
+      const base64String = reader.result;
+
+      const user = firebase.auth().currentUser;
+      if (!user) {
+        alert("Kamu belum login.");
+        return;
+      }
+
+      try {
+        await firebase
+          .firestore()
+          .collection("users")
+          .doc(user.uid)
+          .set({ photo: base64String }, { merge: true });
+
+        alert("Avatar berhasil diunggah!");
+
+        // Update UI jika elemen ditemukan
+        const headerAvatar = document.getElementById("headerAvatar");
+        const dropdownPhoto = document.getElementById("dropdownPhoto");
+
+        if (headerAvatar) headerAvatar.src = base64String;
+        if (dropdownPhoto) dropdownPhoto.src = base64String;
+      } catch (err) {
+        console.error("Gagal menyimpan avatar:", err);
+        alert("Gagal mengunggah avatar.");
+      }
+    };
+
+    reader.readAsDataURL(file);
+  });
+}

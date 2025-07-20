@@ -57,9 +57,9 @@
           <div class="setting-block">
             <h4>Change Avatar</h4>
             <div class="avatar-gallery">
-              <img src="/spaceberry/assets/img/avatar1.png" class="avatar-option" />
-              <img src="/spaceberry/assets/img/avatar2.png" class="avatar-option" />
-              <img src="/spaceberry/assets/img/user-profile.png" class="avatar-option" />
+              <img src="/assets/img/avatar1.png" class="avatar-option" />
+              <img src="/assets/img/avatar2.png" class="avatar-option" />
+              <img src="/assets/img/user-profile.png" class="avatar-option" />
             </div>
 
             <!-- Upload Sendiri -->
@@ -109,8 +109,30 @@
 
     <script src="/spaceberry/assets/js/feather.min.js"></script>
     <script src="/spaceberry/assets/js/settings.js"></script>
+
     <script>
       feather.replace();
+    </script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+    <!-- Firebase Config -->
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDIYWlSgxpjdpHAs6xKFJGaTvM86EKe-4",
+        authDomain: "spaceberry-bf68b.firebaseapp.com",
+        projectId: "spaceberry-bf68b",
+        storageBucket: "spaceberry-bf68b.appspot.com",
+        messagingSenderId: "185481236967",
+        appId: "1:185481236967:web:222422307c4218517fed42",
+        measurementId: "G-2E7GZY8NNE",
+      };
+
+      firebase.initializeApp(firebaseConfig);
     </script>
   </body>
 </html>
