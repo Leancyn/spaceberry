@@ -97,9 +97,33 @@ const preview = document.getElementById("headerAvatar"); // atau #dropdownPhoto
 
 // Klik galeri
 avatarOptions.forEach((img) => {
-  img.addEventListener("click", () => {
+  img.addEventListener("click", async () => {
     const src = img.getAttribute("src");
-    localStorage.setItem("customAvatar", src);
+
+    const user = firebase.auth().currentUser;
+    if (!user) return;
+
+    try {
+      // Simpan avatar yang dipilih ke Firestore
+      await db
+        .collection("users")
+        .doc(user.uid)
+        .set({ photo: src }, { merge: true });
+
+      // Update UI langsung
+      const avatarEls = [
+        document.getElementById("headerAvatar"),
+        document.getElementById("dropdownPhoto"),
+      ];
+      avatarEls.forEach((el) => {
+        if (el) el.src = src;
+      });
+
+      alert("Avatar berhasil diubah!");
+    } catch (err) {
+      console.error("Gagal menyimpan avatar:", err);
+      alert("Gagal menyimpan avatar. Coba lagi nanti.");
+    }
   });
 });
 
