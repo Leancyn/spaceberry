@@ -104,13 +104,13 @@ avatarOptions.forEach((img) => {
     if (!user) return;
 
     try {
-      // Simpan avatar yang dipilih ke Firestore
+      // Simpan avatar ke Firestore
       await db
         .collection("users")
         .doc(user.uid)
         .set({ photo: src }, { merge: true });
 
-      // Update UI langsung
+      // Update gambar di UI
       const avatarEls = [
         document.getElementById("headerAvatar"),
         document.getElementById("dropdownPhoto"),
