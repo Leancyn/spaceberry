@@ -96,34 +96,40 @@ const avatarUpload = document.getElementById("avatarUpload");
 const preview = document.getElementById("headerAvatar"); // atau #dropdownPhoto
 
 // Klik galeri
-avatarOptions.forEach((img) => {
-  img.addEventListener("click", async () => {
-    const src = img.getAttribute("src");
-
-    const user = firebase.auth().currentUser;
-    if (!user) return;
-
-    try {
-      // Simpan avatar ke Firestore
-      await db
-        .collection("users")
-        .doc(user.uid)
-        .set({ photo: src }, { merge: true });
-
-      // Update gambar di UI
-      const avatarEls = [
-        document.getElementById("headerAvatar"),
-        document.getElementById("dropdownPhoto"),
-      ];
-      avatarEls.forEach((el) => {
-        if (el) el.src = src;
-      });
-
-      alert("Avatar berhasil diubah!");
-    } catch (err) {
-      console.error("Gagal menyimpan avatar:", err);
-      alert("Gagal menyimpan avatar. Coba lagi nanti.");
+document.addEventListener("DOMContentLoaded", () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+      console.warn("User belum login.");
+      return;
     }
+
+    const avatarOptions = document.querySelectorAll(".avatar-option");
+
+    avatarOptions.forEach((img) => {
+      img.addEventListener("click", async () => {
+        const src = img.getAttribute("src");
+        try {
+          await firebase
+            .firestore()
+            .collection("users")
+            .doc(user.uid)
+            .set({ photo: src }, { merge: true });
+
+          const avatarEls = [
+            document.getElementById("headerAvatar"),
+            document.getElementById("dropdownPhoto"),
+          ];
+          avatarEls.forEach((el) => {
+            if (el) el.src = src;
+          });
+
+          alert("Avatar berhasil diubah!");
+        } catch (err) {
+          console.error("Gagal menyimpan avatar:", err);
+          alert("Gagal menyimpan avatar. Coba lagi nanti.");
+        }
+      });
+    });
   });
 });
 
