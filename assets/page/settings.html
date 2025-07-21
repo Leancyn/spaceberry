@@ -138,10 +138,12 @@
         storageBucket: "spaceberry-bf68b.appspot.com",
         messagingSenderId: "185481236967",
         appId: "1:185481236967:web:222422307c4218517fed42",
-        measurementId: "G-2E7GZY8NNE",
       };
 
-      firebase.initializeApp(firebaseConfig);
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
+      const db = firebase.firestore();
     </script>
   </body>
 </html>
