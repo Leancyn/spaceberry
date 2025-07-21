@@ -178,7 +178,7 @@ if (avatarInput) {
 
       const user = firebase.auth().currentUser;
       if (!user) {
-        alert("Kamu belum login.");
+        alert("Gagal menyimpan avatar. Coba lagi nanti.");
         return;
       }
 

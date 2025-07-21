@@ -320,29 +320,23 @@
             });
         });
 
-        auth.onAuthStateChanged(async (user) => {
-          if (!user) return;
+        firebase.auth().onAuthStateChanged(async (user) => {
+          if (user) {
+            const doc = await firebase
+              .firestore()
+              .collection("users")
+              .doc(user.uid)
+              .get();
+            const data = doc.data();
+            const base64 = data?.photo;
 
-          try {
-            // Ambil avatar dari Firestore
-            const doc = await db.collection("users").doc(user.uid).get();
-            const firestoreAvatar = doc.exists ? doc.data().photo : null;
+            if (base64) {
+              const headerAvatar = document.getElementById("headerAvatar");
+              const dropdownPhoto = document.getElementById("dropdownPhoto");
 
-            // Prioritaskan avatar Firestore, fallback ke default
-            const avatarUrl =
-              firestoreAvatar || "/spaceberry/assets/img/user-profile.png";
-
-            // Tampilkan ke semua tempat
-            const avatarEls = [
-              document.getElementById("headerAvatar"),
-              document.getElementById("dropdownPhoto"),
-            ];
-
-            avatarEls.forEach((el) => {
-              if (el) el.src = avatarUrl;
-            });
-          } catch (err) {
-            console.error("Gagal memuat avatar pengguna:", err);
+              if (headerAvatar) headerAvatar.src = base64;
+              if (dropdownPhoto) dropdownPhoto.src = base64;
+            }
           }
         });
       });
