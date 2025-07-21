@@ -31,12 +31,19 @@ function toggleMode(toLogin) {
   emailInput.style.display = toLogin ? "none" : "block";
   usernameInput.style.display = toLogin ? "none" : "block";
 
+  // Kosongkan input saat ganti mode
+  loginIdentity.value = "";
+  emailInput.value = "";
+  usernameInput.value = "";
+  passwordInput.value = "";
+
   submitBtn.textContent = toLogin ? "Login" : "Submit";
   toggleText.innerHTML = toLogin
     ? `Belum punya akun? <a href="#" onclick="toggleMode(false)">Register</a>`
-    : ""; // Hilangkan teks saat register
+    : `Sudah punya akun? <a href="#" onclick="toggleMode(true)">Login</a>`;
 
   msg.textContent = "";
+  msg.style.color = "";
 }
 
 // Submit handler
@@ -75,8 +82,6 @@ function submit() {
       })
       .then(() => {
         const user = auth.currentUser;
-
-        // TAMBAHAN: Simpan data lengkap + statistik awal
         return db.collection("users").doc(user.uid).set({
           username: user.displayName,
           email: user.email,
@@ -87,8 +92,10 @@ function submit() {
       .then(() => {
         msg.style.color = "green";
         msg.textContent = "Registrasi berhasil. Silakan login.";
-        auth.signOut();
-        toggleMode(true); // kembali ke login
+        return auth.signOut();
+      })
+      .then(() => {
+        toggleMode(true);
       })
       .catch((err) => {
         msg.style.color = "crimson";
@@ -102,4 +109,9 @@ auth.onAuthStateChanged((user) => {
   if (user && isLoginMode) {
     location.href = "/spaceberry/index.html";
   }
+});
+
+// Default ke login mode saat halaman dibuka
+document.addEventListener("DOMContentLoaded", () => {
+  toggleMode(true);
 });
